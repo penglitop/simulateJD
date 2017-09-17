@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>商品搜索-京东商城</title>
+	<meta name="author" content="pengli">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0">
+	<meta name="apple-mobile-web-app-cappable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black">
+	<meta http-equiv="Expires" content="-1">
+	<meta http-equiv="Chache-Control" content="no-cache">
+	<meta http-equiv="Pragma" content="no-cache">
+	<meta name="description" content="京东JD.COM是国内专业的网上购物商城，为您提供【京东超市】月饼 华美月饼礼盒广式蛋黄月饼 花韵月语600g价格、图片、品牌、评论、等相关信息. ">
+	<meta name="Keywords" content="【京东超市】月饼 华美月饼礼盒广式蛋黄月饼 花韵月语600g, 京东">
+<!--设置html的font-size 开始-->
+	<script type="text/javascript">
+	function htmlFont(){
+		var explorer=navigator.userAgent;
+		if(explorer.indexOf("Opera")>=0){
+			winwid=screen.width;
+		}else{
+			winwid=document.getElementsByTagName('html')[0].offsetWidth;
+		}
+		fosi=winwid/320*100;
+		document.getElementsByTagName('html')[0].style.fontSize=fosi+'px';
+	}
+	htmlFont();
+	window.addEventListener('resize',htmlFont);
+	</script>
+<!--设置html的font-size 开始-->
+	<link rel="stylesheet" type="text/css" href="./../../resources/css/detial_page/detial_page.css"/>
+	<link rel="stylesheet" type="text/css" href="./../../resources/css/reset.css"/>
+	<link rel="stylesheet" type="text/css" href="./../../resources/css/public.css"/>
+</head>
+<body>
+	<div class="m_common_top">
+		<!--新人专享是否显示 开始-->
+		<div id="content">
+			<div class="mjd_floor_item" id="layout_appdown_view">
+				<div class="download_pannel" id="layout_appdown">
+					<div class="pannel_bg">
+						<img src="../../resources/images/index/download_bg.png" alt="固定头部背景图">
+					</div>
+					<div class="download_close">
+						<img src="../../resources/images/index/icon-close-banner.png" alt="关闭按钮">
+					</div>
+					<div class="download_logo">
+						<img src="../../resources/images/index/top-jdlogo.png" alt="京东标志">
+					</div>
+					<div class="download_txt">
+						<em class="download_txt_up">打开京东APP购物</em>
+						<em class="download_txt_down">新人领188元红包</em>
+					</div>
+					<div class="download_action">
+						<a id="download_openapp" href="#">立即打开</a>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!--新人专享是否显示 结束-->
+
+
+		
+		<div id="m_common_header">
+			<header class="jd_header">
+
+				<!--商详头部 开始-->
+				<div class="jd_header_new_bar" id="itemProductHead">
+					<div id="m_common_header_goback" class="jd_header_icon_back">
+						<span></span>
+					</div>
+
+					<ul id="header_tabs" class="jd_header_title">
+						<li class="header_tab_item J_ping">
+							<span class="header_tab_selected">商品</span>
+						</li>
+
+						<li class="header_tab_item J_ping" id="detialInfo">
+							<span>详情</span>
+						</li>
+
+						<li class="header_tab_item J_ping" id="pingjia">
+							<span>评价</span>
+						</li>
+					</ul>
+
+
+					<div id="m_common_header_jdkey" class="jd_header_icon_short J_ping">
+						<span></span>
+					</div>
+				</div>
+				<!--商详头部 结束-->
+
+				<!--图文详情头部 开始-->
+				<div class="jd_header_new_bar" id="itemDetailHead" style="display:none">
+					<div id="m_common_header_goback" class="jd_header_icon_back">
+						<span></span>
+					</div>
+
+					<div class="jd_header_title">图文详情</div>
+
+					<div id="m_common_header_jdkey" class="jd_header_icon_short J_ping">
+						<span></span>
+					</div>
+				</div>
+				<!--图文详情头部 结束-->
+
+				
+				<!--首页-浏览记录头部 开始-->
+				<ul class="jd_header_shortcut" id="m_common_header_shortcut" style="display:none">
+
+					<li>
+						<a href="#">
+							<span class="shortcut_home"></span>
+							<strong>首页</strong>
+						</a>
+					</li>
+
+					<li class="current">
+						<a href="#">
+							<span class="shortcut_categories"></span>
+							<strong>分类搜索</strong>
+						</a>
+					</li>
+
+					<li>
+						<a href="#">
+							<span class="shortcut_cart"></span>
+							<strong>购物车</strong>
+						</a>
+					</li>
+
+					<li>
+						<a href="#">
+							<span class="shortcut_my_account"></span>
+							<strong>我的京东</strong>
+						</a>
+					</li>
+
+					<li>
+						<a href="#">
+							<span class="shortcut_my_history"></span>
+							<strong>浏览记录</strong>
+						</a>
+					</li>
+
+				</ul>
+				<!--首页-浏览记录头部 结束-->
+
+				<!--普通商品详情分支头部 开始-->
+				<div id="fixed" class="sift_tab" style="display:none">
+					<ul class="tab_lst">
+						<li>
+							<a href="#" class="on">商品介绍</a>
+						</li>
+
+						<li>
+							<a href="#" class="tab_lst_a">规格参数</a>
+						</li>
+
+						<li>
+							<a href="#" class="tab_lst_a">包装售后</a>
+						</li>
+					</ul>
+				</div>
+				<!--普通商品详情分支头部 结束-->
+
+				<!--商品评价分支头部 开始-->
+				<ul id="tabs" style="display:none">
+					<li class="tab_item tab_hover">
+						<p class="tab_assess_title">全部评价</p>
+						<p class="tab_assess_num tab_assess_rednum"></p>
+					</li>
+
+					<li class="tab_item">
+						<p class="tab_assess_title">好评</p>
+						<p class="tab_assess_num"></p>
+					</li>
+
+					<li class="tab_item">
+						<p class="tab_assess_title">中评</p>
+						<p class="tab_assess_num"></p>
+					</li>
+
+					<li class="tab_item">
+						<p class="tab_assess_title">差评</p>
+						<p class="tab_assess_num"></p>
+					</li>
+
+					<li class="tab_item">
+						<p class="tab_assess_title">有图</p>
+						<p class="tab_assess_num"></p>
+					</li>
+
+				</ul>
+				<!--商品评价分支头部 结束-->
+			</header>
+		</div>
+		
+	</div>	
+
+
+	<!--列表内容 开始-->
+	<div id="mainLayout">
+		<div id="mainStay" class="new_wt">
+			<div id="goods_img_box" class="miblebox">
+
+				<!--头部等顶部部分占位 开始-->
+				<div class="hold_div_top" style="height:.94rem"></div>
+				<!--头部等顶部部分占位 结束-->
+
+
+				<!--上层页面外容器 开始-->
+				<div class="header_slider">
+					<div class="header_slider_con" style="width:9.6rem; height:17.25rem; transition:500ms ease; transform:translate3d(0,0,0)">
+						<ul>
+
+							<!--商品 开始-->
+							<li id="productTabLi" class="header_slider_item" style="width:3.2rem; height:17.25rem">
+								<div id="mainLayout" class="page_content">
+
+									<!--焦点图片 开始-->
+									<div class="scroll_imgs">
+										<div id="slide" class="slide" style="width:3.2rem; height:3.2rem">
+											<ul style="width:16rem; height:3.2rem">
+												<li class="J_ping" style="transition:all 300ms ease; height:3.2rem; width:3.2rem; transform:translate3d(0,0,0); z-index:10;">
+													<img src="../../resources/images/detial_page/59b5e131N5f07c694.jpg!q70.jpg" alt="" class="J_ping">
+												</li>
+
+												<li class="J_ping" style="transition:all 300ms ease; height:3.2rem; width:3.2rem; transform:translate3d(0,0,0); z-index:10;">
+													<img src="../../resources/images/detial_page/599ccdaaN0bb79c90.jpg!q70.jpg" alt="" class="J_ping">
+												</li>
+
+												<li class="J_ping" style="transition:all 300ms ease; height:3.2rem; width:3.2rem; transform:translate3d(0,0,0); z-index:10;">
+													<img src="../../resources/images/detial_page/599ccdb6Nf80067c1.jpg!q70.jpg" alt="" class="J_ping">
+												</li>
+
+												<li class="J_ping" style="transition:all 300ms ease; height:3.2rem; width:3.2rem; transform:translate3d(0,0,0); z-index:10;">
+													<img src="../../resources/images/detial_page/599ccdb9N007eab95.jpg!q70.jpg" alt="" class="J_ping">
+												</li>
+
+												<li class="J_ping" style="transition:all 300ms ease; height:3.2rem; width:3.2rem; transform:translate3d(0,0,0); z-index:10;">
+													<img src="../../resources/images/detial_page/599ccdbeNc0529b89.jpg!q70.jpg" alt="" class="J_ping">
+												</li>
+											</ul>
+
+											<div id="tittup" class="tittup">
+												<div class="arrow_box">
+													<em class="arrow"></em>
+													<em class="arrow2"></em>
+												</div>
+												<span class="inner">滑动查看详情</span>
+											</div>
+
+											<div class="page_nub" id="slidePageNub">
+												<em class="fz18">1</em>
+												<em class="nub_br">/</em>
+												<em class="fz12">5</em>
+											</div>
+										</div>
+									</div>
+									<!--焦点图片 结束-->
+
+
+									<!--商品描述 开始-->
+									<div class="goods_part bdr_tab price_floor">
+										<div class="basic_info bdr_b borb">
+											<!--商品名称 开始-->
+											<div class="prod_title">
+												<a href="#" class="detialInfoClick">
+													<span class="title_text_wrap">
+														<i class="label_icon_div have_not_icon_div red_div icon_pos">
+															<span class="lable_text white_text">京东配送</span>
+														</i><span class="title_text">【京东超市】月饼 华美月饼礼盒广式蛋黄月饼 花韵月语600g</span>
+													</span>
+												</a>
+											</div>
+											<!--商品名称 结束-->
+
+											<!--商品价格 开始-->
+											<div class="prod_price_warp" id="js_normelPrice">
+												<div class="prod_price">
+													<span class="yang_pic"></span>
+													<span class="yang_pic_price" id="jdPrice_copy">
+														<span class="big_price">45</span><span class="small_price">.90</span>
+													</span>
+												</div>
+
+												<div class="depreciate_arrival_inform_box">
+													<span id="depreciateInformPr" class="depreciate_arrival_inform">降价通知</span>
+												</div>
+											</div>
+											<!--商品价格 结束-->
+
+											<div class="prod_act">【京东仓配 时效保证】<a href="#">中秋月饼提前囤，团购享优惠400-610-1360转806866</a></div>
+										</div>
+									</div>
+									<!--商品描述 结束-->
+
+									<!--plus优先购预约 开始-->
+									<div id="couponActivity" class="goods_part bdr_tab mar_t">
+										<div id="whiteBarInfo" class="prod_whitebar whitebar_flick bdr_b J_ping">
+											<span class="part_note_msg">白条</span>
+											<div class="prod_whitebar_txt">【白条支付】即享3期免息</div>
+										</div>
+
+										<div class="prod_promotion bdr_b borb arrow_fold">
+										<div id="prodPromotion" class="prod_promotion_container promotion_up J_ping">
+											<span class="part_note_msg">促销</span>
+											<div class="promotion_content arrow_fold">
+												<div class="promotion_item promotion_info">
+													<span>可享受以下优惠</span>
+												</div>
+
+												<div class="promotion_item item_import">
+													<i class="label_icon_div have_not_icon_div">
+														<span class="label_text">限制</span>
+													</i>
+													<a href="#">
+														<span class="promotion_item_text">此价格不与套装优惠同时享受</span>
+													</a>
+												</div>
+
+												<div class="promotion_item item_import J_ping">
+													<i class="label_icon_div have_not_icon_div">
+														<span class="label_text">赠品</span>
+													</i>
+													<a href="#">
+														<span class="promotion_item_text">手提袋 单拍不发货 花韵月语（赠完即止）</span>
+														<span class="promotion-left">
+														<em class="icon_arrow icon_arrow_right"></em>
+												</span>
+													</a>
+												</div>
+
+												<span class="promotion-left">
+													<em class="icon_arrow icon_arrow_position arrow_fold"></em>
+												</span>
+											</div>
+										</div>
+									</div>
+									</div>
+									<!--plus优先购预约 结束-->
+
+
+									<!--已选行 开始-->
+									<div class="goods_part bdr_tab bold mar_t">
+										<div id="natureID" class="prod_spec">
+											<div class="spec_desc">
+												<span class="part_note_msg">已选</span>
+												<div id="specDetailInfo" class="base_txt">
+													<span class="amount">1件</span>
+												</div>
+												<em class="icon_popups"></em>
+											</div>
+										</div>
+									</div>
+									<!--已选行 结束-->
+								</div>
+							</li>
+							<!--商品 结束-->
+
+							<!--详情 开始-->
+							<li class="header_slider_item posi_rela"></li>
+							<!--商品 结束-->
+
+							<!--评价 开始-->
+							<li id="commentListId" class="header_slider_item reply_body"></li>
+							<!--评价 结束-->
+						</ul>
+					</div>
+				</div>
+				<!--上层页面外容器 结束-->
+
+
+
+			</div>
+		</div>
+	</div>
+	<!--列表内容 结束-->			
+</body>
+</html>
