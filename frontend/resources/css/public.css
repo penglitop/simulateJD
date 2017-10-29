@@ -84,7 +84,7 @@
 	position:relative;
 }
 .download_txt_up{
-	font-size:0.13rem;
+	font-size:0.12rem;
 	color:#fff;
 	font-weight:500;
 	display:block;
@@ -93,7 +93,7 @@
 	margin-top:0.01rem;
 }
 .download_txt_down{
-	font-size:13px;
+	font-size:12px;
 	color:#999999;
 	display:block;
 	float:left;
@@ -411,6 +411,9 @@
 	width:.25rem;
 	text-align:center;
 }
+.jd_header_short>li.current{
+	background:#2d2d2d;
+}
 .jd_header_short span{
 	width:.3rem;
 	height:.3rem;
@@ -429,6 +432,7 @@
 	color:#fff;
 	font-size:.12rem;
 	font-weight:normal;
+	line-height:.18rem;
 }
 span.shortcut_home{
 	background-position:-.3rem -.27rem;

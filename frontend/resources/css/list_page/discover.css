@@ -1,0 +1,345 @@
+/*新人专享+商详头部 开始*/
+.m_common_top{
+	position:fixed;
+	top:0;
+	left:0;
+	z-index:100;
+	width:100%;
+}
+.jd_header{
+	min-height:.44rem;
+	color:#252525;
+	width:100%;
+}
+
+.jd_header_bar{
+	width:100%;
+	position:relative;
+	background:url(../../images/detial_page/header-bg.png) no-repeat;
+	background-size:100% .44rem;
+	z-index:20;
+	font-size:0;
+}
+.jd_header_icon_back{
+	position:absolute;
+	width:.4rem;
+	height:.44rem;
+}
+.jd_header_icon_back>span{
+	display:block;
+	width:.2rem;
+	height:.2rem;
+	background:url(../../images/detial_page/jd-sprites.png) no-repeat;
+	background-size:.2rem .2rem;
+	background-position:-.2rem 0;
+	margin:.12rem 0 0 .1rem;
+}
+#header_tabs{
+	overflow:hidden;
+	margin:0 .8rem;
+	display: -moz-box;
+    display: -webkit-box;
+    display: box;
+    text-align:center;
+    height:.44rem;
+    line-height:.44rem;
+    font-size:.16rem;
+}
+.jd_header_title>li{
+	text-align:center;
+	box-flex: 1;
+    -moz-box-flex: 1;
+    -webkit-box-flex: 1;
+    box-flex: 1;
+    width:33.3%;
+    overflow: hidden;
+    white-space: nowrap;
+}
+.jd_header_title>li>span{
+	font-size:.14rem;
+	line-height:.14rem;
+	padding:.12rem 0 .1rem 0;
+	width:.34rem;
+	text-align:center;
+	color:#222;
+}
+.jd_header_title>li>.header_tab_selected{
+	font-size:.15rem;
+	line-height:.15rem;
+	padding:.12rem 0 .1rem 0;
+	border-bottom:.02rem solid #222;
+	font-weight:600;
+	width:.34rem;
+	text-align:center;
+}
+.jd_header_icon_short_cut{
+	position:absolute;
+	right:0;
+	top:0;
+	width:.4rem;
+	height:.44rem;
+	overflow:hidden;
+}
+.jd_header_bar .jd_header_icon_short_cut>span{
+	width:.2rem;
+	height:.2rem;
+	overflow:hidden;
+	display:block;
+	background:url(../../images/detial_page/jd-sprites.png) no-repeat;
+	background-size:2rem 2rem;
+	background-position:-.6rem 0;
+	margin:.12rem .1rem 0 .1rem;
+}
+.jd_header_title{
+	margin:0 .5rem;
+	text-align:center;
+	height:.44rem;
+	line-height:.44rem;
+	font-size:.16rem;
+}
+/*新人专享+商详头部 结束*/
+
+/*发现内容 开始*/
+.jd_header_short li.current{
+	background:#2d2d2d;
+}
+#main{
+	padding-bottom:.05rem;
+	position:relative;
+}
+.slide_navi_container{
+	width:90%;
+	overflow:hidden;
+	margin-bottom:.05rem;
+	float:left;
+	font-size:0;
+}
+.slide_navi_container .slide_navi{
+	width:22.5rem;
+	transition-timing-function:cubic-bezier(0.1,0.57,0.1,1);
+	transition-duration:0ms;
+	transform:translate(0rem 0rem) translateZ(0rem); 
+	overflow:hidden;
+}
+.slide_navi_container .slide_navi .navi{
+	position:relative;
+	box-sizing:border-box;
+	float:left;
+	width:.64rem;
+	padding:0 .09rem;
+	text-align:center;
+	font-size:.12rem;
+	line-height:.34rem;
+}
+.slide_navi_container .slide_navi .navi:after{
+	content:'';
+	position:absolute;
+	height:.2rem;
+	width:.01rem;
+	right:0;
+	top:.1rem;
+	background:#aaa;
+}
+ .slide_navi .navi.active .navi_name{
+ 	color:red;
+ 	border-bottom:.02rem solid red;
+ }
+ .down_navi_arrow{
+ 	width:10%;
+ 	float:left;
+ 	text-align:center;
+ 	height:.31rem;
+ 	font-size:.12rem;
+ 	line-height:.3rem;
+ }
+ .down_navi_arrow .arrow{
+ 	background:url(../../images/list_page/list_product/down_arrow.png) no-repeat;
+ 	display:block;
+ 	background-size:45%;
+ 	background-position:50% 50%;
+ 	width:100%;
+ 	height:100%;
+ 	-webkit-transition:rotate,.3s;
+ 	transition:rotate .3s;
+ 	display:inline-block;
+ }
+ .down_navi{
+ 	position:absolute;
+ 	z-index: 999;
+ 	top:.37rem;
+ 	background:#f2f2f2;
+ }
+ .down_transition{
+ 	transition:all .2s ease;
+ 	-webkit-transition:all .2s ease;
+ 	display:none;
+ }
+ .down_navi .navi{
+ 	box-sizing:border-box;
+ 	float:left;
+ 	width:.64rem;
+ 	padding:0 .085rem;
+ 	text-align:center;
+ 	font-size:.12rem;
+ 	line-height:.3rem;
+ 	height:.41rem;
+ }
+ .down_navi .navi_name{
+ 	box-sizing:border-box;
+ 	margin:.03rem 0;
+ 	background-color:#fff;
+ 	border-radius:.1rem;
+ }
+
+
+ .fade_transition{
+ 	transition:all .2s ease;
+ 	-webkit-transition:all .2s ease;
+ 	font-size:0;
+ 	float:left;
+ 	width:100%;
+ }
+ .article{
+ 	border-bottom:.01rem solid #f3f3f3;
+ 	background:#fff;
+ 	overflow:hidden;
+ }
+ .article .article_left{
+ 	float:left;
+ 	box-sizing:border-box;
+ 	width:60%;
+ 	padding:.13rem .17rem 0 .12rem;
+ }
+ .article .article_right{
+ 	float:left;
+ 	box-sizing:border-box;
+ 	width:40%;
+ 	padding:.128rem .128rem .064rem 0;
+ }
+ .article .article_left .article_title{
+ 	font-size:.17rem;
+ 	line-height:.21rem;
+ 	color:#2e2e2e;
+ 	font-weight:500;
+ 	margin-bottom:.076rem;
+ 	height:.42rem;
+ }
+ .line_clamp2{
+    overflow: hidden;
+    display: -webkit-box;
+    text-overflow: ellipsis;
+    -webkit-box-orient: vertical;
+ }
+ .article .article_left .article_summary{
+ 	font-size:.12rem;
+ 	line-height:.17rem;
+ 	height:.34rem;
+ 	color:#646464;
+ }
+ .article .article_left .article_author{
+ 	margin-top:.1rem;
+ }
+ .article_author .article_author_pic{
+	width:.12rem;
+	height:.12rem;
+	border-radius:50%;
+	float:left;
+	margin-right:.034rem;
+ }
+ .article_author .article_author_name{
+ 	font-size:.12rem;
+ 	color:#989898;
+ 	float:left;
+ 	line-height:.12rem;
+ 	max-width:50%;
+ 	overflow:hidden;
+ 	text-overflow:ellipsis;
+ 	white-space:nowrap;
+ }
+ .article_right .img_box{
+ 	position:relative;
+ }
+ .article_right .img_box>img{
+ 	width:1.16rem;
+ 	height:.87rem;
+ 	margin-bottom:.064rem;
+ 	display:block;
+ }
+ .article_right .img_box .play_icon{
+ 	position:absolute;
+ 	width:.34rem;
+ 	height:.34rem;
+ 	top:50%;
+ 	left:50%;
+ 	margin-left:-.17rem;
+ 	margin-top:-.17rem;
+ }
+ .article_right .article_info .article_time{
+ 	float:left;
+ 	width:56%;
+ }
+ .article_info .article_time .clock{
+ 	float:left;
+ 	width:.085rem;
+ 	height:.085rem;
+ 	background:url(../../images/list_page/list_product/lock.png) no-repeat;
+ 	background-size:100% 100%;
+ }
+ .article_info .little_icon{
+ 	display:inline-block;
+ 	margin-top:.02rem;
+ 	margin-right:.026rem;
+ }
+ .article_time span{
+ 	float:left;
+ 	font-size:.12rem;
+ 	line-height:.13rem;
+ 	color:#989898;
+ 	width:.53rem;
+ 	overflow:hidden;
+ 	text-overflow:ellipsis;
+ 	white-space:nowrap;
+ }
+ .article_info .article_viewed{
+ 	float:right;
+ 	width:44%;
+ }
+ .article_viewed span{
+ 	float:right;
+ 	font-size:.12rem;
+ 	line-height:.13rem;
+ 	color:#989898;
+ 	max-width:.36rem;
+ 	overflow:hidden;
+ 	text-overflow:ellipsis;
+ 	white-space:nowrap;
+ }
+ .article_viewed .eye{
+ 	float:right;
+ 	width:.11rem;
+ 	height:.085rem;
+ 	background:url(../../images/list_page/list_product/eye.png) no-repeat;
+ 	background-size:100% 100%;
+ }
+ .article .article_left .article_author .open_app{
+ 	float: left;
+    font-size: .12rem;
+    color: #fb2020;
+    line-height: .12rem;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    padding-left: .05rem;
+ }
+ .to_top{
+ 	position: fixed;
+    bottom:.56rem;
+    right: .08rem;
+    width: .35rem;
+    height: .35rem;
+    background:url(../../images/list_page/list_product/to-top.png) no-repeat;
+    background-size: .35rem .35rem;
+    background-position: 50%;
+ }
+
+/*发现内容 结束*/

@@ -1,0 +1,439 @@
+.page{
+	background:#e5e5e5;
+}
+
+/*发现头部轮播 开始*/
+.m_header_swiper_con{
+	position:relative;
+	color:#fff;
+}
+.swiper_container{
+	margin:0 auto;
+	position:relative;
+	overflow:hidden;
+	z-index:1;
+}
+.swiper_wrapper{
+	position:relative;
+	width:19.2rem;
+	height:100%;
+	z-index:1;
+	display:-webkit-box;
+	display:-moz-box;
+	display:-ms-flexbox;
+	display:-webkit-flex;
+	display:flex;
+	-webkit-transition-property:-webkit-transform;
+	-moz-transition-property:-moz-transform;
+	-ms-transition-property:-ms-transform;
+	-o-transition-property:-o-transform;
+	transition-property:transform;
+	box-sizing:content-box;
+	-webkit-box-sizing:content-box;
+	-moz-box-sizing:content-box;
+	transform:translate3d(0rem 0rem 0rem);
+	transition-duration:0ms;
+}
+.m_header_swiper_slide{
+	width:3.2rem;
+	background:rgba(0,0,0,.75);
+	overflow:hidden;
+	padding:.5% 0;
+	position:relative;
+	height:100%;
+}
+.m_header_icon{
+	background-repeat:no-repeat;
+	position:relative;
+	width:10%;
+	padding-bottom:10%;
+	margin:0 2% 0 7%;
+	font-size:.12rem;
+	background-size:100% 100%;
+}
+.m_header_title{
+	position:absolute;
+	top:15%;
+	transform:translate3d(0,50%,0);
+	-webkit-transform:translate(0,-50%,0);
+	width:50%;
+	font-size:.12rem;
+	line-height:.168rem;
+	display:-webkit-box;
+	display:box;
+	-webkit-box-orient:vertical;
+	overflow:hidden;
+	text-overflow:ellipsis;
+	-webkit-line-clamp:2;
+	line-clamp:2;
+	left:19%;
+}
+.m_header_open_btn{
+	position:absolute;
+	top:0;
+	transform:translate3d(0,50%,0);
+	-webkit-transform:translate3d(0,50%,0);
+	background:#fb2020;
+	font-size:.12rem;
+	padding:0 4%;
+	right:7%;
+}
+.m-header-swiper-close-btn{
+	position: absolute;
+    right: 1.5%;
+    top: 1.5%;
+    color: #fff;
+    z-index: 99;
+    font-size:.12rem;
+    height: .12rem;
+    width: .12rem;
+    line-height:.12rem;
+    text-align: center;
+}
+.swiper_container_horizontal>.swiper_pagination_bullets{
+	bottom:10%;
+	left:0;
+	width:100%;
+	font-size:.12rem;
+	line-height:.12rem;
+}
+.swiper_pagination{
+	position:absolute;
+	text-align:center;
+	-webkit-transition:.3s;
+	-moz-transition:.3s;
+	-o-transition:.3s;
+	transition:.3s;
+	-webkit-transform:translateZ(0rem);
+	-o-transform:translateZ(0rem);
+	-ms-transform:translateZ(0rem);
+	transform:translateZ(0rem);
+	z-index:10;
+}
+.swiper_pagination_bullet{
+	display:inline-block;
+	width:.04rem !important;
+	height:.04rem !important;
+	margin:.02rem !important;
+	background:#828282;
+	border-radius:100%;
+}
+.swiper_pagination_bullet_active{
+	background:#fff !important;
+}
+/*发现头部轮播 结束*/
+
+
+/*新人专享+商详头部 开始*/
+.jd_header{
+	min-height:.44rem;
+	color:#252525;
+	width:100%;
+}
+
+.m_header{
+	width:100%;
+	position:relative;
+	background:url(../../images/detial_page/header-bg.png) no-repeat;
+	background-size:100% .44rem;
+	z-index:20;
+	font-size:0;
+}
+.jd_header_icon_back{
+	position:absolute;
+	width:.4rem;
+	height:.44rem;
+}
+.jd_header_icon_back>span{
+	display:block;
+	width:.2rem;
+	height:.2rem;
+	background:url(../../images/detial_page/jd-sprites.png) no-repeat;
+	background-size:.2rem .2rem;
+	background-position:-.2rem 0;
+	margin:.12rem 0 0 .1rem;
+}
+#header_tabs{
+	overflow:hidden;
+	margin:0 .8rem;
+	display: -moz-box;
+    display: -webkit-box;
+    display: box;
+    text-align:center;
+    height:.44rem;
+    line-height:.44rem;
+    font-size:.16rem;
+}
+.jd_header_title>li{
+	text-align:center;
+	box-flex: 1;
+    -moz-box-flex: 1;
+    -webkit-box-flex: 1;
+    box-flex: 1;
+    width:33.3%;
+    overflow: hidden;
+    white-space: nowrap;
+}
+.jd_header_title>li>span{
+	font-size:.14rem;
+	line-height:.14rem;
+	padding:.12rem 0 .1rem 0;
+	width:.34rem;
+	text-align:center;
+	color:#222;
+}
+.jd_header_title>li>.header_tab_selected{
+	font-size:.15rem;
+	line-height:.15rem;
+	padding:.12rem 0 .1rem 0;
+	border-bottom:.02rem solid #222;
+	font-weight:600;
+	width:.34rem;
+	text-align:center;
+}
+.jd_header_icon_short_cut{
+	position:absolute;
+	right:0;
+	top:0;
+	width:.4rem;
+	height:.44rem;
+	overflow:hidden;
+}
+.m_header .jd_header_icon_short_cut>span{
+	width:.2rem;
+	height:.2rem;
+	overflow:hidden;
+	display:block;
+	background:url(../../images/detial_page/jd-sprites.png) no-repeat;
+	background-size:2rem 2rem;
+	background-position:-.6rem 0;
+	margin:.12rem .1rem 0 .1rem;
+}
+.jd_header_title{
+	margin:0 .5rem;
+	text-align:center;
+	height:.44rem;
+	line-height:.44rem;
+	font-size:.16rem;
+}
+/*新人专享+商详头部 结束*/
+.video_content{
+	background:#fff;
+	font-size:0;
+}
+video{
+	width:100%;
+	height:1.74rem;
+}
+.video_info{
+	color:#2f2f2f;
+	padding:0 6% 3%;
+	margin-top:3%;
+}
+.video_info .title{
+	font-size:.156rem;
+	font-weight:600;
+	line-height:.22rem;
+	display:-webkit-box;
+	display:box;
+	-webkit-box-orient: vertical;
+    box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    -webkit-line-clamp: 2;
+    line-clamp: 2;
+}
+.video_info_author{
+	margin:5% 0;
+}
+.video_img_wrap{
+	position:relative;
+	display:inline-block;
+	width:.24rem;
+	height:.24rem;
+	background:url(../../images/detial_page/errorDog.png) no-repeat;
+	background-size:100% 100%;
+	vertical-align:middle;
+}
+.video_img_wrap>img{
+	width:100%;
+	height:100%;
+	position:absolute;
+	left:0;
+	top:0;
+	border:none;
+}
+.video_info_author span{
+	font-size:.12rem;
+	color:#2f2f2f;
+	position:absolute;
+	margin-left:.05rem;
+}
+.author_pic{
+	border-radius:50%;
+}
+
+
+
+
+.description_content{
+	padding:2% 4%;
+	margin:2% 0;
+	background:#fff;
+}
+.description_content_title{
+	font-size:.12rem;
+	font-weight:300;
+	margin:1% 0;
+}
+.description_item{
+	overflow:hidden;
+	position:relative;
+	margin:2% 0;
+	border:.01rem solid #d9d9d9;
+	padding:2%;
+}
+.description_item .img_layout{
+	position:relative;
+	width:30%;
+	padding-bottom:30%;
+	float:left;
+	margin-right:5%;
+	background:url(../../images/detial_page/default.jpg) no-repeat;
+	background-size:100% 100%;
+}
+.description_item .img_layout>img{
+	position:absolute;
+	left:0;
+	top:0;
+	width:100%;
+	height:100%;
+}
+.description_item .description_info{
+	float:left;
+	width:65%;
+	height:100%;
+}
+.description_title{
+    line-height:.18rem;
+    font-weight: 600;
+    display: -webkit-box;
+    display: box;
+    -webkit-box-orient: vertical;
+    box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    -webkit-line-clamp: 2;
+    line-clamp: 2;
+    font-size: .12rem;
+}
+.description_meta{
+	position:absolute;
+	right:0;
+	bottom:4%;
+	overflow:hidden;
+	width:65%;
+}
+.description_meta .description_price{
+	float:left;
+	color:#fb2020;
+	font-size:.12rem;
+}
+.description_meta .description_buy{
+	float:right;
+	margin-right:4%;
+	border:.01rem solid  #fb2020;
+	color:#fb2020;
+	padding:2% 6%;
+	font-size:.12rem;
+	line-height:.12rem;
+}
+.description_extra{
+	margin:2% 0;
+	text-align:center;
+	font-size:.12rem;
+	color:#404040;
+	line-height:.12rem;
+}
+.fold_icon{
+    display: inline-block;
+    width: .05rem;
+    height: .05rem;
+    border-left: .01rem solid #404040;
+    border-bottom:.01rem solid #404040;
+    margin-right: .04rem
+}
+.open{
+	-webkit-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+}
+
+
+
+
+.related_con{
+	padding:2% 3.7% 5%;
+	background:#fff;
+}
+.related_con_title{
+	font-size:.13rem;
+	font-weight:300;
+	margin:5% 0;
+	line-height:.12rem;
+}
+.related_item{
+	position:relative;
+	overflow:hidden;
+	margin:4% 0;
+}
+.related_content{
+	float:left;
+	width:56.3%;
+}
+.related_content_title{
+	font-size:.13rem;
+	font-weight:600;
+	line-height:.18rem;
+}
+.related_content_meta{
+	position:absolute;
+	left:0;
+	bottom:0;
+	width:100%;
+}
+.related_content_meta>.time{
+	color:#828282;
+	font-size:.12rem;
+	margin:0 1%;
+}
+.related_open_app{
+	font-size:.12rem;
+    color: #fb2020;
+}
+.related_img_placehold{
+	float:right;
+	overflow:hidden;
+	position: relative;
+    width: 35.73%;
+    padding-bottom: 26.8%;
+    background: url(../../images/detial_page/default.jpg) no-repeat;
+    background-size: 100% 100%;
+}
+.related_img_placehold>img{
+	position: absolute;
+	left:0;
+	top:0;
+	width:100%;
+	height:100%;
+}
+.related_video_play{
+	position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 40%;
+    height: 50%;
+    background: url(../../images/detial_page/play-icon.png) no-repeat;
+    background-size: 100% 100%;
+    -webkit-transform: translate3d(-50%,-50%,0);
+    transform: translate3d(-50%,-50%,0);
+}

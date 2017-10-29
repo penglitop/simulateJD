@@ -1,0 +1,1008 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>购物车-京东–触屏版-京东触屏</title>
+	<meta name="author" content="pengli">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0">
+	<meta name="apple-mobile-web-app-cappable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black">
+	<meta http-equiv="Expires" content="-1">
+	<meta http-equiv="Chache-Control" content="no-cache">
+	<meta http-equiv="Pragma" content="no-cache">
+<!--设置html的font-size 开始-->
+	<script type="text/javascript">
+	function htmlFont(){
+		var explorer=navigator.userAgent;
+		if(explorer.indexOf("Opera")>=0){
+			winwid=screen.width;
+		}else{
+			winwid=document.getElementsByTagName('html')[0].offsetWidth;
+		}
+		fosi=winwid/320*100;
+		document.getElementsByTagName('html')[0].style.fontSize=fosi+'px';
+	}
+	htmlFont();
+	window.addEventListener('resize',htmlFont);
+	</script>
+<!--设置html的font-size 开始-->
+	<link rel="stylesheet" type="text/css" href="./../../resources/css/cart/unlisted_cart.css"/>
+	<link rel="stylesheet" type="text/css" href="./../../resources/css/reset.css"/>
+	<link rel="stylesheet" type="text/css" href="./../../resources/css/public.css"/>
+</head>
+<body>
+	<header>
+		<!--商详头部 开始-->
+		<div id="m_header" class="m_header">
+			<div id="m_common_header_goback" class="jd_header_icon_back">
+				<span></span>
+			</div>
+
+			<div class="jd_header_title">购物车</div>
+
+			<div id="m_common_bottom_jdkey" class="jd_header_icon_short_cut J_ping">
+				<span></span>
+			</div>
+		</div>
+
+		<ul class="jd_header_short" id="layout_jdBar" style="display:none">
+
+			<li>
+				<a href="#">
+					<span class="shortcut_home"></span>
+					<strong>首页</strong>
+				</a>
+			</li>
+
+			<li>
+				<a href="#">
+					<span class="shortcut_categories"></span>
+					<strong>分类搜索</strong>
+				</a>
+			</li>
+
+			<li class="current">
+				<a href="#">
+					<span class="shortcut_cart"></span>
+					<strong>购物车</strong>
+				</a>
+			</li>
+
+			<li>
+				<a href="#">
+					<span class="shortcut_my_account"></span>
+					<strong>我的京东</strong>
+				</a>
+			</li>
+
+		</ul>
+		<!--商详头部 结束-->
+	</header>
+
+
+	<!--登录块 开始-->
+	<div class="login_wrapper" id="notEmptyCartLogin">
+		<div class="header_login_info">
+			<div class="header_login_info_left">登录后可同步电脑与手机购物车中的商品</div>
+			<div class="header_login_info_right">
+				<a href="#" class="btn_jd_red">登录</a>
+			</div>
+		</div>
+	</div>
+
+
+	<div class="shp_cart_empty" id="emptyCartLogin" style="display:none">
+		<em class="cart_empty_icn"></em>
+		<span class="empty_msg">登录后可同步电脑与手机购物车</span>
+		<a href="#" class="to_login_see_btn">登录</a>
+	</div>
+
+
+	<div class="bottom_to_top" id="indexToTop">
+		<img src="../../resources/images/cart/scroll-to-top-icon.png" alt="">
+	</div>
+
+
+	<div class="pop" id="giftWares11"></div>
+	<!--登录块 结束-->
+
+	<!--加入购物车商品列表 开始-->
+	<div id="notEmptyCart">
+		<div class="shop_group">
+			<div class="shop_group_item" id="shop1">
+				<div class="shop_title customize_shtit">
+					<div class="item">
+						<div class="check_wrapper">
+							<span id="checkShop8888" class="cart_checkbox check_wrapper_unit checked"></span>
+						</div>
+						<div class="shop_title_content">
+							<span class="shop_title_icon">
+								<img src="../../resources/images/cart/JDshopTitle.png" alt="">
+							</span>
+							<span class="shop_title_name">京东自营</span>
+
+							<div class="shop_btn_com freeFreOpini" id="freeFreight">
+
+								<a href="#" class="cart_new_btn free_freight_btn">
+									<span class="right_boundary"></span>
+									<span class="btn_msg_in">
+										<div class="freight_free_container store_right_new_free">
+											<span class="free_tips">凑单免运费</span>
+										</div>
+									</span>
+								</a>
+
+								<a href="#" class="cart_new_btn marginLt10 self_coupon_btn coupon_info_exp">
+									<span class="right_boundary"></span>
+									<span class="btn_msg_in">优惠券</span>
+								</a>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<ul class="shp_cart_list">
+					<li class="product204302459" id="productGroup-1">
+						<span class="promotion_space">
+							<a href="#" id="shopping204302459" class="shp_cart_conditions_link">
+								<span class="icon_condition" id="gift_info_sign204302459">
+									<span>满减</span>
+									<em class="promotion_down_arrow_icon"></em>
+								</span>
+
+								<span class="condition_description">
+									<span class="sTip204302459">购满199.00元，可减100.00元，还差159.10元</span>
+								</span>
+
+								<span class="condition_description_tips">
+									<i id="sTipEntrance204302459">去凑单</i>
+								</span>
+							</a>
+						</span>
+						<div class="items" id="product4223570">
+							<div class="check_wrapper">
+								<span class="cart_checkbox  group-8888 checked" id="checkIcon4223570"></span>
+							</div>
+							<div class="shp_cart_item_core shop_cart_display">
+								<a href="#" class="cart_product_cell_1">
+									<img src="../../resources/images/cart/58d8d96aN1bc6d7d1.jpg!q70.jpg" alt="" class="cart_photo_thumb">
+								</a>
+
+								<div class="cart_product_cell_2" style="display:none">
+									<div class="cart_product_name">
+										<a href="#">
+											<span class="non_fresh_txt">红棉 红糖姜茶 黑糖姜母茶 老姜黑糖块 220g</span>
+										</a>
+									</div>
+
+									<div class="cart_product_prop eles_flex">
+										<i class="prop0">重量:0.29kg</i>
+										<span class="prop1">12345</span>
+									</div>
+
+									<div class="icon_list"></div>
+
+									<div class="cart_product_cell_3" style="display:none">
+										<span class="shp_cart_item_price " id="price2043024594223570">
+											¥
+											<strong>39</strong>.90
+										</span>
+
+										<div class="quantity_wrapper customize_qua">
+											<a href="#" class="quantity_decrease disabled" id="subnum4223570"></a>
+
+											<input type="text" id="num4223570" class="quantity" value="1">
+
+											<a href="#" class="quantity_increase " id="addnum4223570"></a>
+										</div>
+									</div>
+								</div>
+
+								<div class="edit_pro_mode">
+									<div class="property_edit_in noEditEntry">
+										<span></span>
+										<em class="arrow_down_pro"></em>
+									</div>
+
+									<div class="price_count_edit">
+										<span class="shp_cart_item_price " id="price2043024594223570">
+											¥
+											<strong>39</strong>.90
+										</span>
+
+										<div class="quantity_wrapper customize_qua">
+											<a href="#" class="quantity_decrease disabled" id="subnum4223570"></a>
+
+											<input type="text" id="num4223570" class="quantity" value="1">
+
+											<a href="#" class="quantity_increase " id="addnum4223570"></a>
+										</div>
+									</div>
+
+									<div class="option_btns">
+										<div class="shop_btn_com">
+											<a href="#" class="cart_new_btn atten_move_btn">
+												<span class="btn_msg_in" id="grey_color">移入关注</span>
+												<span class="right_boundary"></span>
+											</a>
+
+											<a href="#" class="cart_new_btn del_prod_btn">
+												<span class="right_boundary"></span>
+												<span class="btn_msg_in" id="grey_color">删除</span>
+											</a>
+
+											<a href="#" class="cart_new_btn complete_edit_btn">
+												<span class="right_boundary"></span>
+												<span class="btn_msg_in">完成</span>
+											</a>
+										</div>
+									</div>
+								</div>
+
+								<div class="cart_product_cell_5 main_pro_btns" style="display:none;">
+									<div class="shop_btn_com">
+										<a href="#" class="cart_new_btn edit_mode_in">
+											<span class="right_boundary"></span>
+											<span class="btn_msg_in">编辑</span>
+										</a>
+									</div>
+								</div>
+							</div>
+						</div>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+	<!--加入购物车商品列表 结束-->
+
+
+	<!--空购物车部分 开始-->
+	<div id="emptyCart" style="display:none">
+		<div class="shp_cart_empty">
+			<em class="cart_empty_icn"></em>
+			<span class="empty_msg">购物车空空如也,赶紧逛逛吧~</span>
+		</div>
+
+		<div class="operating_floor_container">
+			<div class="operating_floor_two">
+
+				<div class="operating_floor_box">
+					<a href="#">
+						<div class="operating_floor_img">
+							<div class="img_default_back">
+								<img src="../../resources/images/cart/act.coupon.png" alt="">
+							</div>
+						</div>
+						<div class="operating_floor_txt">
+							<span>每日神券</span>
+							<span class="secong">限量发放,快去抢</span>
+						</div>
+					</a>
+				</div>
+
+
+				<div class="operating_floor_box">
+					<a href="#">
+						<div class="operating_floor_img">
+							<div class="img_default_back">
+								<img src="../../resources/images/cart/act.attention.png" alt="">
+							</div>
+						</div>
+						<div class="operating_floor_txt">
+							<span>我的关注</span>
+							<span class="secong">你关心的都在这里</span>
+						</div>
+					</a>
+				</div>
+			</div>
+
+			<div class="operating_floor_one">
+				<a href="#">
+					<img src="../../resources/images/cart/5975a8b0Nfbfbd0bf.png" alt="" class="operating_floor_only">
+					<span class="operating_floor_posit"></span>
+				</a>
+			</div>
+		</div>
+
+		<div id="secKillArea" class="floor bdr_bottom">
+			<!--秒杀部分 开始-->
+			<div class="gray_text">
+				<span class="gray_layout">
+					<span class="gray_text_img"></span>京东秒杀
+				</span>
+			</div>
+			<div class="seckill_floor">
+				<div id="seckill_title" class="title_wrap">
+					<a href="#" class="seckill_left_link">
+						<strong id="seckill_now" class="seckill_nth"><em>12</em>点场</strong>
+						<div class="seckill_timer" id="seckill_time">
+
+							<div class="seckill-time" id="killHour">00</div>
+							<span class="seckill-time-separator">:</span>
+
+							<div class="seckill-time" id="killMin">00</div>
+							<span class="seckill-time-separator">:</span>
+
+							<div class="seckill-time" id="killSec">00</div>
+
+						</div>
+					</a>
+					<a href="#" class="seckill_more_link">京选尖货轮番秒<i class="seckill_more_icon"></i></a>
+				</div>
+
+
+				<div class="floor_contianer">
+					<ul id="seckillul" class="seckill_new_list">
+
+						<li class="seckill_new_item">
+							<div class="seckill_item_img bd_r">
+								<a href="#">
+									<img src="../../resources/images/index/seckill_new_img1.jpg" alt="">
+									<div class="seckill_tip">大牌秒</div>
+								</a>
+							</div>
+							<div class="seckill_item_price">
+								<span class="seckill_new_price"><em>¥</em>6998</span>
+								<span class="seckill_original_price"><em>¥</em>7399</span>
+							</div>
+						</li>
+
+						<li class="seckill_new_item">
+							<div class="seckill_item_img bd_r">
+								<a href="#">
+									<img src="../../resources/images/index/seckill_new_img2.jpg" alt="">
+									<div class="seckill_tip">大牌秒</div>
+								</a>
+							</div>
+							<div class="seckill_item_price">
+								<span class="seckill_new_price"><em>¥</em>6998</span>
+								<span class="seckill_original_price"><em>¥</em>7399</span>
+							</div>
+						</li>
+
+						<li class="seckill_new_item">
+							<div class="seckill_item_img bd_r">
+								<a href="#">
+									<img src="../../resources/images/index/seckill_new_img3.jpg" alt="">
+									<div class="seckill_tip">大牌秒</div>
+								</a>
+							</div>
+							<div class="seckill_item_price">
+								<span class="seckill_new_price"><em>¥</em>6998</span>
+								<span class="seckill_original_price"><em>¥</em>7399</span>
+							</div>
+						</li>
+
+						<li class="seckill_new_item">
+							<div class="seckill_item_img bd_r">
+								<a href="#">
+									<img src="../../resources/images/index/seckill_new_img4.jpg" alt="">
+									<div class="seckill_tip">大牌秒</div>
+								</a>
+							</div>
+							<div class="seckill_item_price">
+								<span class="seckill_new_price"><em>¥</em>6998</span>
+								<span class="seckill_original_price"><em>¥</em>7399</span>
+							</div>
+						</li>
+
+						<li class="seckill_new_item">
+							<div class="seckill_item_img bd_r">
+								<a href="#">
+									<img src="../../resources/images/index/seckill_new_img5.jpg" alt="">
+									<div class="seckill_tip">大牌秒</div>
+								</a>
+							</div>
+							<div class="seckill_item_price">
+								<span class="seckill_new_price"><em>¥</em>6998</span>
+								<span class="seckill_original_price"><em>¥</em>7399</span>
+							</div>
+						</li>
+
+						<li class="seckill_new_item">
+							<div class="seckill_item_img bd_r">
+								<a href="#">
+									<img src="../../resources/images/index/seckill_new_img6.jpg" alt="">
+									<div class="seckill_tip">大牌秒</div>
+								</a>
+							</div>
+							<div class="seckill_item_price">
+								<span class="seckill_new_price"><em>¥</em>6998</span>
+								<span class="seckill_original_price"><em>¥</em>7399</span>
+							</div>
+						</li>
+
+						<li class="seckill_new_item">
+							<div class="seckill_item_img bd_r">
+								<a href="#">
+									<img src="../../resources/images/index/seckill_new_img7.jpg" alt="">
+									<div class="seckill_tip">大牌秒</div>
+								</a>
+							</div>
+							<div class="seckill_item_price">
+								<span class="seckill_new_price"><em>¥</em>6998</span>
+								<span class="seckill_original_price"><em>¥</em>7399</span>
+							</div>
+						</li>
+
+						<li class="seckill_new_item">
+							<div class="seckill_item_img bd_r">
+								<a href="#">
+									<img src="../../resources/images/index/seckill_new_img8.jpg" alt="">
+									<div class="seckill_tip">大牌秒</div>
+								</a>
+							</div>
+							<div class="seckill_item_price">
+								<span class="seckill_new_price"><em>¥</em>6998</span>
+								<span class="seckill_original_price"><em>¥</em>7399</span>
+							</div>
+						</li>
+
+						<li class="seckill_new_item">
+							<div class="seckill_item_img bd_r">
+								<a href="#">
+									<img src="../../resources/images/index/seckill_new_img9.jpg" alt="">
+									<div class="seckill_tip">大牌秒</div>
+								</a>
+							</div>
+							<div class="seckill_item_price">
+								<span class="seckill_new_price"><em>¥</em>6998</span>
+								<span class="seckill_original_price"><em>¥</em>7399</span>
+							</div>
+						</li>
+
+						<li class="seckill_new_item">
+							<div class="seckill_item_img bd_r">
+								<a href="#">
+									<img src="../../resources/images/index/seckill_new_img10.jpg" alt="">
+									<div class="seckill_tip">大牌秒</div>
+								</a>
+							</div>
+							<div class="seckill_item_price">
+								<span class="seckill_new_price"><em>¥</em>6998</span>
+								<span class="seckill_original_price"><em>¥</em>7399</span>
+							</div>
+						</li>
+
+						<li class="seckill_new_item">
+							<div class="seckill_item_img bd_r">
+								<a href="#">
+									<img src="../../resources/images/index/seckill_new_img11.jpg" alt="">
+									<div class="seckill_tip">大牌秒</div>
+								</a>
+							</div>
+							<div class="seckill_item_price">
+								<span class="seckill_new_price"><em>¥</em>6998</span>
+								<span class="seckill_original_price"><em>¥</em>7399</span>
+							</div>
+						</li>
+
+						<li class="seckill_new_item">
+							<div class="seckill_item_img bd_r">
+								<a href="#">
+									<img src="../../resources/images/index/seckill_new_img12.jpg" alt="">
+									<div class="seckill_tip">大牌秒</div>
+								</a>
+							</div>
+							<div class="seckill_item_price">
+								<span class="seckill_new_price"><em>¥</em>6998</span>
+								<span class="seckill_original_price"><em>¥</em>7399</span>
+							</div>
+						</li>
+
+						<li class="seckill_new_item">
+							<div class="seckill_item_img bd_r">
+								<a href="#">
+									<img src="../../resources/images/index/seckill_new_img13.jpg" alt="">
+									<div class="seckill_tip">大牌秒</div>
+								</a>
+							</div>
+							<div class="seckill_item_price">
+								<span class="seckill_new_price"><em>¥</em>6998</span>
+								<span class="seckill_original_price"><em>¥</em>7399</span>
+							</div>
+						</li>
+
+						<li class="seckill_new_item">
+							<div class="seckill_item_img bd_r">
+								<a href="#">
+									<img src="../../resources/images/index/seckill_new_img14.jpg" alt="">
+									<div class="seckill_tip">大牌秒</div>
+								</a>
+							</div>
+							<div class="seckill_item_price">
+								<span class="seckill_new_price"><em>¥</em>6998</span>
+								<span class="seckill_original_price"><em>¥</em>7399</span>
+							</div>
+						</li>
+
+						<li class="seckill_new_item">
+							<div class="seckill_item_img bd_r">
+								<a href="#">
+									<img src="../../resources/images/index/seckill_new_img15.jpg" alt="">
+									<div class="seckill_tip">大牌秒</div>
+								</a>
+							</div>
+							<div class="seckill_item_price">
+								<span class="seckill_new_price"><em>¥</em>6998</span>
+								<span class="seckill_original_price"><em>¥</em>7399</span>
+							</div>
+						</li>
+
+						<li class="seckill_new_item">
+							<div class="seckill_item_img bd_r">
+								<a href="#">
+									<img src="../../resources/images/index/seckill_new_img16.jpg" alt="">
+									<div class="seckill_tip">大牌秒</div>
+								</a>
+							</div>
+							<div class="seckill_item_price">
+								<span class="seckill_new_price"><em>¥</em>6998</span>
+								<span class="seckill_original_price"><em>¥</em>7399</span>
+							</div>
+						</li>
+
+						<li class="seckill_new_item">
+							<div class="seckill_item_img bd_r">
+								<a href="#">
+									<img src="../../resources/images/index/seckill_new_img17.jpg" alt="">
+									<div class="seckill_tip">大牌秒</div>
+								</a>
+							</div>
+							<div class="seckill_item_price">
+								<span class="seckill_new_price"><em>¥</em>6998</span>
+								<span class="seckill_original_price"><em>¥</em>7399</span>
+							</div>
+						</li>
+
+						<li class="seckill_new_item">
+							<div class="seckill_item_img bd_r">
+								<a href="#">
+									<img src="../../resources/images/index/seckill_new_img18.jpg" alt="">
+									<div class="seckill_tip">大牌秒</div>
+								</a>
+							</div>
+							<div class="seckill_item_price">
+								<span class="seckill_new_price"><em>¥</em>6998</span>
+								<span class="seckill_original_price"><em>¥</em>7399</span>
+							</div>
+						</li>
+
+						<li class="seckill_new_item">
+							<div class="seckill_item_img bd_r">
+								<a href="#">
+									<img src="../../resources/images/index/seckill_new_img19.jpg" alt="">
+									<div class="seckill_tip">大牌秒</div>
+								</a>
+							</div>
+							<div class="seckill_item_price">
+								<span class="seckill_new_price"><em>¥</em>6998</span>
+								<span class="seckill_original_price"><em>¥</em>7399</span>
+							</div>
+						</li>
+
+						<li class="seckill_new_item">
+							<div class="seckill_item_img bd_r">
+								<a href="#">
+									<img src="../../resources/images/index/seckill_new_img20.jpg" alt="">
+									<div class="seckill_tip">大牌秒</div>
+								</a>
+							</div>
+							<div class="seckill_item_price">
+								<span class="seckill_new_price"><em>¥</em>6998</span>
+								<span class="seckill_original_price"><em>¥</em>7399</span>
+							</div>
+						</li>
+
+						<li class="seckill_all_item">
+							<a href="#">
+								<div class="seckill_all">
+									<i class="show_all_icon"></i>
+									<span class="show_all_title">查看更多</span>
+								</div>
+							</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+			<!--秒杀部分 结束-->
+		</div>
+	</div>
+	<!--空购物车部分 结束-->
+
+	<!--空购物车-看看热卖 开始-->
+	<div class="shopping_guess_container" id="emptycartHotRecommend" style="display:none;">
+		<div id="guessID" class="shopping_guess">
+			<div class="gray_text">
+				<span class="gray_layout">
+					<span class="gray_text_img"></span>看看热卖
+				</span>
+			</div>
+
+			<ul class="similar_ul cf" id="emptyRecommendID">
+				<li class="similar_li">
+					<div class="similar_product">
+						<a href="#">
+							<div class="similar_nimg">
+								<img src="../../resources/images/cart/59be3f41N89527548.jpg!q70.jpg" alt="" class="Jschangewidth">
+							</div>
+							<span class="similar_product_text">【京东配送】航向者 高频酷睿i3升i5/GTX750独显游戏办公台式电脑主机/DIY组装机 套餐一/ 酷睿i3/GTX650独显</span>
+							<span class="similar_product_price">
+								¥
+								<span class="big_price">1599</span>
+								<span class="small_price">.00</span>
+								<span class="recomm_comment_num">1.5万条评论</span>
+							</span>
+							<span class="recommend_add_cart"></span>
+							<span class="guess_button">看相似</span>
+						</a>
+					</div>
+				</li>
+
+				<li class="similar_li">
+					<div class="similar_product">
+						<a href="#">
+							<div class="similar_nimg">
+								<img src="../../resources/images/cart/58d88cb6N6deca98b.jpg!q70.jpg" alt="" class="Jschangewidth">
+							</div>
+							<span class="similar_product_text">红棉 纯正 红糖 黑糖姜茶配料 原味黑糖块 220g</span>
+							<span class="similar_product_price">
+								¥
+								<span class="big_price">39</span>
+								<span class="small_price">.90</span>
+								<span class="recomm_comment_num">1.53万条评论</span>
+							</span>
+							<span class="recommend_add_cart"></span>
+							<span class="guess_button">看相似</span>
+						</a>
+					</div>
+				</li>
+
+				<li class="similar_li">
+					<div class="similar_product">
+						<a href="#">
+							<div class="similar_nimg">
+								<img src="../../resources/images/cart/5980119fN1e042b46.jpg!q70.jpg" alt="" class="Jschangewidth">
+								<span class="recommend_reason_txt">满379元减10元/span>
+							</div>
+							<span class="similar_product_text">金士顿 定制logoU盘32G 迷你U盘dtse9不锈钢超薄金属16G 汽车车载音乐U盘 送硅胶保护套(不定制) 16G</span>
+							<span class="similar_product_price">
+								¥
+								<span class="big_price">57</span>
+								<span class="small_price">.90</span>
+								<span class="recomm_comment_num">789条评论</span>
+							</span>
+							<span class="recommend_add_cart"></span>
+							<span class="guess_button">看相似</span>
+						</a>
+					</div>
+				</li>
+
+				<li class="similar_li">
+					<div class="similar_product">
+						<a href="#">
+							<div class="similar_nimg">
+								<img src="../../resources/images/cart/59c22dc9N2cb0407a.jpg!q70.jpg" alt="" class="Jschangewidth">
+							</div>
+							<span class="similar_product_text">逸居客（YIJUKE） 煎蛋器不锈钢DIY创意 煎蛋荷包蛋模具蛋饼 加厚不粘锅爱心圆形 爱心型1个</span>
+							<span class="similar_product_price">
+								¥
+								<span class="big_price">14</span>
+								<span class="small_price">.90</span>
+								<span class="recomm_comment_num">29条评论</span>
+							</span>
+							<span class="recommend_add_cart"></span>
+							<span class="guess_button">看相似</span>
+						</a>
+					</div>
+				</li>
+
+				<li class="similar_li">
+					<div class="similar_product">
+						<a href="#">
+							<div class="similar_nimg">
+								<img src="../../resources/images/cart/59151ea0Ndc9ba1e9.jpg!q70.jpg" alt="" class="Jschangewidth">
+							</div>
+							<span class="similar_product_text">木一多 女童连衣裙夏装新款2017童装儿童公主裙韩版中大童小女孩夏季六一表演裙子 紫色 130(建议身高120左右)</span>
+							<span class="similar_product_price">
+								¥
+								<span class="big_price">78</span>
+								<span class="small_price">.00</span>
+								<span class="recomm_comment_num">255条评论</span>
+							</span>
+							<span class="recommend_add_cart"></span>
+							<span class="guess_button">看相似</span>
+						</a>
+					</div>
+				</li>
+
+				<li class="similar_li">
+					<div class="similar_product">
+						<a href="#">
+							<div class="similar_nimg">
+								<img src="../../resources/images/cart/59c6221dN2d5551a3.jpg!q70.jpg" alt="" class="Jschangewidth">
+							</div>
+							<span class="similar_product_text">逸居客（YIJUKE） 304不锈钢筷子韩式加厚防滑防烫合金酒店家用套装不发霉不生锈餐具 （年年有余）筷子1双</span>
+							<span class="similar_product_price">
+								¥
+								<span class="big_price">15</span>
+								<span class="small_price">.70</span>
+								<span class="recomm_comment_num">149条评论</span>
+							</span>
+							<span class="recommend_add_cart"></span>
+							<span class="guess_button">看相似</span>
+						</a>
+					</div>
+				</li>
+
+				<li class="similar_li">
+					<div class="similar_product">
+						<a href="#">
+							<div class="similar_nimg">
+								<img src="../../resources/images/cart/59c3a04cNd42dfc14.jpg!q70.jpg" alt="" class="Jschangewidth">
+							</div>
+							<span class="similar_product_text">NIKE耐克男鞋跑步鞋2017夏季revolution3 网面透气运动鞋819300 TG 夏819300-001深灰+白+黑 42(建议41码脚穿着)</span>
+							<span class="similar_product_price">
+								¥
+								<span class="big_price">359</span>
+								<span class="small_price">.00</span>
+								<span class="recomm_comment_num">2589条评论</span>
+							</span>
+							<span class="recommend_add_cart"></span>
+							<span class="guess_button">看相似</span>
+						</a>
+					</div>
+				</li>
+
+				<li class="similar_li">
+					<div class="similar_product">
+						<a href="#">
+							<div class="similar_nimg">
+								<img src="../../resources/images/cart/58d8d96aN1bc6d7d1.jpg!q70.jpg" alt="" class="Jschangewidth">
+							</div>
+							<span class="similar_product_text">红棉 红糖姜茶 黑糖姜母茶 老姜黑糖块 220g</span>
+							<span class="similar_product_price">
+								¥
+								<span class="big_price">39</span>
+								<span class="small_price">.90</span>
+								<span class="recomm_comment_num">1233条评论</span>
+							</span>
+							<span class="recommend_add_cart"></span>
+							<span class="guess_button">看相似</span>
+						</a>
+					</div>
+				</li>					
+			</ul>
+
+			<img src="../../resources/images/cart/no-more.png" alt="" class="no_more">
+			<span class="txt_nomore_msg">热卖商品实时更新，常回来看看哦~</span>
+		</div>
+
+		<div class="bottom_space"></div>
+	</div>
+	<!--空购物车-看看热卖 结束-->
+
+
+	<!--购物车-你可能还想要 开始-->
+	<div class="shopping_guess_container" id="notEmptyRecommend">
+		<div id="guessID" class="shopping_guess">
+			<div class="gray_text">
+				<span class="gray_layout">
+					<span class="gray_text_img"></span>你可能还想要
+				</span>
+			</div>
+
+			<ul class="similar_ul cf" id="emptyRecommendID">
+				<li class="similar_li">
+					<div class="similar_product">
+						<a href="#">
+							<div class="similar_nimg">
+								<img src="../../resources/images/cart/561c890aN2158462f.jpg!q70.jpg" alt="" class="Jschangewidth">
+							</div>
+							<span class="similar_product_text">买2送1 滇王驿 云南特产纯黑糖160g古法红糖玫瑰黑糖块 纯甘蔗熬制 玫瑰黑糖160g</span>
+							<span class="similar_product_price">
+								¥
+								<span class="big_price">36</span>
+								<span class="small_price">.00</span>
+								<span class="recomm_comment_num">65555条评论</span>
+							</span>
+							<span class="recommend_add_cart"></span>
+						</a>
+					</div>
+				</li>
+
+				<li class="similar_li">
+					<div class="similar_product">
+						<a href="#">
+							<div class="similar_nimg">
+								<img src="../../resources/images/cart/59804f94N231d5331.jpg!q70.jpg" alt="" class="Jschangewidth">
+								<span class="recommend_reason_txt">满79.8元减40元/<span>
+							</div>
+							<span class="similar_product_text">红棉 红糖 京东自营 玫瑰黑糖 女生茶饮 甘蔗红糖块 220g</span>
+							<span class="similar_product_price">
+								¥
+								<span class="big_price">39</span>
+								<span class="small_price">.90</span>
+								<span class="recomm_comment_num">552条评论</span>
+							</span>
+							<span class="recommend_add_cart"></span>
+						</a>
+					</div>
+				</li>
+
+				<li class="similar_li">
+					<div class="similar_product">
+						<a href="#">
+							<div class="similar_nimg">
+								<img src="../../resources/images/cart/59657559N53ca6a2e.jpg!q70.jpg" alt="" class="Jschangewidth">
+								<span class="recommend_reason_txt">满29元减10元/<span>
+							</div>
+							<span class="similar_product_text">红棉糖粉 烘焙原料糖粉 糖霜糖粉 白砂糖粉细砂糖454g</span>
+							<span class="similar_product_price">
+								¥
+								<span class="big_price">19</span>
+								<span class="small_price">.80</span>
+								<span class="recomm_comment_num">789条评论</span>
+							</span>
+							<span class="recommend_add_cart"></span>
+						</a>
+					</div>
+				</li>
+
+				<li class="similar_li">
+					<div class="similar_product">
+						<a href="#">
+							<div class="similar_nimg">
+								<img src="../../resources/images/cart/59400b9bNc952a556.jpg!q70.jpg" alt="" class="Jschangewidth">
+								<span class="recommend_reason_txt">满99元买5件/<span>
+							</div>
+							<span class="similar_product_text">西域美农 蜜饯果干 枣夹核桃 零食特产小吃 灰枣夹核桃仁 魅仁枣218g/袋</span>
+							<span class="similar_product_price">
+								¥
+								<span class="big_price">29</span>
+								<span class="small_price">.80</span>
+								<span class="recomm_comment_num">4.6万条评论</span>
+							</span>
+							<span class="recommend_add_cart"></span>
+						</a>
+					</div>
+				</li>
+
+				<li class="similar_li">
+					<div class="similar_product">
+						<a href="#">
+							<div class="similar_nimg">
+								<img src="../../resources/images/cart/5850bc06N1a49fc9c.jpg!q70.jpg" alt="" class="Jschangewidth">
+							</div>
+							<span class="similar_product_text">买2送1 滇王驿古法元宝土红糖块甘蔗榨取老红糖500g手工月子红糖</span>
+							<span class="similar_product_price">
+								¥
+								<span class="big_price">19</span>
+								<span class="small_price">.00</span>
+								<span class="recomm_comment_num">7245条评论</span>
+							</span>
+							<span class="recommend_add_cart"></span>
+						</a>
+					</div>
+				</li>
+
+				<li class="similar_li">
+					<div class="similar_product">
+						<a href="#">
+							<div class="similar_nimg">
+								<img src="../../resources/images/cart/58490317N84177df5.jpg!q70.jpg" alt="" class="Jschangewidth">
+							</div>
+							<span class="similar_product_text">中国香港品牌 虎标 老姜黑糖块 红糖姜茶 独立包装 240g /罐</span>
+							<span class="similar_product_price">
+								¥
+								<span class="big_price">39</span>
+								<span class="small_price">.80</span>
+								<span class="recomm_comment_num">3308条评论</span>
+							</span>
+							<span class="recommend_add_cart"></span>
+						</a>
+					</div>
+				</li>
+
+				<li class="similar_li">
+					<div class="similar_product">
+						<a href="#">
+							<div class="similar_nimg">
+								<img src="../../resources/images/cart/59c8ca3bN871c0ae2.jpg!q70.jpg" alt="" class="Jschangewidth">
+							</div>
+							<span class="similar_product_text">【免邮】麻辣空间 麻辣香锅底料 180g*3袋特惠装 川味干锅底料 干锅虾香锅排骨</span>
+							<span class="similar_product_price">
+								¥
+								<span class="big_price">37</span>
+								<span class="small_price">.90</span>
+								<span class="recomm_comment_num">16.5万条评论</span>
+							</span>
+							<span class="recommend_add_cart"></span>
+						</a>
+					</div>
+				</li>
+
+				<li class="similar_li">
+					<div class="similar_product">
+						<a href="#">
+							<div class="similar_nimg">
+								<img src="../../resources/images/cart/55f274f0N9e4a9680.jpg!q70.jpg" alt="" class="Jschangewidth">
+							</div>
+							<span class="similar_product_text">禾煜 福建莆田桂圆 桂圆红枣茶原料 500g</span>
+							<span class="similar_product_price">
+								¥
+								<span class="big_price">19</span>
+								<span class="small_price">.90</span>
+								<span class="recomm_comment_num">1233条评论</span>
+							</span>
+							<span class="recommend_add_cart"></span>
+						</a>
+					</div>
+				</li>					
+			</ul>
+
+			<img src="../../resources/images/cart/no-more.png" alt="" class="no_more">
+			<span class="txt_nomore_msg">以上根据您购物车中已有商品推荐</span>
+		</div>
+
+		<div class="bottom_space"></div>
+	</div>
+	<!--空购物车-你可能还想要 结束-->
+
+	<!--底部结算 开始-->
+	<div id="payment_p">
+		<div class="payment_total_bar payment_total_bar_new box_flex_f" id="payment">
+			<div class="shp_chk shp_chk_new  box_flex_c">
+				<span class="cart_checkbox" id="checkIcon_1"></span>
+				<span class="cart_checkbox_text">全选</span>
+			</div>
+			<div class="shp_cart_info shp_cart_info_new  box_flex_c">
+				<strong id="shpCartTotal" class="shp_cart_total">
+					合计: <span class="bottom_bar_price" id="cart_realPrice"></span>
+				</strong>
+
+				<span class="sale_off sale_off_new  bottom_total_price" id="saleOffNew">
+					总额：<span class="money_unit_bf" id="cart_oriPrice"></span>
+					立减：<span class="money_unit_bf" id="cart_reiPrice"></span>
+				</span>
+			</div>
+			<a class="btn_right_block btn_right_block_new  box_flex_c">
+				去结算<span id="checkedNum">()</span>
+			</a>
+		</div>
+	</div>
+	<!--底部结算 结束-->
+
+	<div id="mask">
+		<div id="mask_wraper">
+			<div id="mask_con"></div>
+		</div>
+	</div>
+
+	<!--加入成功弹层 开始-->
+	<div class="refresh_cart_prompt">
+		<span>加入成功！</span>
+		<span>
+			<i></i>
+			点击查看新加入商品
+		</span>
+	</div>
+	<!--加入成功弹层 结束-->
+
+	<!--删除弹层 开始-->
+	<div class="cart_pop_floor" id="pop_delete" style="display:none;">
+		<div class="cart_cover_floor"></div>
+		<div class="cart_info_box">
+			<div class="cart_info_box_content cart_bdb_1px">
+				<span class="cart_info_box_content cart_bdb_1px">确认要删除此商品吗？</span>
+			</div>
+			<div class="cart_btn_box">
+				<div class="cart_btn_box_back" id="cancel">取消</div>
+				<div class="cart_btn_box_check" id="isok">确定</div>
+			</div>
+		</div>
+	</div>
+	<!--删除弹层 结束-->
+</body>
+</html>

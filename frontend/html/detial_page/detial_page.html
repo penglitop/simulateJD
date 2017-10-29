@@ -203,7 +203,7 @@
 	<!--列表内容 开始-->
 	<div id="mainLayout">
 		<div id="mainStay" class="new_wt">
-			<div id="goods_img_box" class="miblebox">
+			<div id="miblebox" class="goods_img_box">
 
 				<!--头部等顶部部分占位 开始-->
 				<div class="hold_div_top" style="height:.94rem"></div>
@@ -212,11 +212,11 @@
 
 				<!--上层页面外容器 开始-->
 				<div class="header_slider">
-					<div class="header_slider_con" style="width:9.6rem; height:17.25rem; transition:500ms ease; transform:translate3d(0,0,0)">
+					<div class="header_slider_con">
 						<ul>
 
 							<!--商品 开始-->
-							<li id="productTabLi" class="header_slider_item" style="width:3.2rem; height:17.25rem">
+							<li id="productTabLi" class="header_slider_item" style="width:100%;">
 								<div id="mainLayout" class="page_content">
 
 									<!--焦点图片 开始-->
@@ -312,7 +312,7 @@
 													<span>可享受以下优惠</span>
 												</div>
 
-												<div class="promotion_item item_import">
+												<div class="promotion_item item_import" style="display:none">
 													<i class="label_icon_div have_not_icon_div">
 														<span class="label_text">限制</span>
 													</i>
@@ -321,7 +321,7 @@
 													</a>
 												</div>
 
-												<div class="promotion_item item_import J_ping">
+												<div class="promotion_item item_import J_ping" style="display:none">
 													<i class="label_icon_div have_not_icon_div">
 														<span class="label_text">赠品</span>
 													</i>
@@ -356,27 +356,1018 @@
 										</div>
 									</div>
 									<!--已选行 结束-->
+
+									<!--送至地点 开始-->
+									<div class="goods_part bdr_t mar_t loc_floor">
+										<div class="send_to">
+											<span class="col01 part_note_msg">送至</span>
+											<div id="btn_select_region" class="send_loc">
+												<div class="address adress01 J_ping">
+													<span id="provinceName">北京</span>
+													<span id="cityName">朝阳区</span>
+													<span id="countyName">管庄</span>
+													<span id="townName"></span>
+													<i class="icon icon_location"></i>
+												</div>
+											</div>
+										</div>
+
+										<p class="row01col03 stockStatus" id="stockStatus">
+											<span class="isExist">现货，11:10前下单,预计今天(09月18日)送达</span>
+											<span class="send_time">&nbsp</span>
+										</p>
+
+										<div class="provide_srv" id="fare">
+											<span class="part_note_msg">运费</span>
+											<p class="provider base_txt" id="fareMoney">在线支付免运费</p>
+										</div>
+									</div>
+
+									<div class="service_floor J_ping">
+										<div class="service_tip_module">
+											<i class="service_icon support_service_icon"></i>
+											<span class="service_icon_text">京东发货&店铺售后</span>
+										</div>
+
+										<div class="service_tip_module">
+											<i class="service_icon nonsupport_service_icon"></i>
+											<span class="service_icon_text">不可七天退货</span>
+										</div>
+									</div>
+									<!--送至地点 结束-->
+
+									<!--店铺 开始-->
+									<div class="goods_part bdr_tab mar_t" id="shop_floor">
+										<div class="shop_part" id="jshopkefu">
+											<a href="#" class="shop_href">
+												<div class="shop_row1">
+													<span class="shop_row">
+														<div class="shop_icon">
+															<img src="../../resources/images/detial_page/599d3df5Nbe164c02.png" alt="">
+														</div>
+														<span class="shop_name">泽天食品专营店</span>
+														<span class="score_text red_font">9.5</span>
+													</span>
+												</div>
+
+												<div class="shop_describe">
+
+													<span class="describe_info">商品<span class="green_font">9.4</span></span>
+
+													<span class="describe_info">服务<span class="green_font">9.4</span></span>
+
+													<span class="describe_info">物流<span class="red_font">9.5</span></span>
+												</div>
+
+												<div class="shop_tab">
+													<span class="tabs">
+														<div class="num">1107</div>
+														<div class="text">关注人数</div>
+														<div class="vertical_line"></div>
+													</span>
+
+													<span class="tabs">
+														<div class="num">62</div>
+														<div class="text">全部商品</div>
+														<div class="vertical_line"></div>
+													</span>
+
+													<span class="tabs">
+														<div class="num">15</div>
+														<div class="text">店铺动态</div>
+													</span>
+												</div>
+											</a>
+											<div class="shop_footer">
+												<div class="shop_dong">
+													<a href="#" class="shop_btn" id="im">
+														<i class="icon_dong icon_dong_yellow"></i>
+														<span class="dong_text J_ping">联系卖家</span>
+													</a>
+												</div>
+												<div class="shop_go">
+													<a href="#" class="shop_btn">
+														<i class="icon_go"></i>
+														<span class="dong_text J_ping">联系卖家</span>
+													</a>
+												</div>
+											</div>
+										</div>
+									</div>
+									<!--店铺 结束-->
+
+									<!--下载引流楼层 开始-->
+									<div class="mar_t J_ping download_action_floor" id="download_floor">
+										<img src="../../resources/images/detial_page/downloadbanner.png" alt="">
+									</div>
+									<!--下载引流楼层 结束-->
+
+
+									<!--评论内容 开始-->
+									<div id="commendetailModel" class="goods_part bdr_tab mar_t">
+
+										<div class="goods_eval J_ping" id="btnAssess">
+											<div class="info">
+												<a href="#">
+													<span class="part_note_msg">评价(<em id="comments">3113</em>)</span>
+													<span class="good_comment_text">
+														好评<em id="goods">97%</em>
+													</span>
+													<i class="icon_arrow icon_arrow_right"></i>
+												</a>
+											</div>
+										</div>
+
+										<div class="prod_comment" id="showDetail">
+											<div class="comment_list" id="comment_listID">
+
+												<div class="comment_list_item">
+
+													<div class="comment_item_info">
+														<span class="product_item_star">
+															<span class="real_ster comment_stars_width5"></span>
+														</span>
+														<span class="comment_item_author">辉***器</span>
+													</div>
+
+													<div class="comment_item_content down_icon">
+														<span class="content">假的，挂羊头卖狗肉，大家千万别上当</span>
+													</div>
+													<div class="comment_img_container">
+														<ul class="img_container J_ping">
+															<li class="comment_img_item">
+																<img src="../../resources/images/detial_page/59b9eeb7N1b8c482d.jpg" alt="">
+															</li>
+															<li class="comment_img_space"></li>
+															<li class="comment_img_item">
+																<img src="../../resources/images/detial_page/59b9eeb8N51a9e36d.jpg" alt="">
+															</li>
+															<li class="comment_img_space"></li>
+															<li class="comment_img_item">
+																<img src="../../resources/images/detial_page/599ccdbeNc0529b89.jpg!q70.jpg" alt="">
+															</li>
+															<li class="comment_img_space"></li>
+															<li class="comment_img_item">
+																<img src="../../resources/images/detial_page/59b9eebaN1aafc2c9.jpg" alt="">
+															</li>
+														</ul>
+													</div>
+													<div class="comment_item_date">2017-09-6</div>
+												</div>
+
+
+												<div class="comment_list_item">
+
+													<div class="comment_item_info">
+														<span class="product_item_star">
+															<span class="real_ster comment_stars_width5"></span>
+														</span>
+														<span class="comment_item_author">x***c</span>
+													</div>
+
+													<div class="comment_item_content down_icon">
+														<span class="content">超爱吃月饼，每次快到中秋节就特别馋，今年在京东上选了这盒，都是甜味的月饼，味道正宗，非常好吃！日期新鲜，关键是价格非常便宜，还是京东配送，免邮！下单第二天就收到了，全五星好评！</span>
+													</div>
+													<div class="comment_img_container">
+														<ul class="img_container J_ping">
+															<li class="comment_img_item">
+																<img src="../../resources/images/detial_page/59ba79e0N72e36192.jpg" alt="">
+															</li>
+															<li class="comment_img_space"></li>
+															<li class="comment_img_item">
+																<img src="../../resources/images/detial_page/59ba79e1N1c2bad10.jpg" alt="">
+															</li>
+															<li class="comment_img_space"></li>
+															<li class="comment_img_item">
+																<img src="../../resources/images/detial_page/59ba79e2N3ca2f625.jpg" alt="">
+															</li>
+															<li class="comment_img_space"></li>
+															<li class="comment_img_item">
+																<img src="../../resources/images/detial_page/59ba79e3Ne5bfa18d.jpg" alt="">
+															</li>
+														</ul>
+													</div>
+													<div class="comment_item_date">2017-09-10</div>
+												</div>
+
+
+												<div class="comment_list_item">
+
+													<div class="comment_item_info">
+														<span class="product_item_star">
+															<span class="real_ster comment_stars_width5"></span>
+														</span>
+														<span class="comment_item_author">涵***熙</span>
+													</div>
+
+													<div class="comment_item_content down_icon">
+														<span class="content">买了好几盒，挺好吃的，包装精美，快递给力，早上买下午到，京东的不错，赞一下</span>
+													</div>
+													<div class="comment_img_container">
+														<ul class="img_container J_ping">
+															<li class="comment_img_item">
+																<img src="../../resources/images/detial_page/59b11a03N88f7b3fa.jpg" alt="">
+															</li>
+															<li class="comment_img_space"></li>
+															<li class="comment_img_item">
+																<img src="../../resources/images/detial_page/59b11a05N8885f7a9.jpg" alt="">
+															</li>
+															<li class="comment_img_space"></li>
+															<li class="comment_img_item">
+																<img src="../../resources/images/detial_page/59b0fd5aN31e34533.jpg" alt="">
+															</li>
+															<li class="comment_img_space"></li>
+															<li class="comment_img_item">
+																<img src="../../resources/images/detial_page/59b0fd5aN31e34533.jpg" alt="">
+															</li>
+														</ul>
+													</div>
+													<div class="comment_item_date">2017-09-19</div>
+												</div>
+											</div>
+										</div>
+									</div>
+									<!--评论内容 结束-->
+
+									<div class="af_open_app_warp J_ping" id="downloadFlagA">
+										<div class="af_open_app_btn">打开京东APP，查看全部评价</div>
+									</div>
+
+									<div class="bottom_tip_floor" id="bottomTipFloor">
+										<span class="btm_detail_icon btm_up"></span><span class="bottom_tip"> 上拉查看图文详情  </span>
+									</div>
 								</div>
 							</li>
 							<!--商品 结束-->
 
 							<!--详情 开始-->
-							<li class="header_slider_item posi_rela"></li>
-							<!--商品 结束-->
+							<li class="header_slider_item posi_rela" style="width:100%;display:none;">
+								<div class="good_detial sift_img" id="goodDetail">
+									<!--商品介绍 开始-->
+									<div class="detial" id="wareInfo" style="display:none">
+										<!--商品图片展示 开始-->
+										<div id="scale_parent" style="width:3rem;height:auto;
+										margin:0 .1rem; overflow:hidden">
+											<div class="scale_box" id="scale_cont" style="transform-origin:0rem 0rem 0rem;transform:scale(0.46875) font-size:.35rem;">
+												<p><span></span></p>
+												<!--产品图片展示 开始-->
+												<ul id="__01" class="img_show">
+													<li>
+														<img src="../../resources/images/detial_page/599cec6fNe42ed292.jpg" alt="">
+													</li>
+
+													<li>
+														<img src="../../resources/images/detial_page/599cec5dN7f2f6b52.jpg" alt="">
+													</li>
+
+													<li>
+														<img src="../../resources/images/detial_page/599cec6bN3597856d.jpg" alt="">
+													</li>
+
+													<li>
+														<img src="../../resources/images/detial_page/599cec5fN702396cc.jpg" alt="">
+													</li>
+
+													<li>
+														<img src="../../resources/images/detial_page/599cec6eN74251408.jpg" alt="">
+													</li>
+
+													<li>
+														<img src="../../resources/images/detial_page/599cec71N9e3c7533.jpg" alt="">
+													</li>
+
+													<li>
+														<img src="../../resources/images/detial_page/599cec70N85e2dce8.jpg" alt="">
+													</li>
+
+													<li>
+														<img src="../../resources/images/detial_page/599cec6cN84aa43e0.jpg" alt="">
+													</li>
+
+													<li>
+														<img src="../../resources/images/detial_page/599cec70Nc7494d5d.jpg" alt="">
+													</li>
+
+													<li>
+														<img src="../../resources/images/detial_page/599cec70N3e572c67.jpg" alt="">
+													</li>
+
+													<li>
+														<img src="../../resources/images/detial_page/599cec6eNf6feb9a0.jpg" alt="">
+													</li>
+
+													<li>
+														<img src="../../resources/images/detial_page/599cec6eN2a9296ca.jpg" alt="">
+													</li>
+
+													<li>
+														<img src="../../resources/images/detial_page/599cec60Nc675a283.jpg" alt="">
+													</li>
+
+
+													<li>
+														<img src="../../resources/images/detial_page/599cec71N18126e2b.jpg" alt="">
+													</li>
+
+													<li>
+														<img src="../../resources/images/detial_page/599cec71N0a9092ef.jpg" alt="">
+													</li>
+
+													<li>
+														<img src="../../resources/images/detial_page/599cec71N53a82794.jpg" alt="">
+													</li>
+												</ul>
+												<p></p>
+												<!--产品图片展示 结束-->
+											</div>
+										</div>
+										<!--商品图片展示 结束-->
+
+
+										<!--为你推荐 开始-->
+										<div id="recommendWrap" class="recommend_wrap">
+											<img src="../../resources/images/detial_page/guess-title.png" alt="" class="recommend_title">
+											<ul class="find_similar_ul" id="recommendList">
+												<li class="similar_li">
+													<a href="#" class="J_ping">
+														<img src="../../resources/images/detial_page/59bfc9c5Ncc388c26.jpg!q70.jpg" alt="" class="Jschangewidth">
+														<span class="similar_product_text">月饼 三珍斋竹篮月饼礼盒装中秋节礼品团购批发礼物560克广式糕点蛋黄莲蓉等送300克酱鸭</span>
+														<span class="similar_product_price">
+															¥
+															<span class="detial_big_price">48</span><span class="detial_small_price">.90</span>
+														</span>
+													</a>
+												</li>
+
+												<li class="similar_li">
+													<a href="#" class="J_ping">
+														<img src="../../resources/images/detial_page/59be5790N3513700c.jpg!q70.jpg" alt="" class="Jschangewidth">
+														<span class="similar_product_text">【京东超市】华美月饼礼盒中秋月饼礼盒 月圆情圆400g【2味4饼含蛋黄白莲蓉月饼】</span>
+														<span class="similar_product_price">
+															¥
+															<span class="detial_big_price">45</span><span class="detial_small_price">.90</span>
+														</span>
+													</a>
+												</li>
+
+												<li class="similar_li">
+													<a href="#" class="J_ping">
+														<img src="../../resources/images/detial_page/59bf8e9cN0171833d.jpg!q70.jpg" alt="" class="Jschangewidth">
+														<span class="similar_product_text">【京东超市】华美月饼礼盒 广式月饼中秋 祝福月500g（含蛋黄白莲蓉）</span>
+														<span class="similar_product_price">
+															¥
+															<span class="detial_big_price">49</span><span class="detial_small_price">.90</span>
+														</span>
+													</a>
+												</li>
+
+												<li class="similar_li">
+													<a href="#" class="J_ping">
+														<img src="../../resources/images/detial_page/59b7891eNa90205ab.jpg!q70.jpg" alt="" class="Jschangewidth">
+														<span class="similar_product_text">【京东超市】华美 月饼礼盒中秋广式蛋黄月饼 花韵月语600g</span>
+														<span class="similar_product_price">
+															¥
+															<span class="detial_big_price">42</span><span class="detial_small_price">.90</span>
+														</span>
+													</a>
+												</li>
+											</ul>
+										</div>
+										<!--为你推荐 结束-->
+									</div>
+									<!--商品介绍 结束-->
+
+									<!--规格参数 开始-->
+									<div id="wareStandard" class="detial" style="display:none">
+										<table class="table_border">
+											<tbody>
+												<tr>
+													<td colspan="2">
+														<strong>主体</strong>
+													</td>
+												</tr>
+												<tr>
+													<td>口味</td>
+													<td>其他</td>
+												</tr>
+												<tr>
+													<td>包装</td>
+													<td>纸盒装</td>
+												</tr>
+											</tbody>
+										</table>
+									</div>
+									<!--规格参数 结束-->
+
+									<!--包装售后 开始-->
+									<div id="warePack" class="detial sale_service_wrap">
+										<div class="sale_service_grey bdr_t"></div>
+										<div class="sale_service_floor bdr_t">
+											<div class="sale_service_title">
+												<span class="title_text">
+													价格说明
+												</span>
+											</div>
+											<div class="sale_service_content">
+												1、京东价：京东价为商品的销售价，是您最终决定是否购买商品的依据。
+												<br/>
+												2、划线价：商品展示的划横线价格为参考价，该价格可能是品牌专柜标价、商品吊牌价或由品牌供应商提供的正品零售价（如厂商指导价、建议零售价等）或该商品在京东平台上曾经展示过的销售价；由于地区、时间的差异性和市场行情波动，品牌专柜标价、商品吊牌价等可能会与您购物时展示的不一致，该价格仅供您参考。
+												<br/>
+												3、折扣：如无特殊说明，折扣指销售商在原价、或划线价（如品牌专柜标价、商品吊牌价、厂商指导价、厂商建议零售价）等某一价格基础上计算出的优惠比例或优惠金额；如有疑问，您可在购买前联系销售商进行咨询。
+												<br/>
+												4、异常问题：商品促销信息以商品详情页“促销”栏中的信息为准；商品的具体售价以订单结算页价格为准；如您发现活动商品售价或促销信息有异常，建议购买前先联系销售商咨询。
+												<br/>
+											</div>
+										</div>
+									</div>
+									<!--包装售后 结束-->
+								</div>
+
+								<!--正在加载中 开始-->
+								<div class="loading_position" style="display:none;">
+									<div class="is_loading">
+										<em></em>
+										<span>加载中...</span>
+									</div>
+								</div>
+								<!--正在加载中 结束-->
+							</li>
+							<!--详情 结束-->
 
 							<!--评价 开始-->
-							<li id="commentListId" class="header_slider_item reply_body"></li>
+							<li id="commentListId" class="header_slider_item reply_body_body" style="width:100%;height:4.47rem;overflow:scroll;display:none;">
+								<div class="tab_con_wrapper tab_con_oaa" id="tab_wrapper">
+
+									<div class="assess_flat">
+										<span class="assess_wrapper">
+											<div class="assess_top">
+												<span class="use_portrait">
+													<img src="../../resources/images/detial_page/baabb0d8d6a631343630393430383637393638_sma.jpg" alt="">
+												</span>
+												<span class="user_name">涵***熙</span>
+												<a href="#" class="plus_icon_wrap J_ping">
+													<img src="../../resources/images/detial_page/plus-icon.png" alt="">
+												</a>
+												<span class="assess_date">2017-09-07</span>
+											</div>
+											<div class="assess_bottom">
+												<span class="comment_item_star">
+													<span class="real_star comment_stars_width5"></span>
+												</span>
+												<p class="assess_content">买了好几盒，挺好吃的，包装精美，快递给力，早上买下午到，京东的不错，赞一下</p>
+												<div class="product_img_module">
+													<a href="#" class="J_ping">
+														<ul class="jd_slider_container">
+															<li class="jd_slider_item product_imgs_li">
+																<img src="../../resources/images/detial_page/59b11a03N88f7b3fa.jpg" alt="">
+															</li>
+															<li class="product_img_space"></li>
+
+															<li class="jd_slider_item product_imgs_li">
+																<img src="../../resources/images/detial_page/59b11a03N88f7b3fa.jpg" alt="">
+															</li>
+															<li class="product_img_space"></li>
+
+															<li class="jd_slider_item product_imgs_li">
+																<img src="../../resources/images/detial_page/59b11a03N88f7b3fa.jpg" alt="">
+															</li>
+															<li class="product_img_space"></li>
+
+															<li class="jd_slider_item product_imgs_li">
+																<img src="../../resources/images/detial_page/59b11a03N88f7b3fa.jpg" alt="">
+															</li>
+														</ul>
+													</a>
+												</div>
+												<p class="pay_date">购买日期：2017-09-06 08:46:14</p>
+											</div>
+										</span>
+										<div class="assess_btns_box">
+											<div class="assess_btns">
+												<a href="#" class="assess_like_btn">
+													<i class="assess_btn_icon btn_like_icon like_grey"></i>
+													<span class="assess_btn_num">(6)</span>
+												</a>
+
+												<a href="#" class="assess_reply_btn">
+													<i class="assess_btn_icon btn_reply_icon"></i>
+													<span class="assess_btn_num">(13)</span>
+												</a>
+											</div>
+										</div>
+									</div>
+
+
+									<div class="assess_flat">
+										<span class="assess_wrapper">
+											<div class="assess_top">
+												<span class="use_portrait">
+													<img src="../../resources/images/detial_page/5473e62aNdb4251d8.png" alt="">
+												</span>
+												<span class="user_name">j***7</span>
+												<a href="#" class="plus_icon_wrap J_ping">
+													<img src="../../resources/images/detial_page/plus-icon.png" alt="">
+												</a>
+												<span class="assess_date">2017-09-07</span>
+											</div>
+											<div class="assess_bottom">
+												<span class="comment_item_star">
+													<span class="real_star comment_stars_width5"></span>
+												</span>
+												<p class="assess_content">买了好几盒，挺好吃的，包装精美，快递给力，早上买下午到，京东的不错，赞一下</p>
+												<div class="product_img_module">
+													<a href="#" class="J_ping">
+														<ul class="jd_slider_container">
+															<li class="jd_slider_item product_imgs_li">
+																<img src="../../resources/images/detial_page/59ba83cfN263cd67b.jpg" alt="">
+															</li>
+															<li class="product_img_space"></li>
+
+															<li class="jd_slider_item product_imgs_li">
+																<img src="../../resources/images/detial_page/59ba83d7Na7b05dd8.jpg" alt="">
+															</li>
+															<li class="product_img_space"></li>
+
+															<li class="jd_slider_item product_imgs_li">
+																<img src="../../resources/images/detial_page/59ba83cfNd704ea43.jpg" alt="">
+															</li>
+															<li class="product_img_space"></li>
+
+															<li class="jd_slider_item product_imgs_li">
+																<img src="../../resources/images/detial_page/59ba83daNf3d3cac0.jpg" alt="">
+															</li>
+														</ul>
+													</a>
+												</div>
+												<p class="pay_date">购买日期：2017-09-06 08:46:14</p>
+											</div>
+										</span>
+										<div class="assess_btns_box">
+											<div class="assess_btns">
+												<a href="#" class="assess_like_btn">
+													<i class="assess_btn_icon btn_like_icon like_grey"></i>
+													<span class="assess_btn_num">(6)</span>
+												</a>
+
+												<a href="#" class="assess_reply_btn">
+													<i class="assess_btn_icon btn_reply_icon"></i>
+													<span class="assess_btn_num">(13)</span>
+												</a>
+											</div>
+										</div>
+									</div>
+
+
+									<div class="assess_flat">
+										<span class="assess_wrapper">
+											<div class="assess_top">
+												<span class="use_portrait">
+													<img src="../../resources/images/detial_page/5473e62aNdb4251d8.png" alt="">
+												</span>
+												<span class="user_name">x***c</span>
+												<a href="#" class="plus_icon_wrap J_ping">
+													<img src="../../resources/images/detial_page/plus-icon.png" alt="">
+												</a>
+												<span class="assess_date">2017-09-14</span>
+											</div>
+											<div class="assess_bottom">
+												<span class="comment_item_star">
+													<span class="real_star comment_stars_width5"></span>
+												</span>
+												<p class="assess_content">超爱吃月饼，每次快到中秋节就特别馋，今年在京东上选了这盒，都是甜味的月饼，味道正宗，非常好吃！日期新鲜，关键是价格非常便宜，还是京东配送，免邮！下单第二天就收到了，全五星好评！</p>
+												<div class="product_img_module">
+													<a href="#" class="J_ping">
+														<ul class="jd_slider_container">
+															<li class="jd_slider_item product_imgs_li">
+																<img src="../../resources/images/detial_page/59ba79e0N72e36192.jpg" alt="">
+															</li>
+															<li class="product_img_space"></li>
+
+															<li class="jd_slider_item product_imgs_li">
+																<img src="../../resources/images/detial_page/59b7891eNa90205ab.jpg!q70.jpg" alt="">
+															</li>
+															<li class="product_img_space"></li>
+
+															<li class="jd_slider_item product_imgs_li">
+																<img src="../../resources/images/detial_page/59ba79e2N3ca2f625.jpg" alt="">
+															</li>
+															<li class="product_img_space"></li>
+
+															<li class="jd_slider_item product_imgs_li">
+																<img src="../../resources/images/detial_page/59ba79e1N1c2bad10.jpg" alt="">
+															</li>
+														</ul>
+													</a>
+												</div>
+												<p class="pay_date">购买日期：2017-09-06 08:46:14</p>
+											</div>
+										</span>
+										<div class="assess_btns_box">
+											<div class="assess_btns">
+												<a href="#" class="assess_like_btn">
+													<i class="assess_btn_icon btn_like_icon like_grey"></i>
+													<span class="assess_btn_num">(22)</span>
+												</a>
+
+												<a href="#" class="assess_reply_btn">
+													<i class="assess_btn_icon btn_reply_icon"></i>
+													<span class="assess_btn_num">(10)</span>
+												</a>
+											</div>
+										</div>
+									</div>
+								</div>
+
+								<!--正在加载中 开始-->
+								<div class="loading_position" style="display:none;">
+									<div class="is_loading">
+										<em></em>
+										<span>加载中...</span>
+									</div>
+								</div>
+								<!--正在加载中 结束-->
+
+
+								<!--没有更多喽 开始-->
+								<div class="reply_flat_bottom" style="display:none">
+									<div class="div1">
+										<div class="no_more_border"></div>
+										<img src="../../resources/images/detial_page/no-more-joy2.png" alt="" class="no_more_icon">
+										<p class="no_more_write">没有更多喽~</p>
+									</div>
+								</div>
+								<!--没有更多喽 结束-->
+
+
+								<!--打开京东APP查看更多 开始-->
+								<div class="open_app_bottom">
+									<div id="openAppAText" class="open_app_a_text">还有3515条评价，打开京东APP立即查看</div>
+									<div class="open_app_a_img">
+										<a href="#" class="J_ping" id="downloadFlagAP"></a>
+									</div>
+								</div>					
+								<!--打开京东APP查看更多 结束-->
+							</li>
 							<!--评价 结束-->
 						</ul>
 					</div>
 				</div>
 				<!--上层页面外容器 结束-->
 
+				<!--底部占位 开始-->
+				<div class="hold_div_bottom"></div>
+				<!--底部占位 结束-->
 
-
+				<!--商品添加成功 开始-->
+					<div class="cart_pop" id="cart" style="display:none;">
+						<span class="att_succ">添加成功！</span>
+						<span class="cart_succ">商品已成功加入购物车</span>
+					</div>
+				<!--商品添加成功 结束-->
 			</div>
+
+			<!--send-to 开始-->
+			<div class="menu_sidebar" id="puller" style="display:none">
+				<div class="list_content_mask"></div>
+				<div class="sidebar_content">
+					<div class="sidebar_header region_title">
+						<span class="region_title_back" id="region_back_arrow">
+							<i class="J_ping"></i>
+						</span>
+						<span class="region_title_name">配送至</span>
+					</div>
+					<div class="sidebar_items_container region_list_group">
+						<div class="space44"></div>
+						<div class="region_wrapper">
+							<ul class="sidebar_list sidebar_categories region_list J_ping cur">
+
+								<li class="choice_address checked">
+									<i class="tick"></i>
+									<span>北京</span>
+								</li>
+
+								<li class="choice_address">
+									<i class="tick"></i>
+									<span>上海</span>
+								</li>
+
+								<li class="choice_address">
+									<i class="tick"></i>
+									<span>天津</span>
+								</li>
+
+								<li class="choice_address">
+									<i class="tick"></i>
+									<span>重庆</span>
+								</li>
+
+								<li class="choice_address">
+									<i class="tick"></i>
+									<span>河北</span>
+								</li>
+
+								<li class="choice_address">
+									<i class="tick"></i>
+									<span>山西</span>
+								</li>
+
+								<li class="choice_address">
+									<i class="tick"></i>
+									<span>河南</span>
+								</li>
+
+								<li class="choice_address">
+									<i class="tick"></i>
+									<span>辽宁</span>
+								</li>
+
+								<li class="choice_address">
+									<i class="tick"></i>
+									<span>吉林</span>
+								</li>
+
+								<li class="choice_address">
+									<i class="tick"></i>
+									<span>黑龙江</span>
+								</li>
+
+								<li class="choice_address">
+									<i class="tick"></i>
+									<span>内蒙古</span>
+								</li>
+
+								<li class="choice_address">
+									<i class="tick"></i>
+									<span>江苏</span>
+								</li>
+
+								<li class="choice_address">
+									<i class="tick"></i>
+									<span>山东</span>
+								</li>
+
+								<li class="choice_address">
+									<i class="tick"></i>
+									<span>安徽</span>
+								</li>
+
+								<li class="choice_address">
+									<i class="tick"></i>
+									<span>浙江</span>
+								</li>
+							</ul>
+						</div>
+						<div class="loading_mask"></div>
+					</div>
+				</div>
+			</div>
+			<!--send-to 结束-->
+
+			<!--降价通知 开始-->
+			<div class="depreciate_inform_block J_ping reduce_price" id="depreciateInformBlock" style="display:none">
+				<span class="depreciate_inform_title">设置降价通知</span>
+				<span class="depreciate_inform_title2">若商品30天内降价，手机短信会通知您</span>
+				<input type="number" class="input_box J_ping" id="depreciate_price" placeholder="请输入期望价格">
+				<span class="input_prompt">请输入价格</span>
+				<input type="tel" class="input_box J_ping" id="depreciate_phoneno" placeholder="请输入手机号码">
+				<span class="phone_num_prompt">手机号码错误请重新输入</span>
+				<div class="cancel_yes_box cf">
+					<div class="cancel_but_box">
+						<div class="cancel_but J_ping">取消</div>
+						<div class="yes_but J_ping">确定</div>
+					</div>
+				</div>
+			</div>
+			<!--降价通知 结束-->
+			
+
+			<!--到货通知 开始-->
+			<div class="depreciate_inform_block J_ping arrival_goods" id="depreciateInformBlock" style="display:none;">
+				<span class="depreciate_inform_title">设置到货通知</span>
+				<span class="depreciate_inform_title2">若商品30天内到货，手机短信会通知您</span>
+				<input type="tel" class="input_box J_ping" id="depreciate_phoneno" placeholder="请输入手机号码">
+				<span class="phone_num_prompt">手机号码错误请重新输入</span>
+				<div class="cancel_yes_box cf">
+					<div class="cancel_but_box">
+						<div class="cancel_but J_ping">取消</div>
+						<div class="yes_but J_ping">确定</div>
+					</div>
+				</div>
+			</div>
+			<!--到货通知 结束-->
+
+
+			<!--实名认证弹窗 开始-->
+			<div class="certification_floor" style="display:none;">
+				<div class="cover_floor"></div>
+				<div class="one_btn_tip_box_tip">
+					<div class="one_btn_tip_info">
+						<span>实名认证用户才能领取哦~，请到我的京东-账户管理中去开通吧！</span>
+					</div>
+					<div class="one_btn_tip_btn">
+						我知道了
+					</div>
+				</div>
+			</div>
+			<!--实名认证弹窗 结束-->
 		</div>
 	</div>
-	<!--列表内容 结束-->			
+	<!--列表内容 结束-->	
+
+
+	<!--加车提示loadding 开始-->
+	<div class="cart_loading_icon"></div>
+	<!--加车提示loadding 结束-->
+
+
+	<!--多次点赞提示文案 开始-->
+	<div class="prompt_window useful_window" style="display:none;">
+		<span class="prompt_err_icon"></span>
+		<span class="prompt_text">您已经点赞过了</span>
+	</div>
+	<!--多次点赞提示文案 结束-->
+
+
+	<!--添加购物车成功提示文案 开始-->
+	<div class="add_succesed">
+		<span class="add_succesed_icon"></span>
+		<span class="prompt_text">加入购物车成功！</span>
+	</div>
+	<!--添加购物车成功提示文案 结束-->	
+
+
+	<!--暂无回复 开始-->
+	<div class="prompt_window useful_window" id="pop_none_reply" style="display:none;">
+		<span class="prompt_err_icon"></span>
+		<span class="prompt_text">暂无回复哦</span>
+	</div>
+	<!--暂无回复 结束-->	
+
+
+	<!--上层页面回到顶部 开始-->
+	<div class="bottom_to_top J_ping" id="index_to_top" style="display:none;">
+		<img src="../../resources/images/detial_page/scroll-to-top-icon.png" alt="">
+	</div>
+	<!--上层页面回到顶部 结束-->
+
+	<!--灰色弹出层 开始-->
+	<div class="flick_menu_mask" style="display:none"></div>
+	<!--灰色弹出层 结束-->	
+
+
+	<!--选择商品弹层 开始-->
+	<div class="spec_menu" style="display:none">
+		<div class="spea_menu_content">
+			<div class="spec_menu_top bdr_b">
+
+				<div class="spec_first_pic">
+					<img src="../../resources/images/detial_page/59b5e131N5f07c694.jpg!q70.jpg" alt="" id="">
+				</div>
+
+				<a href="#" class="rt_close_btn_wrap spec_menu_close">
+					<p class="flick_menu_close"></p>
+				</a>
+
+				<div id="specPlus" class="plus_price_wrap spec_plus_price_mtl" style="display:none">
+					<div class="plus_price_row">
+						<div class="spec_jd_price">
+							<span class="plus_jd_price_title">京东价：</span>
+							<span class="price_icon grey"></span>
+							<span class="plus_jd_price_text" id="specJdPrice">45.90</span>
+						</div>
+					</div>
+					<div class="plus_price_row">
+						<div class="spec_plus_price">
+							<span class="plus_member_price_title">会员价：</span>
+							<span class="price_icon black"></span>
+							<span class="plus_member_price_text" id="specPlusPrice">38.90</span>
+							<img src="../../resources/images/detial_page/plus-price-icon.png" alt="" class="plus_pri_icon">
+						</div>
+					</div>
+				</div>
+
+				<div class="spec_price" id="specJdPri">
+					<span class="yang_pic spec_yang_pic"></span>
+					<span id="spec_price">45.90</span>
+				</div>
+
+				<div id="specWeightDiv" class="spec_weight">
+					<span>重量:</span>
+					<span id="spec_weight">1.2kg</span>
+				</div>
+			</div>
+
+
+			<div class="spec_menu_middle">
+				<div class="prod_spec" id="prodSpecArea">
+					<div class="spec_desc">
+						<span class="part_note_msg">已选</span>
+						<div id="specDetailInfo_spec" class="base_txt">
+							<span class="amount">1件</span>
+						</div>
+					</div>
+					<div class="nature_container" id="natureCotainer">
+						<div id="addCartNum" class="pro_count">
+							<span class="part_note_msg">数量</span>
+							<div class="quantity_wrapper">
+								<a href="#" class="quantity_decrease limited J_ping">
+									<em id="minus">-</em>
+								</a>
+								<input type="text" class="quantity" value="1" id="number">
+								<a href="#" class="quantity_increase J_ping" id="quantityPlus">
+									<em id="plus">+</em>
+								</a>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="warrantty_wrap bdr_t">
+					<div id="spec_yanbaoInfo" class="warranty_title">保障服务</div>
+					<div id="spec_spec_yanbaoItems"></div>
+				</div>
+			</div>
+
+			<!--选择商品弹层确认取消按钮 开始-->
+			<div class="flick_menu_btn spec_menu_btn">
+				<a href="#" class="yellow_color abb_cart" id="add_cart_spec">加入购物车</a>
+				<a href="#" class="red_color directorder" id="directorder_spec">立即购买</a>
+				<a href="#" class="yellow_color J_ping looksimilar looksimilara looksimilar_spec" id="looksimilar_speca" style="display:none;">查看相似</a>
+				<a href="#" class="yellow_color J_ping looksimilar looksimilarb looksimilar_spec" id="looksimilar_specb" style="display:none;">查看同款</a>
+				<a href="#" class="red_color J_ping arrivalInform" id="arrivalInform_spec" style="display:none;">到货通知</a>
+				<a href="#" class="red_color disabled waitingForAppointments" id="waitingForAppointments_spec" style="display:none;">等待预约</a>
+				<a href="#" class="red_color makeAppointments" id="makeAppointments_spec" style="display:none;">立即预约</a>
+				<a href="#" class="red_color disabled waitingForBuying" id="waitingForBuying_spec" style="display:none;">等待抢购</a>
+				<a href="#" class="red_color buyImmediately" id="buyImmediately_spec" style="display:none;">立即抢购</a>
+				<a href="#" class="red_color disabled appointmentsEnd" id="appointmentsEnd_spec" style="display:none;">预约结束</a>
+				<a href="#" class="red_color" id="yushou_add_cart_spec" style="display:none;">立即预定</a>
+			</div>
+			<!--选择商品弹层确认取消按钮 结束-->
+		</div>
+	</div>
+	<!--选择商品弹层 结束-->
+
+
+	<!--服务弹层 开始-->
+	<div class="service_menu" style="display:none">
+		<div class="flick_menu_title">服务说明</div>
+		<a href="#" class="rt_close_btn_wrap service_menu_close  J_ping">
+			<p class="flick_menu_close"></p>
+		</a>
+		<div class="service_menu_wrapper">
+			<div class="service_item_row">
+				<img src="../../resources/images/detial_page/5680f585N70da96a6.png" alt="" class="service_item_icon">
+				<span class="service_item_title">京东发货&店铺售后</span>
+				<span class="service_item_text">由京东从北京发货,泽天食品专营店提供售后服务</span>
+			</div>
+			<div class="service_menu_iconList"></div>
+			<div class="service_item_row">
+				<img src="../../resources/images/detial_page/5680f4a7Nd42f863e.png" alt="" class="service_item_icon">
+				<span class="service_item_title">不可七天退货</span>
+				<span class="service_item_text">不支持7天无理由退货</span>
+			</div>
+		</div>
+		<div class="flick_menu_btn J_ping">
+			<div class="service_ok_btn">确定</div>
+		</div>
+	</div>
+	<!--服务弹层 结束-->
+
+	<!--吸底无货，预约等提示文案 开始-->
+	<div class="bottom_prompt" id="bottom_prompt_msg_div" style="display:none">
+		<p class="prompt_title" id="prompt_msg">抱歉，所选地区暂时无货!!!</p>
+	</div>
+	<!--吸底无货，预约等提示文案 结束-->	
+
+
+	<!--底部按钮 开始-->
+	<div class="cart_concern_btm_fixed five_column" id="cart1">
+		<div class="concern_cart">
+			<a href="#" class="dong_dong_icn J_ping" id="imBottom">
+				<em class="btm_act_icn"></em>
+				<span class="focus_info">卖家</span>
+			</a>
+
+			<a href="#" class="love_heart_icn J_ping" id="focusOn">
+				<em class="btm_act_icn focus_out" id="attentionFocus"></em>
+				<span class="focus_info">关注</span>
+			</a>
+
+			<a href="#" class="cart_car_icn J_ping" id="toCartNew">
+				<em class="btm_act_icn" id="shoppingCart">
+					<i class="order_numbers" id="carNum">1</i>
+				</em>
+				<span class="focus_info">购物车</span>
+			</a>
+		</div>
+		<div class="action_list">
+			<a href="#" class="yellow_color add_cart" id="addCartBtm">加入购物车</a>
+			<a href="#" class="red_color directorder" id="directorderBtm">立即购买</a>
+			<a href="#" class="yellow_color J_ping looksimilar looksimilara" style="display:none">查看相似</a>
+			<a href="#" class="yellow_color J_ping looksimilar looksimilarb looksimilar_spec" style="display:none">查看同款</a>
+			<a href="#" class="red_color J_ping arrivalInform" id="arrivalInform_spec" style="display:none">到货通知</a>
+		</div>
+	</div>
+	<!--底部按钮 结束-->	
 </body>
 </html>

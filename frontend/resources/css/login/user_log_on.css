@@ -1,0 +1,381 @@
+/*登陆头部 开始*/
+#header{
+	height:.45rem;
+	line-height:.45rem;
+	background:#f9f9f9;
+	color:#616161;
+	font-size:.17rem;
+	border-bottom:.01rem solid #bbb;
+	z-index:999;
+	width:100%;
+	-webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    font-size:0;
+    text-align:center;
+}
+#icon_goback{
+	top:.12rem;
+	left:.12rem;
+	background-position:0 -.63rem;
+}
+.icon{
+	width:.22rem;
+	height:.22rem;
+	overflow:hidden;
+	position:absolute;
+	background:url(../../images/login/iconBg.png) no-repeat;
+	background-size:100% auto;
+	display:inline-block;
+}
+
+.text_header{
+	font-size:.17rem;
+	font-family:"Helvetica Neue",Helvetica,Tahoma,sans-serif;
+}
+/*登陆头部 结束*/
+
+.page{
+    left: 0;
+    background: white;
+    padding: 0 .2rem .2rem .2rem;
+    overflow: auto;
+    overflow-scrolling: touch;
+    -webkit-overflow-scrolling: touch;
+    width: 100%;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+.wrap{
+    max-width: 7.5rem;
+    margin: 0 auto;
+    padding-top: .05rem;
+}
+.input_container{
+    position: relative;
+    width: 100%;
+    height: .48rem;
+    line-height: .48rem;
+    overflow: hidden;
+    padding: 0 .05rem;
+    background-color: #fff;
+    border-bottom: 1px solid #d7d7d7;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    font-size:0;
+}
+.acc_input{
+	margin-left:0;
+	line-height:.46rem;
+	font-size:.14rem;
+	border:0;
+	outline:none;
+}
+.imgverify{
+	width:100%;
+	padding-right:1.1rem;
+}
+.code_box{
+    width: .75rem;
+    height: .23rem;
+    right: .05rem;
+    top: .125rem;
+    border-left: 1px solid #d7d7d7;
+    position:absolute;
+    display:inline-block;
+}
+.code_box img{
+	width: .75rem;
+    height: .3rem;
+    margin-top: -.28rem;
+    border: 1px solid transparent;
+    display:inline-block;
+}
+
+.icon_clear_zhuce{
+	right:.85rem;
+	top: .13rem;
+    background-position: 0 0
+}
+.input_box{
+		position:relative;
+}
+.area_box{
+	position:absolute;
+	width:.62rem;
+	text-align:right;
+	font-size:.14rem;
+}
+.area_icon{
+	width: 0;
+    height: 0;
+    border-left: .04rem solid transparent;
+    border-right: .04rem solid transparent;
+    border-top: .05rem solid #ABABAB;
+    display: inline-block;
+    margin: 0 .07rem 0 .02rem;
+    padding-top: .01rem;
+}
+.telphone{
+    width: 100%;
+    padding-left: .6rem;
+    padding-right: 1.3rem;
+}
+.input_box>.mesg_code{
+		width:1.12rem;
+		border-left:.01rem solid #d7d7d7;
+		padding:0;
+		height:.23rem;
+		line-height:.23rem;
+		top:.125rem;
+		outline:0;
+		background-color:#fff;
+		-webkit-box-shadow: none;
+    	box-shadow: none;
+    	position:absolute;
+    	right:0;
+
+}
+.mesg_disable{
+	color:#848689;
+	}
+.input_box .icon_clear_zhuce{
+	right:1.15rem;
+}
+.telCode{
+		width:100%;
+		padding-right:.32rem;
+		line-height:.48rem;
+		font-size:.14rem;
+}
+.icon_clear_zhuce_telCode{
+	top:.13rem;
+	right:.1rem;
+	background-position:0 0;
+}
+.label_checkbox{
+	position:absolute;
+	right:.05rem;
+	top:.15rem;
+	height:.18rem;
+	overflow:hidden;
+}
+.label_checkbox .checkbtn{
+	display:block;
+	width:.3rem;
+	height:.18rem;
+	background:url(../../images/login/hide_password.png) no-repeat;
+	background-size:100% auto;
+	background-clip:padding-box;
+	color:#fff;
+	-webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+.icon_clear_pass{
+	right:.45rem;
+	top:.12rem;
+}
+.noice{
+    font-size: .12rem;
+	line-height: .3rem;
+	color: #f23030;
+	min-height: .15rem;
+	text-align: left;
+}
+.notice_def{
+	color:#999;
+}
+.btn{
+    height: .45rem;
+    line-height: .46rem;
+    border-radius: 2px;
+    border: 0;
+    background-color: #eee;
+    font-size: .16rem;
+    color: #bfbfbf;
+    display:block;
+    text-align: center;
+}
+.reg_notice{
+	margin-top:.1rem;
+	font-size:.13rem;
+	text-align:left;
+	color:#999;
+}
+.reg_notice a{
+    text-decoration: underline;
+    color: #f23030;
+}
+.toast_ui{
+    display: none;
+    top: 350px;
+    padding: .1rem .15rem;
+    color: #fff;
+    z-index: 200;
+    background: 0;
+    text-align:center;
+}
+.toast{
+    -webkit-animation-name: fadeIn;
+    -webkit-animation-duration: 3s;
+    -webkit-animation-iteration-count: 1;
+    -webkit-animation-delay: 0s;
+    -webkit-transition: all .3s ease;
+    -moz-transition: all .3s ease;
+    transition: all .3s ease;
+    max-width: 80%;
+    display: none;
+    background: #2B2B2B;
+    padding: .07rem .15rem;
+    display: inline-table;
+    text-align: left;
+    border-radius: 3px;
+    font-size:.12rem;
+    display:block;
+    margin:0 auto;
+    width:.78rem;
+}
+
+
+/*注册及隐私政策弹窗 开始*/
+.agreement_dialog{
+	position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    z-index: 999;
+    background: rgba(0,0,0,.5);
+    font-family: PingFangSC-Regular;
+    font-size:0;
+}
+.agreement_body{
+	position: absolute;
+    left: 0;
+    bottom: 0;
+    padding: 0 .05rem 0 .1rem;
+    background: #f8f8f8;
+    width: 100%;
+    height: 4.22rem;
+    overflow: hidden;
+    -webkit-border-radius: .03rem;
+    -moz-border-radius: .03rem;
+    border-radius: .03rem;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+.agreement_msg{
+	height: 4.22rem;
+    position: relative;
+}
+.agreement_title{
+    width: 100%;
+    font-weight: bold;
+    font-size: .18rem;
+    padding: .125rem 0;
+    text-align: center;
+    color:#000;
+    font-size:.18rem;
+}
+.agreement_line{
+    border-top: .01rem solid #d7d7d7;
+    width: 104%;
+    float: left;
+    margin-left: -.1rem;
+}
+.agreement_concent{
+	width: 100%;
+    height: 2.4rem;
+    font-size: .13rem;
+    padding-top: .125rem;
+    color: black;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    text-align: left;
+}
+.agreement_concent p{
+	font-size:.13rem;
+	line-height:.18rem;
+}
+.agreement_concent a{
+	color:#000;
+}
+.important_tip{
+	text-decoration:underline;
+	font-weight:bold;
+}
+.link_top{
+	margin-top:.1rem;
+}
+.link_bottom{
+	margin-bottom:.1rem;
+}
+.agreement_btn_wrap{
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 1.29rem;
+    background: #f8f8f8;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+.agreement_notice{
+	height: .66rem;
+    text-align: left;
+    font-size: .13rem;
+    line-height:.17rem;
+    padding: .1rem .05rem 0 0;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+.agreement_notice span{
+    font-weight: bold;
+    line-height: .13rem;
+}
+.agreement_notice a{
+    text-decoration: underline;
+	color: #F02B2B;
+}
+.agreement_btns{
+	margin-top:.08rem;
+	height:.55rem;
+	font-size:.16rem;
+	text-align:center;
+}
+.agreement_btn{
+	display: inline-block;
+    text-align: center;
+    width: 40%;
+    line-height: .39rem;
+    margin: .08rem 0;
+    -webkit-border-radius: .03rem;
+    -moz-border-radius: .03rem;
+    border-radius: .03rem;
+}
+.agreement_btn_cancel{
+	float: left;
+    color: #000;
+    margin-left: .1rem;
+    background: #fff;
+    border: .01rem solid #d7d7d7;
+    color:#000;
+}
+.btn_complete{
+	color: #fff;
+    float: right;
+    margin-right: .1rem;
+    border: .01rem solid #f15353;
+    background: #f15353;
+    color:#fff;
+}
+/*注册及隐私政策弹窗 结束*/
