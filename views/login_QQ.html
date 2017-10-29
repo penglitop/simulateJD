@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>QQ登录</title>
+	<meta name="viewport" id="viewport" content="width=device-width,intial-scale=1,user-scalable=no"/>
+	<meta name="format-detection" content="telephone=no"/>
+	<meta name="apple-mobile-web-app-capable" content="yes"/>
+	<!--设置html的font-size 开始-->
+	<script type="text/javascript">
+	function htmlFont(){
+		var explorer=navigator.userAgent;
+		if(explorer.indexOf("Opera")>=0){
+			winwid=screen.width;
+		}else{
+			winwid=document.getElementsByTagName('html')[0].offsetWidth;
+		}
+		fosi=winwid/320*100;
+		document.getElementsByTagName('html')[0].style.fontSize=fosi+'px';
+	}
+	htmlFont();
+	window.addEventListener('resize',htmlFont);
+	</script>
+<!--设置html的font-size 开始-->
+	<link rel="stylesheet" type="text/css" href="/stylesheets/login/login_QQ.css"/>
+	<link rel="stylesheet" type="text/css" href="/stylesheets/reset.css"/>
+	<link rel="stylesheet" type="text/css" href="/stylesheets/public.css"/>
+</head>
+</head>
+<body>
+	<div class="content">
+		<header class="page_header">
+			<span class="auth_logo"></span>
+			<h1 class="login_header">登录</h1>
+			<h2>亿万用户已选择QQ帐号登录应用</h2>
+		</header>
+
+		<div class="page_content">
+			<div id="web_login">
+				<div id="pwdlogin" class="login_form_panel">
+					<div class="title" id="title2">帐号密码登录</div>
+					<div id="qlogin_entry">推荐使用<a href="#" class="switch_btn_focus link_tips" id="switcher_qlogin">快速安全登录</a>，防止盗号。</div>
+				</div>
+
+				<div id="form_outter_wrap" class="login_form_row">
+					<div id="form_inner_wrap">
+						<div class="input_wrap">
+							<div class="inner_wrap">
+								<input type="text" class="input_id" id="u" placeholder="支持QQ号/邮箱/手机号登录">
+							</div>
+							<div class="inner_wrap">
+								<input type="text" id="p" class="input_pwd" placeholder="密码">
+							</div>
+						</div>
+						<div id="verifyinput" class="verify_code"></div>
+					</div>
+				</div>
+
+				<div class="btn_group hidecancel"></div>
+			</div>
+		</div>
+	</div>
+
+
+	<div id="error_tips" class="msgbox alert hide"></div>
+
+
+	<div class="new_vcode" id="new_vcode"></div>
+
+
+	<div class="copyright"></div>
+
+
+	<div class="download_bottom" id="download_area"></div>
+</body>
+</html>

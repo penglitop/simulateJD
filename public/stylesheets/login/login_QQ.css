@@ -1,0 +1,16 @@
+body{
+    background: #fff;
+    position: absolute;
+    height: 100%;
+    color: #555;
+    -webkit-user-select: none;
+    -webkit-user-drag: none;
+    -webkit-text-size-adjust: none;
+    overflow: scroll;
+    font-family: '微软雅黑','Helvetica Neue',Helvetica,Arial,sans-serif;
+    width:100%;
+    font-size:0;
+}
+.content{
+	font-size:0;
+}
