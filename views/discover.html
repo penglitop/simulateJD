@@ -31,11 +31,11 @@
 </head>
 <body>
 	<div id="content_29">
-		<div id="content_29_div" class="download_pannel download_noBg">
+		<div id="download_pannel" class="download_pannel download_noBg">
 			<div class="pannel_bg">
 				<img src="/images/index/download_bg.png" alt="固定头部背景图">
 			</div>
-			<div class="download_close">
+			<div class="download_close" id="download_close">
 				<img src="/images/index/icon-close-banner.png" alt="关闭按钮">
 			</div>
 			<div class="download_logo">
@@ -66,7 +66,7 @@
 		</div>
 	<!--商详头部 结束-->
 
-		<ul class="jd_header_short" id="layout_jdBar">
+		<ul class="jd_header_short" id="layout_jdBar" style="display:none;">
 
 			<li>
 				<a href="#">
@@ -102,9 +102,9 @@
 	<!--发现内容 开始-->
 	<div id="main" class="clearfix">
 		<div class="slide_navi_container" id="wrapper">
-			<ul id="wrapper" class="slide_navi clearfix">
-				<li class="navi active">
-					<p class="navi_name">精选</p>
+			<ul id="wrapper" class="slide_navi clearfix slideBctive">
+				<li class="navi">
+					<p class="navi_name  activeF">精选</p>
 				</li>
 
 				<li class="navi">
@@ -122,14 +122,18 @@
 				<li class="navi">
 					<p class="navi_name">数码</p>
 				</li>
+
+				<li class="navi">
+					<p class="navi_name">美食</p>
+				</li>
 			</ul>
 		</div>
-		<div class="down_navi_arrow">
-			<span class="arrow"></span>
+		<div class="down_navi_arrow" id="down_navi_arrow">
+			<span class="arrow"  id="navi_arrow"></span>
 		</div>
-		<ul class="down_navi clearfix down_transition">
-			<li class="navi active">
-				<p class="navi_name">精选</p>
+		<ul class="down_navi clearfix down_transition displayNone" id="down_transition">
+			<li class="navi">
+				<p class="navi_name activeS">精选</p>
 			</li>
 
 			<li class="navi">
@@ -279,5 +283,8 @@
 		<div class="to_top"></div>
 	</div>
 	<!--发现内容 结束-->
+
+	<script type="text/javascript" src="/javascripts/way_base.js"></script>
+	<script type="text/javascript" src="/javascripts/list_page/discover.js"></script>
 </body>
 </html>

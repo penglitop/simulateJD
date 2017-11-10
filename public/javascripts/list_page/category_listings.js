@@ -1,0 +1,132 @@
+"use strict";
+/*列表出现 开始*/
+;(function(global){
+	var layKey=bycss('#layout_jdKey'),
+		layjdBar=bycss('#layout_jdBar');
+
+		layKey.addEventListener('click',function(){
+			if(layjdBar.style.display=='none'){
+				show(layjdBar);
+			}else{
+				hide(layjdBar);
+			}
+		})
+})(this);
+/*列表出现 结束*/
+
+/*清空特色服务 开始*/
+/*;(function(global){
+	var cleanBtn=bycss('#clean_btn'),
+		cleanBox=bycss('#clean_box'),
+		searchToast=bycss('#search_toast'),
+		yesClean=bycss('#yes_clean'),
+		noClean=bycss('#no_clean');
+
+	var cleanSeaTost=localStorage.getItem('cleanSeaTost');
+		if(cleanSeaTost=='false'){
+			return
+		}
+
+		cleanBtn.addEventListener('click',function(){
+			show(searchToast);
+		});
+
+		yesClean.addEventListener('click',function(){
+			hide(searchToast);
+			hideBox();
+		});
+
+		noClean.addEventListener('click',function(){
+			hide(searchToast);
+		});		
+
+		function hideBox(){
+			if(cleanBox){
+				cleanBox.style.display=='none';
+				localStorage.setItem('cleanSeaTost','false');
+			}
+		}
+})(this);*/
+/*清空特色服务 结束*/
+
+/*左侧目录 开始*/
+;(function(global){
+	var cateListUl=bycss('#category_list_ul'),
+		ulHeight=cateListUl.offsetHeight,
+		conHeight=bycss('#category12').offsetHeight,
+		cha=ulHeight-conHeight,
+		aA=bycssAll('a',cateListUl),
+		activeInd=0,
+		startY=0,
+		lastY=0;
+
+		for(var i=0;i<aA.length;i++){
+			aA[i].index=i;
+			aA[i].addEventListener('click',function(e){
+				e.stopPropagation();
+				if(!hasClass(this,'active')){
+					removeClass(aA[activeInd],'active');
+					addClass(this,'active');
+					activeInd=this.index;
+					lastY=-(this.index*aA[0].offsetHeight);
+					if(lastY<-cha){
+						lastY=-cha;
+					}
+					setTranslate(cateListUl,lastY);
+				}
+			})
+		};
+
+		var int=function(){
+				if(cha<=0){
+					return;
+				}
+				cateListUl.addEventListener('touchstart',startTouch);
+				cateListUl.addEventListener('touchmove',moveTouch);
+				cateListUl.addEventListener('touchend',endTouch);
+			},
+			startTouch=function(e){
+				startY=e.touches[0].clientY;
+			},
+			moveTouch=function(e){
+				var moveY=e.changedTouches[0].clientY-startY+lastY;
+				setTranslate(cateListUl,moveY);
+			},
+			endTouch=function(e){
+				var endY=e.changedTouches[0].clientY-startY+lastY;
+				if(endY>0){
+					endY=0;
+				}else if(endY<-cha){
+					endY=-cha;
+				}
+				lastY=endY;
+				setTranslate(cateListUl,endY);
+			};
+			int();
+})(this);
+/*左侧目录 结束*/
+
+/*输入框部分 开始*/
+;(function(global){
+	var layNewkeyword=bycss('#layout_newkeyword'),
+		laySearchSubmit=bycss('#layout_search_submit'),
+		layoutJdKey=bycss('#layout_jdKey'),
+		categoryBody=bycss('#categoryBody'),
+		searchLand=bycss('#search_land_searchland'),
+		layUrlblack=bycss('#layout_urlblack');
+
+		layNewkeyword.addEventListener('click',function(){
+			hide(categoryBody);
+			hide(layoutJdKey);
+			show(searchLand);
+			show(laySearchSubmit);
+		});
+
+		layUrlblack.addEventListener('click',function(){
+			hide(searchLand);
+			hide(laySearchSubmit);
+			show(layoutJdKey);
+			show(categoryBody)
+		})		
+})(this);
+/*输入框部分 结束*/

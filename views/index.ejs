@@ -39,51 +39,16 @@
 	<div class="scroll_wrapper" id="scwrapper">
 		<div class="viewport_new" id="newviewport">
 			<!--轮播 开始-->
-			<div class="slider floor">
-				<ul class="slider_list">
-					<li>
-						<a href="#">
-							<img src="/images/index/slid1.jpg" alt="">
-						</a>
-					</li>
-
-					<li>
-						<a href="#">
-							<img src="/images/index/slid2.jpg" alt="">
-						</a>
-					</li>
-
-					<li>
-						<a href="#">
-							<img src="/images/index/slid3.jpg" alt="">
-						</a>
-					</li>
-
-					<li>
-						<a href="#">
-							<img src="/images/index/slid4.jpg" alt="">
-						</a>
-					</li>
-
-					<li>
-						<a href="#">
-							<img src="/images/index/slid5.jpg" alt="">
-						</a>
-					</li>
-
-					<li>
-						<a href="#">
-							<img src="/images/index/slid6.jpg" alt="">
-						</a>
-					</li>
+			<div class="slider floor" id="slider">
+				<ul class="slider_list" id="slider_list">
+					<li class="sliderItem"><a href=""><img src="/images/index/slid1.jpg" alt=""></a></li>
+					<li class="sliderItem"><a href=""><img src="/images/index/slid2.jpg" alt=""></a></li>
+					<li class="sliderItem"><a href=""><img src="/images/index/slid3.jpg" alt=""></a></li>
+					<li class="sliderItem"><a href=""><img src="/images/index/slid4.jpg" alt=""></a></li>
+					<li class="sliderItem"><a href=""><img src="/images/index/slid5.jpg" alt=""></a></li>
+					<li class="sliderItem"><a href=""><img src="/images/index/slid6.jpg" alt=""></a></li>
 				</ul>
-				<div class="focus_btn">
-					<span class="focus_active"></span>
-					<span></span>
-					<span></span>
-					<span></span>
-					<span></span>
-					<span></span>
+				<div class="focus_btn" id="focus_btn"><!-- focus_active -->
 				</div>
 			</div>
 			<!--轮播 开始-->
@@ -193,7 +158,7 @@
 				</a>
 
 				<div id="scroll_news" class="news_list_wrapper">
-					<ul class="news_list news_active">
+					<ul class="news_list">
 						<li class="news_item">
 							<a href="#" class="news_txt"><span class="red">抢</span>家居狂欢周，1元好货限时抢购</a>
 						</li>
@@ -223,19 +188,13 @@
 							<strong id="seckill_now" class="seckill_nth"><em>12</em>点场</strong>
 							<div class="seckill_timer" id="seckill_time">
 
-								<div class="seckill-time">
-									<span>0</span><span>0</span>
-								</div>
+								<div class="seckill-time" id="time_hours">00</div>
 								<span class="seckill-time-separator">:</span>
 
-								<div class="seckill-time">
-									<span>0</span><span>0</span>
-								</div>
+								<div class="seckill-time" id="time_mintues">00</div>
 								<span class="seckill-time-separator">:</span>
 
-								<div class="seckill-time">
-									<span>0</span><span>0</span>
-								</div>
+								<div class="seckill-time" id="time_seconds">00</div>
 
 							</div>
 						</a>
@@ -1836,7 +1795,7 @@
 			<div class="pannel_bg">
 				<img src="/images/index/download_bg.png" alt="固定头部背景图">
 			</div>
-			<div class="download_close">
+			<div class="download_close" id="download_close">
 				<img src="/images/index/icon-close-banner.png" alt="关闭按钮">
 			</div>
 			<div class="download_logo">
@@ -1851,6 +1810,7 @@
 			</div>
 		</div>
 		<div id="index_search_main">
+			<div class="jd_search_box_cover" id="jd_search_box_cover"></div>
 			<div class="search_main">
 				<div class="search_left">
 				<div class="search_box">
@@ -1869,7 +1829,8 @@
 	</div>
 	<!--固定头部 开始-->
 
-
+<script type="text/javascript" src="/javascripts/way_base.js"></script>
+<script type="text/javascript" src="/javascripts/index.js"></script>
 
 </body>
 </html>

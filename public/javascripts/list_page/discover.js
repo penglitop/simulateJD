@@ -1,0 +1,70 @@
+"use strict";
+/*关闭固定头部 开始*/
+;(function(glboal){
+	var downloadBannel=byid('download_pannel'),
+		downloadClose=byid('download_close');
+
+	downloadClose.addEventListener('click',function(){
+		hide(downloadBannel);
+	});
+})(this);
+/*关闭固定头部 结束*/
+
+/*列表出现 开始*/
+;(function(global){
+	var layKey=bycss('#m_common_bottom_jdkey'),
+		layjdBar=bycss('#layout_jdBar'),
+		headerGoback=bycss('#m_common_header_goback');
+
+		layKey.addEventListener('click',function(){
+			if(layjdBar.style.display=='none'){
+				show(layjdBar);
+			}else{
+				hide(layjdBar);
+			}
+		});
+
+		headerGoback.addEventListener('click',function(){
+			if(window.history.go(-1)){
+				window.history.go(-1);
+			}
+		})
+})(this);
+/*列表出现 结束*/
+
+/*精选列表 开始*/
+;(function(global){
+	var naviArrow=bycss('#down_navi_arrow'),
+		arrow=bycss('#navi_arrow'),
+		downTransition=bycss('#down_transition'),
+		wrapperUl=bycss('#wrapper'),
+		aWrapperP=bycssAll('.navi_name',wrapperUl),
+		aDownTraP=bycssAll('.navi_name',downTransition),
+		activeInd=0;
+
+
+		naviArrow.addEventListener('click',function(){
+			if(!hasClass(downTransition,'displayNone')){
+					removeClass(arrow,'arrow_up');
+					addClass(downTransition,'displayNone');
+					addClass()		
+			}else{
+				addClass(arrow,'arrow_up');
+				removeClass(downTransition,'displayNone');
+			}
+		});
+
+		for(var i=0;i<aWrapperP.length;i++){
+			aWrapperP[i].index=i;
+			aWrapperP[i].addEventListener('click',function(){
+				if(!hasClass(this,'activeF')){
+					removeClass(aWrapperP[activeInd],'activeF');
+					addClass(this,'activeF');
+					removeClass(aDownTraP[activeInd],'activeS');
+					addClass(aDownTraP[this.index],'activeS');
+					activeInd=this.index;
+				}
+			})
+		}
+})(this);
+/*精选列表 结束*/

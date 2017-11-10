@@ -27,6 +27,10 @@
 .jd_category_list{
 	height:5.23rem;
 }
+.category_list_ul{
+	transition:all .3s ease-out;
+	transform:translate3d(0px,0px,0px);
+}
 .category_viewport>ul{
 	width:.75rem;
 	display:block;
@@ -49,6 +53,9 @@
 	overflow:hidden;
 	text-overflow:ellipsis;
 	white-space:nowrap;
+}
+.jd_category_tab li>a.active{
+	color:#f23030;
 }
 .jd_category_tab li:before{
 	content:'';

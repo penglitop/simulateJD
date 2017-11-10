@@ -34,7 +34,7 @@
 </head>
 </head>
 <body class="hide_landing">
-<!--搜索头部 开始-->
+<!-- 搜索头部 开始 -->
 	<div class="top_bar_container" id="containerTop">
 		<div class="jd_header_bar on_blur" id="layout_search_head">
 			<div class="jd_header_icon_cancel" id="layout_search_bar_cancel">
@@ -47,17 +47,22 @@
 				<div class="jd_search_box">
 					<div class="jd_search_input">
 						<i id="search_input_left_icon" class="jd_header_icon_fdj"></i>
-						<input type="text" id="layout_newkeyword" class="hilight1" placeholder="9.11大闸蟹超级单品日 满499减200">
+						<input type="text" id="layout_newkeyword" class="hilight1" placeholder="笔记本电脑">
 					</div>
 				</div>
+
+				<a href="javascript:void(0);" class="jd_header_icon_search1" id="layout_search_submit" style="display:none;">
+					<span>搜索</span>
+				</a>
 			</form>
+
 			<div class="jd_header_icon_shortcut" id="layout_jdKey">
 				<span>京东键</span>
 			</div>
 		</div>
-<!--搜索头部 结束-->
+<!-- 搜索头部 结束 -->
 
-		<ul class="jd_header_short" id="layout_jdBar">
+		<ul class="jd_header_short" id="layout_jdBar" style="display:none">
 
 			<li>
 				<a href="#">
@@ -95,10 +100,10 @@
 	<div class="category_viewport" id="categoryBody">
 		<div class="jd_category_tab" id="rootList">
 			<div class="jd_category_list" id="category12">
-				<ul id="category11">
+				<ul id="category_list_ul" class="category_list_ul">
 
 					<li class="cur" id="category15">
-						<a href="#" class="J_ping">热门推荐</a>
+						<a href="#" class="J_ping active">热门推荐</a>
 					</li>
 
 					<li id="category16">
@@ -252,12 +257,12 @@
 						</a>
 					</div>
 
-					<div class="jd_category_div cur">
-						<a href="#" class="delete_box" id="category10">
+					<div class="jd_category_div cur" id="clean_box">
+						<a href="#" class="delete_box" id="clean_btn">
 							<i></i>
 							<span>清空</span>
 						</a>
-						<h4>特色业务</h4>
+						<h4>常用分类</h4>
 						<ul class="jd_category_style1">
 
 							<li>
@@ -290,7 +295,7 @@
 							<span>排行榜</span>
 							<i class="right_arrow"></i>
 						</a>
-						<h4>特色业务</h4>
+						<h4>电子产品</h4>
 						<ul class="jd_category_style1">
 
 							<li>
@@ -481,18 +486,127 @@
 									<span>运动服饰</span>
 								</a>
 							</li>
-
-
-							<ul class="text_ul_border">
-								<li>
-									<a href="#" class="J_ping">儿童文学</a>
-								</li>
-							</ul>
 						</ul>
 					</div>
 				</div>
 			</div>
 		</div>
 	</div>
+   
+   <!-- 搜索弹出页面 开始 -->
+	<div id="search_land_searchland" class="search_land"  style="display:none;">
+		<div id="recent_search" class="recent_search">
+			<div class="recent_search_head">
+				<p>最近搜索</p>
+				<i class="garbage_pic" id="trash_can"></i>
+			</div>
+
+			<div id="recent_search_tags" class="recent_search_tags">
+				<span>
+					<a href="javascript:void(0);">牛奶</a>
+				</span>
+
+				<span>
+					<a href="javascript:void(0);">11.11专场</a>
+				</span>
+			</div>
+		</div>
+		<div id="hot_search" class="hot_search">
+			<div class="hot_search_head">
+				<p>热门搜索</p>
+				<i class="around_pic" id="hot_change_btn" style="display:none;"></i>
+			</div>
+			<div id="hot_search_tags" class="hot_search_tags">
+				<span>
+					<a href="javascript:void(0);">
+						<i class="hot_search_move">11.11专场</i>
+					</a>
+				</span>
+
+				<span>
+					<a href="javascript:void(0);">
+						<i class="hot_search_move">超级秒杀</i>
+					</a>
+				</span>
+
+				<span>
+					<a href="javascript:void(0);">
+						<i class="hot_search_move">多功能沙发床</i>
+					</a>
+				</span>
+
+				<span>
+					<a href="javascript:void(0);">
+						<i class="hot_search_move">移动书架</i>
+					</a>
+				</span>
+
+				<span>
+					<a href="javascript:void(0);">
+						<i class="hot_search_move">魔术头巾</i>
+					</a>
+				</span>
+
+				<span>
+					<a href="javascript:void(0);">
+						<i class="hot_search_move">欧式果盘</i>
+					</a>
+				</span>
+
+				<span>
+					<a href="javascript:void(0);">
+						<i class="hot_search_move">户外急救包</i>
+					</a>
+				</span>
+
+				<span>
+					<a href="javascript:void(0);">
+						<i class="hot_search_move">固态硬盘</i>
+					</a>
+				</span>
+
+				<span>
+					<a href="javascript:void(0);">
+						<i class="hot_search_move">进口牛奶</i>
+					</a>
+				</span>
+
+				<span>
+					<a href="javascript:void(0);">
+						<i class="hot_search_move">斯诺克球杆</i>
+					</a>
+				</span>
+
+				<span>
+					<a href="javascript:void(0);">
+						<i class="hot_search_move">保温杯</i>
+					</a>
+				</span>
+
+				<span>
+					<a href="javascript:void(0);">
+						<i class="hot_search_move">牛奶</i>
+					</a>
+				</span>
+			</div>
+		</div>
+	</div>
+   <!-- 搜索弹出页面 结束 -->
+
+   <!-- 清空弹窗 开始 -->
+	<div class="search_toast" id="search_toast" style="display:none;">
+		<div class="black_floor"></div>
+		<div class="ground_toast">
+			<div class="toast_content">确定要清空吗？</div>
+			<div class="toast_btn">
+				<a class="no_clean" id="no_clean">取消</a>
+				<a class="yes_clean" id="yes_clean">确定</a>
+			</div>
+		</div>
+	</div>
+   <!-- 清空弹窗 结束 -->
+
+	<script type="text/javascript" src="/javascripts/way_base.js"></script>
+	<script type="text/javascript" src="/javascripts/list_page/category_listings.js"></script>
 </body>
 </html>

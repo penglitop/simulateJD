@@ -118,8 +118,12 @@
 	width:22.5rem;
 	transition-timing-function:cubic-bezier(0.1,0.57,0.1,1);
 	transition-duration:0ms;
-	transform:translate(0rem 0rem) translateZ(0rem); 
+	transform:translate(0px,0px,0px); 
 	overflow:hidden;
+
+}
+.slideBctive {
+	border-bottom:.01rem solid #ddd;
 }
 .slide_navi_container .slide_navi .navi{
 	position:relative;
@@ -140,9 +144,12 @@
 	top:.1rem;
 	background:#aaa;
 }
- .slide_navi .navi.active .navi_name{
+ .activeF{
  	color:red;
  	border-bottom:.02rem solid red;
+ }
+ .activeS{
+ 	color:red;
  }
  .down_navi_arrow{
  	width:10%;
@@ -152,6 +159,16 @@
  	font-size:.12rem;
  	line-height:.3rem;
  }
+.arrow_up{
+	-webkit-transform: rotate(180deg);
+    transform: rotate(180deg);
+    -moz-transform: rotate(180deg);
+    -ms-transform: rotate(180deg);
+    -o-transform: rotate(180deg);
+ }
+ .displayNone{
+ 	display:none;
+ }
  .down_navi_arrow .arrow{
  	background:url(../../images/list_page/list_product/down_arrow.png) no-repeat;
  	display:block;
@@ -159,8 +176,8 @@
  	background-position:50% 50%;
  	width:100%;
  	height:100%;
- 	-webkit-transition:rotate,.3s;
- 	transition:rotate .3s;
+ 	-webkit-transition:all,.3s ease-out;
+ 	transition:all .3s ease-out;
  	display:inline-block;
  }
  .down_navi{
@@ -172,7 +189,8 @@
  .down_transition{
  	transition:all .2s ease;
  	-webkit-transition:all .2s ease;
- 	display:none;
+ 	-moz-transition:all .2s ease;
+ 	-o-transition:all .2s ease;
  }
  .down_navi .navi{
  	box-sizing:border-box;
