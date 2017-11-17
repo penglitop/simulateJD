@@ -41,7 +41,7 @@
 					<div class="pannel_bg">
 						<img src="/images/index/download_bg.png" alt="固定头部背景图">
 					</div>
-					<div class="download_close">
+					<div class="download_close" id="download_close">
 						<img src="/images/index/icon-close-banner.png" alt="关闭按钮">
 					</div>
 					<div class="download_logo">
@@ -206,7 +206,7 @@
 			<div id="miblebox" class="goods_img_box">
 
 				<!--头部等顶部部分占位 开始-->
-				<div class="hold_div_top" style="height:.94rem"></div>
+				<div class="hold_div_top" id="hold_div_top" style="height:.44rem"></div>
 				<!--头部等顶部部分占位 结束-->
 
 
@@ -264,10 +264,10 @@
 
 									<!--商品描述 开始-->
 									<div class="goods_part bdr_tab price_floor">
-										<div class="basic_info bdr_b borb">
+										<div class="basic_info borb">
 											<!--商品名称 开始-->
 											<div class="prod_title">
-												<a href="#" class="detialInfoClick">
+												<a class="detialInfoClick">
 													<span class="title_text_wrap">
 														<i class="label_icon_div have_not_icon_div red_div icon_pos">
 															<span class="lable_text white_text">京东配送</span>
@@ -282,7 +282,7 @@
 												<div class="prod_price">
 													<span class="yang_pic"></span>
 													<span class="yang_pic_price" id="jdPrice_copy">
-														<span class="big_price">45</span><span class="small_price">.90</span>
+														<span class="big_price" id="big_price">45</span><span class="small_price" id="small_price">.90</span>
 													</span>
 												</div>
 
@@ -303,8 +303,9 @@
 											<span class="part_note_msg">白条</span>
 											<div class="prod_whitebar_txt">【白条支付】即享3期免息</div>
 										</div>
+									</div>
 
-										<div class="prod_promotion bdr_b borb arrow_fold">
+									<div class="prod_promotion bdr_b borb arrow_fold">
 										<div id="prodPromotion" class="prod_promotion_container promotion_up J_ping">
 											<span class="part_note_msg">促销</span>
 											<div class="promotion_content arrow_fold">
@@ -312,7 +313,7 @@
 													<span>可享受以下优惠</span>
 												</div>
 
-												<div class="promotion_item item_import" style="display:none">
+												<div class="promotion_item item_import" id="promotion_item" style="display:none">
 													<i class="label_icon_div have_not_icon_div">
 														<span class="label_text">限制</span>
 													</i>
@@ -334,11 +335,10 @@
 												</div>
 
 												<span class="promotion-left">
-													<em class="icon_arrow icon_arrow_position arrow_fold"></em>
+													<em class="icon_arrow icon_arrow_position arrow_fold" id="promoicon_arrow"></em>
 												</span>
 											</div>
 										</div>
-									</div>
 									</div>
 									<!--plus优先购预约 结束-->
 
@@ -349,9 +349,9 @@
 											<div class="spec_desc">
 												<span class="part_note_msg">已选</span>
 												<div id="specDetailInfo" class="base_txt">
-													<span class="amount">1件</span>
+													<span class="amount" id="amount">1件</span>
 												</div>
-												<em class="icon_popups"></em>
+												<em class="icon_popups" id="icon_popups"></em>
 											</div>
 										</div>
 									</div>
@@ -386,12 +386,12 @@
 									<div class="service_floor J_ping">
 										<div class="service_tip_module">
 											<i class="service_icon support_service_icon"></i>
-											<span class="service_icon_text">京东发货&店铺售后</span>
+											<span class="service_icon_text" id="service_text1">京东发货&店铺售后</span>
 										</div>
 
 										<div class="service_tip_module">
 											<i class="service_icon nonsupport_service_icon"></i>
-											<span class="service_icon_text">不可七天退货</span>
+											<span class="service_icon_text" id="service_text2">不可七天退货</span>
 										</div>
 									</div>
 									<!--送至地点 结束-->
@@ -1128,15 +1128,16 @@
 				<span class="depreciate_inform_title">设置降价通知</span>
 				<span class="depreciate_inform_title2">若商品30天内降价，手机短信会通知您</span>
 				<input type="number" class="input_box J_ping" id="depreciate_price" placeholder="请输入期望价格">
-				<span class="input_prompt">请输入价格</span>
+				<span class="input_prompt" id="input_prompt" style="visibility:hidden;">请输入价格</span>
 				<input type="tel" class="input_box J_ping" id="depreciate_phoneno" placeholder="请输入手机号码">
-				<span class="phone_num_prompt">手机号码错误请重新输入</span>
+				<span class="phone_num_prompt" id="phone_num_prompt" style="visibility:hidden;">手机号码错误请重新输入</span>
 				<div class="cancel_yes_box cf">
 					<div class="cancel_but_box">
-						<div class="cancel_but J_ping">取消</div>
-						<div class="yes_but J_ping">确定</div>
+						<div class="cancel_but J_ping" id="cancel_but">取消</div>
+						<div class="yes_but J_ping" id="yes_but">确定</div>
 					</div>
 				</div>
+				<span class="discount_block" id="discount_block" style="display:none;">0.6折</span>
 			</div>
 			<!--降价通知 结束-->
 
@@ -1146,7 +1147,7 @@
 				<span class="depreciate_inform_title">设置到货通知</span>
 				<span class="depreciate_inform_title2">若商品30天内到货，手机短信会通知您</span>
 				<input type="tel" class="input_box J_ping" id="depreciate_phoneno" placeholder="请输入手机号码">
-				<span class="phone_num_prompt">手机号码错误请重新输入</span>
+				<span class="phone_num_prompt" style="visibility:hidden;">手机号码错误请重新输入</span>
 				<div class="cancel_yes_box cf">
 					<div class="cancel_but_box">
 						<div class="cancel_but J_ping">取消</div>
@@ -1189,11 +1190,32 @@
 
 
 	<!--添加购物车成功提示文案 开始-->
-	<div class="add_succesed">
+	<div class="add_succesed" id="add_succesed" style="display:none;">
 		<span class="add_succesed_icon"></span>
 		<span class="prompt_text">加入购物车成功！</span>
 	</div>
 	<!--添加购物车成功提示文案 结束-->
+
+	<!--关注成功提示文案 开始-->
+	<div class="add_succesed" id="concern_succesed" style="display:none;">
+		<span class="add_succesed_icon"></span>
+		<span class="prompt_text">关注成功！</span>
+	</div>
+	<!--关注成功提示文案 结束-->
+
+	<!--取消关注提示文案 开始-->
+	<div class="add_succesed" id="cancel_concern" style="display:none;">
+		<span class="add_succesed_icon"></span>
+		<span class="prompt_text">取消关注！</span>
+	</div>
+	<!--取消关注提示文案 结束-->
+
+	<!--降价订阅成功提示文案 开始-->
+	<div class="add_succesed" id="subscribe" style="display:none;">
+		<span class="add_succesed_icon"></span>
+		<span class="prompt_text">订阅成功！</span>
+	</div>
+	<!--降价订阅成功提示文案 结束-->
 
 
 	<!--暂无回复 开始-->
@@ -1211,20 +1233,20 @@
 	<!--上层页面回到顶部 结束-->
 
 	<!--灰色弹出层 开始-->
-	<div class="flick_menu_mask" style="display:none"></div>
+	<div class="flick_menu_mask" style="display:none" id="flick_menu_mask"></div>
 	<!--灰色弹出层 结束-->
 
 
 	<!--选择商品弹层 开始-->
-	<div class="spec_menu" style="display:none">
-		<div class="spea_menu_content">
+	<div class="spec_menu">
+		<div class="spea_menu_content" id="spec_menu" style="display:none">
 			<div class="spec_menu_top bdr_b">
 
 				<div class="spec_first_pic">
 					<img src="/images/detial_page/59b5e131N5f07c694.jpg!q70.jpg" alt="" id="">
 				</div>
 
-				<a href="#" class="rt_close_btn_wrap spec_menu_close">
+				<a class="rt_close_btn_wrap spec_menu_close" id="spec_menu_close">
 					<p class="flick_menu_close"></p>
 				</a>
 
@@ -1263,18 +1285,18 @@
 					<div class="spec_desc">
 						<span class="part_note_msg">已选</span>
 						<div id="specDetailInfo_spec" class="base_txt">
-							<span class="amount">1件</span>
+							<span class="amount" id="select_amount">1件</span>
 						</div>
 					</div>
 					<div class="nature_container" id="natureCotainer">
 						<div id="addCartNum" class="pro_count">
 							<span class="part_note_msg">数量</span>
 							<div class="quantity_wrapper">
-								<a href="#" class="quantity_decrease limited J_ping">
+								<a class="quantity_decrease limited J_ping" id="quantity_decrease">
 									<em id="minus">-</em>
 								</a>
 								<input type="text" class="quantity" value="1" id="number">
-								<a href="#" class="quantity_increase J_ping" id="quantityPlus">
+								<a class="quantity_increase J_ping" id="quantityPlus">
 									<em id="plus">+</em>
 								</a>
 							</div>
@@ -1290,7 +1312,7 @@
 
 			<!--选择商品弹层确认取消按钮 开始-->
 			<div class="flick_menu_btn spec_menu_btn">
-				<a href="#" class="yellow_color abb_cart" id="add_cart_spec">加入购物车</a>
+				<a class="yellow_color abb_cart" id="add_cart_spec">加入购物车</a>
 				<a href="#" class="red_color directorder" id="directorder_spec">立即购买</a>
 				<a href="#" class="yellow_color J_ping looksimilar looksimilara looksimilar_spec" id="looksimilar_speca" style="display:none;">查看相似</a>
 				<a href="#" class="yellow_color J_ping looksimilar looksimilarb looksimilar_spec" id="looksimilar_specb" style="display:none;">查看同款</a>
@@ -1309,9 +1331,9 @@
 
 
 	<!--服务弹层 开始-->
-	<div class="service_menu" style="display:none">
+	<div class="service_menu" id="service_menu" style="display:none">
 		<div class="flick_menu_title">服务说明</div>
-		<a href="#" class="rt_close_btn_wrap service_menu_close  J_ping">
+		<a class="rt_close_btn_wrap service_menu_close  J_ping" id="service_menu_close">
 			<p class="flick_menu_close"></p>
 		</a>
 		<div class="service_menu_wrapper">
@@ -1328,7 +1350,7 @@
 			</div>
 		</div>
 		<div class="flick_menu_btn J_ping">
-			<div class="service_ok_btn">确定</div>
+			<div class="service_ok_btn" id="service_ok_btn">确定</div>
 		</div>
 	</div>
 	<!--服务弹层 结束-->
@@ -1348,20 +1370,21 @@
 				<span class="focus_info">卖家</span>
 			</a>
 
-			<a href="#" class="love_heart_icn J_ping" id="focusOn">
+			<a class="love_heart_icn J_ping" id="focusOn">
 				<em class="btm_act_icn focus_out" id="attentionFocus"></em>
-				<span class="focus_info">关注</span>
+				<i class="focus_scale" id="focus_scale" style="display:none;"></i>
+				<span class="focus_info" id="concern_info">关注</span>
 			</a>
 
 			<a href="#" class="cart_car_icn J_ping" id="toCartNew">
 				<em class="btm_act_icn" id="shoppingCart">
-					<i class="order_numbers" id="carNum">1</i>
+					<i class="order_numbers" id="carNum">0</i>
 				</em>
 				<span class="focus_info">购物车</span>
 			</a>
 		</div>
 		<div class="action_list">
-			<a href="#" class="yellow_color add_cart" id="addCartBtm">加入购物车</a>
+			<a class="yellow_color add_cart" id="addCartBtm">加入购物车</a>
 			<a href="#" class="red_color directorder" id="directorderBtm">立即购买</a>
 			<a href="#" class="yellow_color J_ping looksimilar looksimilara" style="display:none">查看相似</a>
 			<a href="#" class="yellow_color J_ping looksimilar looksimilarb looksimilar_spec" style="display:none">查看同款</a>
@@ -1369,5 +1392,8 @@
 		</div>
 	</div>
 	<!--底部按钮 结束-->
+
+	<script type="text/javascript" src="/javascripts/way_base.js"></script>
+	<script type="text/javascript" src="/javascripts/detial_page/detial_page.js"></script>
 </body>
 </html>

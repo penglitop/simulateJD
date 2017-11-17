@@ -99,11 +99,12 @@ function hide(obj){
 		return;
 }
 
-function setTranslate(el,y){
-		var value='translate3d(0px,'+y+'px,0px)';
+function setTranslate(el,x,y,z){
+		var value='translate3d('+x+'px,'+y+'px,'+z+'px)';
         el.style.transform = value;
         el.style.webkitTransform=value;
         el.style.msTransform=value;
         el.style.mozTransform=value;
         el.style.oTransform = value;
 }
+

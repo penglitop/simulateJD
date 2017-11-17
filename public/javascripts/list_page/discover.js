@@ -46,11 +46,17 @@
 		naviArrow.addEventListener('click',function(){
 			if(!hasClass(downTransition,'displayNone')){
 					removeClass(arrow,'arrow_up');
-					addClass(downTransition,'displayNone');
-					addClass()		
+					addClass(downTransition,'down_active');
+					setTimeout(function(){
+						addClass(downTransition,'displayNone');
+					},200);
+						
 			}else{
 				addClass(arrow,'arrow_up');
-				removeClass(downTransition,'displayNone');
+				removeClass(downTransition,'down_active');
+				setTimeout(function(){
+					removeClass(downTransition,'displayNone');
+				},200);
 			}
 		});
 
@@ -68,3 +74,33 @@
 		}
 })(this);
 /*精选列表 结束*/
+
+
+/*返回到顶部 开始*/
+;(function(global){
+	var toTopBtn=bycss('#to_top'),
+		toToptimer=null;
+
+	window.addEventListener('scroll',function(){
+		var oldScrollTop=document.documentElement.scrollTop||window.pageYOffset||document.body.scrollTop;
+		if(oldScrollTop>=5){
+			show(toTopBtn);
+		}else{
+			hide(toTopBtn);
+		}
+	});
+	toTopBtn.addEventListener('click',function(){
+		clearInterval(toToptimer);
+		toToptimer=setInterval(toTop,30);
+	});
+
+	function toTop(){
+		var oldScrollTop=document.documentElement.scrollTop||window.pageYOffset||document.body.scrollTop,
+			iSpeed=Math.floor(-oldScrollTop/6);
+		document.body.scrollTop=window.pageYOffset=document.documentElement.scrollTop=oldScrollTop+iSpeed;
+		if(oldScrollTop==0){
+				clearInterval(toToptimer);
+			}
+	}
+})(this);
+/*返回到顶部 结束*/

@@ -183,8 +183,16 @@
  .down_navi{
  	position:absolute;
  	z-index: 999;
- 	top:.37rem;
+ 	top:.34rem;
  	background:#f2f2f2;
+ }
+ .down_active{
+ 	top:0;
+ 	opacity:0;
+ }
+ .up_active{
+	top:.34rem;
+ 	opacity:1;
  }
  .down_transition{
  	transition:all .2s ease;
@@ -358,6 +366,7 @@
     background:url(../../images/list_page/list_product/to-top.png) no-repeat;
     background-size: .35rem .35rem;
     background-position: 50%;
+    display:none;
  }
 
 /*发现内容 结束*/
