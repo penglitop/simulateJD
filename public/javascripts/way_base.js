@@ -108,3 +108,11 @@ function setTranslate(el,x,y,z){
         el.style.oTransform = value;
 }
 
+//跨浏览器获取style：
+function getStyle(elements,attr){
+	if(typeof window.getComputedStyle!='undefined'){
+		return window.getComputedStyle(elements,null)[attr];
+	}else if(typeof elements.currentStyle!='undefined'){
+		return elements.currentStyle()[attr];
+	}
+}

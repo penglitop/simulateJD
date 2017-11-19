@@ -148,8 +148,8 @@
 				<!--首页-浏览记录头部 结束-->
 
 				<!--普通商品详情分支头部 开始-->
-				<div id="fixed" class="sift_tab" style="display:none">
-					<ul class="tab_lst">
+				<div id="detial_fixed" class="sift_tab" style="display:none">
+					<ul class="tab_lst" id="tab_lst">
 						<li>
 							<a href="#" class="on">商品介绍</a>
 						</li>
@@ -206,17 +206,17 @@
 			<div id="miblebox" class="goods_img_box">
 
 				<!--头部等顶部部分占位 开始-->
-				<div class="hold_div_top" id="hold_div_top" style="height:.44rem"></div>
+				<div class="hold_div_top" id="hold_div_top"></div>
 				<!--头部等顶部部分占位 结束-->
 
 
 				<!--上层页面外容器 开始-->
-				<div class="header_slider">
+				<div class="header_slider" id="header_slider">
 					<div class="header_slider_con">
 						<ul>
 
 							<!--商品 开始-->
-							<li id="productTabLi" class="header_slider_item" style="width:100%;">
+							<li id="productTabLi" class="header_slider_item">
 								<div id="mainLayout" class="page_content">
 
 									<!--焦点图片 开始-->
@@ -601,10 +601,10 @@
 							<!--商品 结束-->
 
 							<!--详情 开始-->
-							<li class="header_slider_item posi_rela" style="width:100%;display:none;">
+							<li class="header_slider_item posi_rela">
 								<div class="good_detial sift_img" id="goodDetail">
 									<!--商品介绍 开始-->
-									<div class="detial" id="wareInfo" style="display:none">
+									<div class="detial" id="wareInfo">
 										<!--商品图片展示 开始-->
 										<div id="scale_parent" style="width:3rem;height:auto;
 										margin:0 .1rem; overflow:hidden">
@@ -760,7 +760,7 @@
 									<!--规格参数 结束-->
 
 									<!--包装售后 开始-->
-									<div id="warePack" class="detial sale_service_wrap">
+									<div id="warePack" class="detial sale_service_wrap" style="display:none;">
 										<div class="sale_service_grey bdr_t"></div>
 										<div class="sale_service_floor bdr_t">
 											<div class="sale_service_title">
@@ -795,7 +795,7 @@
 							<!--详情 结束-->
 
 							<!--评价 开始-->
-							<li id="commentListId" class="header_slider_item reply_body_body" style="width:100%;height:4.47rem;overflow:scroll;display:none;">
+							<li id="commentListId" class="header_slider_item reply_body_body">
 								<div class="tab_con_wrapper tab_con_oaa" id="tab_wrapper">
 
 									<div class="assess_flat">
@@ -1015,7 +1015,7 @@
 				<!--上层页面外容器 结束-->
 
 				<!--底部占位 开始-->
-				<div class="hold_div_bottom"></div>
+				<div class="hold_div_bottom" id="hold_div_bottom"></div>
 				<!--底部占位 结束-->
 
 				<!--商品添加成功 开始-->
