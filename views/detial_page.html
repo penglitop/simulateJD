@@ -201,7 +201,7 @@
 
 
 	<!--列表内容 开始-->
-	<div id="mainLayout">
+	<div id="mainLayout" class="mainLayout">
 		<div id="mainStay" class="new_wt">
 			<div id="miblebox" class="goods_img_box">
 
@@ -222,7 +222,7 @@
 									<!--焦点图片 开始-->
 									<div class="scroll_imgs">
 										<div id="slide" class="slide" style="width:3.2rem; height:3.2rem">
-											<ul style="width:16rem; height:3.2rem">
+											<ul id="slide_ul" style="width:16rem; height:3.2rem">
 												<li class="J_ping" style="transition:all 300ms ease; height:3.2rem; width:3.2rem; transform:translate3d(0,0,0); z-index:10;">
 													<img src="/images/detial_page/59b5e131N5f07c694.jpg!q70.jpg" alt="" class="J_ping">
 												</li>
@@ -253,9 +253,9 @@
 											</div>
 
 											<div class="page_nub" id="slidePageNub">
-												<em class="fz18">1</em>
+												<em class="fz18" id="nowPage">1</em>
 												<em class="nub_br">/</em>
-												<em class="fz12">5</em>
+												<em class="fz12" id="totalPage">5</em>
 											</div>
 										</div>
 									</div>
@@ -367,7 +367,7 @@
 													<span id="cityName">朝阳区</span>
 													<span id="countyName">管庄</span>
 													<span id="townName"></span>
-													<i class="icon icon_location"></i>
+													<i class="icon icon_location" id="icon_location"></i>
 												</div>
 											</div>
 										</div>
@@ -1026,103 +1026,6 @@
 				<!--商品添加成功 结束-->
 			</div>
 
-			<!--send-to 开始-->
-			<div class="menu_sidebar" id="puller" style="display:none">
-				<div class="list_content_mask"></div>
-				<div class="sidebar_content">
-					<div class="sidebar_header region_title">
-						<span class="region_title_back" id="region_back_arrow">
-							<i class="J_ping"></i>
-						</span>
-						<span class="region_title_name">配送至</span>
-					</div>
-					<div class="sidebar_items_container region_list_group">
-						<div class="space44"></div>
-						<div class="region_wrapper">
-							<ul class="sidebar_list sidebar_categories region_list J_ping cur">
-
-								<li class="choice_address checked">
-									<i class="tick"></i>
-									<span>北京</span>
-								</li>
-
-								<li class="choice_address">
-									<i class="tick"></i>
-									<span>上海</span>
-								</li>
-
-								<li class="choice_address">
-									<i class="tick"></i>
-									<span>天津</span>
-								</li>
-
-								<li class="choice_address">
-									<i class="tick"></i>
-									<span>重庆</span>
-								</li>
-
-								<li class="choice_address">
-									<i class="tick"></i>
-									<span>河北</span>
-								</li>
-
-								<li class="choice_address">
-									<i class="tick"></i>
-									<span>山西</span>
-								</li>
-
-								<li class="choice_address">
-									<i class="tick"></i>
-									<span>河南</span>
-								</li>
-
-								<li class="choice_address">
-									<i class="tick"></i>
-									<span>辽宁</span>
-								</li>
-
-								<li class="choice_address">
-									<i class="tick"></i>
-									<span>吉林</span>
-								</li>
-
-								<li class="choice_address">
-									<i class="tick"></i>
-									<span>黑龙江</span>
-								</li>
-
-								<li class="choice_address">
-									<i class="tick"></i>
-									<span>内蒙古</span>
-								</li>
-
-								<li class="choice_address">
-									<i class="tick"></i>
-									<span>江苏</span>
-								</li>
-
-								<li class="choice_address">
-									<i class="tick"></i>
-									<span>山东</span>
-								</li>
-
-								<li class="choice_address">
-									<i class="tick"></i>
-									<span>安徽</span>
-								</li>
-
-								<li class="choice_address">
-									<i class="tick"></i>
-									<span>浙江</span>
-								</li>
-							</ul>
-						</div>
-						<div class="loading_mask"></div>
-					</div>
-				</div>
-			</div>
-			<!--send-to 结束-->
-
 			<!--降价通知 开始-->
 			<div class="depreciate_inform_block J_ping reduce_price" id="depreciateInformBlock" style="display:none">
 				<span class="depreciate_inform_title">设置降价通知</span>
@@ -1174,7 +1077,103 @@
 		</div>
 	</div>
 	<!--列表内容 结束-->
+	
+	<!--send-to 开始-->
+		<div class="menu_sidebar" id="puller" style="display:none">
+			<div class="list_content_mask"></div>
+			<div class="sidebar_content" id="sidebar_content">
+				<div class="sidebar_header region_title">
+					<span class="region_title_back" id="region_back_arrow">
+						<i class="J_ping"></i>
+					</span>
+					<span class="region_title_name">配送至</span>
+				</div>
+				<div class="sidebar_items_container region_list_group">
+					<div class="space44"></div>
+					<div class="region_wrapper">
+						<ul class="sidebar_list sidebar_categories region_list J_ping cur">
 
+							<li class="choice_address checked">
+								<i class="tick"></i>
+								<span>北京</span>
+							</li>
+
+							<li class="choice_address">
+								<i class="tick"></i>
+								<span>上海</span>
+							</li>
+
+							<li class="choice_address">
+								<i class="tick"></i>
+								<span>天津</span>
+							</li>
+
+							<li class="choice_address">
+								<i class="tick"></i>
+								<span>重庆</span>
+							</li>
+
+							<li class="choice_address">
+								<i class="tick"></i>
+								<span>河北</span>
+							</li>
+
+							<li class="choice_address">
+								<i class="tick"></i>
+								<span>山西</span>
+							</li>
+
+							<li class="choice_address">
+								<i class="tick"></i>
+								<span>河南</span>
+							</li>
+
+							<li class="choice_address">
+								<i class="tick"></i>
+								<span>辽宁</span>
+							</li>
+
+							<li class="choice_address">
+								<i class="tick"></i>
+								<span>吉林</span>
+							</li>
+
+							<li class="choice_address">
+								<i class="tick"></i>
+								<span>黑龙江</span>
+							</li>
+
+							<li class="choice_address">
+								<i class="tick"></i>
+								<span>内蒙古</span>
+							</li>
+
+							<li class="choice_address">
+								<i class="tick"></i>
+								<span>江苏</span>
+							</li>
+
+							<li class="choice_address">
+								<i class="tick"></i>
+								<span>山东</span>
+							</li>
+
+							<li class="choice_address">
+								<i class="tick"></i>
+								<span>安徽</span>
+							</li>
+
+							<li class="choice_address">
+								<i class="tick"></i>
+								<span>浙江</span>
+							</li>
+						</ul>
+					</div>
+					<div class="loading_mask"></div>
+				</div>
+			</div>
+		</div>
+	<!--send-to 结束-->
 
 	<!--加车提示loadding 开始-->
 	<div class="cart_loading_icon"></div>

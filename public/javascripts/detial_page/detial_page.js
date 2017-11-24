@@ -403,6 +403,7 @@
 		tabLst=bycss('#tab_lst'),
 		detialTab=byEl('a',tabLst),
 		detialBlock=bycssAll('.detial'),
+		tabs=bycss('#tabs'),
 		num=null,
 		activeInd=0,
 		selectInd=0,
@@ -412,6 +413,8 @@
 
 		slider.style.width=clientWidth;
 		sliderCon.style.width=sliderItem.length*clientWidth+'px';
+		num=sliderItem[0];
+		slider.style.height=getStyle(num,'height');
 		for(var i=0;i<tabItem.length;i++){
 			tabItem[i].index=i;
 			tabItem[i].addEventListener('click',function(){
@@ -420,6 +423,11 @@
 					show(detialFixed);
 				}else{
 					hide(detialFixed);
+				}
+				if(this.index==2){
+					show(tabs);
+				}else{
+					hide(tabs);
 				}
 				num=sliderItem[this.index];
 				slider.style.height=getStyle(num,'height');
@@ -450,3 +458,72 @@
 
 })(this);
 /*商品-详情-评价 切换 结束*/
+
+/*焦点图片切换 开始*/
+/*;(function(global){
+	var slide=bycss('#slide'),
+		slideUl=bycss('#slide_ul'),
+		slideLi=byEl('li',slideUl),
+		nowPage=bycss('#nowPage'),
+		totalPage=bycss('#totalPage'),
+		startX=0,
+		lastX=0,
+		clientWidth=document.documentElement.clientWidth;
+
+		slide.style.width=clientWidth;
+		slideUl.style.width=slideLi.length*clientWidth+'px';
+
+	var int=function(){
+		slideUl.addEventListener('touchstart',startTouch);
+		slideUl.addEventListener('touchmove',moveTouch);
+		slideUl.addEventListener('touchend',endTouch);
+	},
+
+	startTouch=function(e){
+		startX=e.touches[0].clientX;
+	},
+
+	moveTouch=function(e){
+		var moveX=e.changedTouches[0].clientX-(startX+lastX);
+		addClass(slideUl,'tranX_active');
+		setTranslate(slideUl,moveX,0,0);
+	},
+
+	endTouch=function(e){
+		var endX=e.changedTouches[0].clientX-(startX+lastX);
+		removeClass(slideUl,'tranX_active');
+		setTranslate(slideUl,endX,0,0);
+		lastX=startX;
+	};
+
+	int();
+})(this);*/
+/*焦点图片切换 结束*/
+
+/*配送至出现 开始*/
+;(function(global){
+	var location=bycss('#icon_location'),
+		puller=bycss('#puller'),
+		mainLayout=bycss('#mainLayout'),
+		sidebar=bycss('#sidebar_content'),
+		regionBack=bycss('#region_back_arrow');
+
+		location.addEventListener('click',sendToShow);
+
+		regionBack.addEventListener('click',sendToHide);
+
+		function sendToShow(){
+			document.body.scrollTop=window.pageYOffset=document.documentElement.scrollTop=0+'px';
+			addClass(mainLayout,'body_slide_move');
+			show(puller);
+			addClass(sidebar,'send_slide_show');
+		}
+
+		function sendToHide(){
+			setTimeout(function(){
+				hide(puller);
+			},50);
+			removeClass(mainLayout,'body_slide_move');
+		}
+})(this);
+/*配送至出现 结束*/

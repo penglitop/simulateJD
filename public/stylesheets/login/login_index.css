@@ -53,7 +53,7 @@ body{
     font-size:0;
 }
 .login_tab{
-	height:.44rem;
+	height:.45rem;
 	line-height:.44rem;
 	font-size:.14rem;
 	border-bottom:.01rem solid #d7d7d7;
@@ -70,9 +70,9 @@ body{
 	float:right;
 	text-align:center;
 }
-.login_selected>span{
+span.login_selected{
 	border-bottom:.02rem solid #f23030;
-	padding:.1rem .1rem;
+	padding:.12rem .1rem;
 }
 .login_index .wrap{
 	max-width:7.5rem;
@@ -122,7 +122,6 @@ body{
 		top:.13rem;
 		right:.1rem;
 		background-position:0 0;
-		display:none;
 	}
 	.password{
 		width:100%;
@@ -187,6 +186,10 @@ body{
 	.sms_input_box{
 		position:relative;
 	}
+	.btn_active{
+		background-color: #f23030;
+    	color: #fff;
+	}
 	.area_box{
 		position:absolute;
 		width:.62rem;
@@ -244,15 +247,17 @@ body{
 		text-align:left;
 	}
 	.btn{
-		display:block;
-		color:#848689;
+		display:block;	
 		height:.45rem;
 		line-height:.46rem;
-		background:#eee;
 		border-radius:.02rem;
 		border:0;
 		font-size:.14rem;
 		text-align:center;
+	}
+	.btn_gray{
+		color:#848689;
+		background:#eee;
 	}
 	.btn_onestep{
 		color:#f23030 !important;
@@ -683,3 +688,16 @@ html,body,.login_list_page{
     transform: translate(-50%,-50%);
 }
 /*登录-短信验证码 结束*/
+
+ 	input::-webkit-input-placeholder { /* WebKit browsers */
+　　color:red;
+　　}
+　　input:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+　　color:#999;
+　　}
+　　input::-moz-placeholder { /* Mozilla Firefox 19+ */
+　　color:#999;
+　　}
+　　input:-ms-input-placeholder { /* Internet Explorer 10+ */
+　　color:#999;
+　　}
