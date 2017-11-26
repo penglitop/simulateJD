@@ -33,6 +33,7 @@
 	<link rel="stylesheet" type="text/css" href="/stylesheets/public.css"/>
 </head>
 <body>
+	<header class="top_header" id="topheader"></header>
 	<div class="viewports">
 		<div class="mjd_container" id="layout_root">
 			<div class="mjd_header cover_info max_zindex" id="layout_top">
@@ -42,7 +43,7 @@
 						<div class="pannel_bg">
 							<img src="/images/index/download_bg.png" alt="固定头部背景图">
 						</div>
-						<div class="download_close">
+						<div class="download_close" id="download_close">
 							<img src="/images/index/icon-close-banner.png" alt="关闭按钮">
 						</div>
 						<div class="download_logo">
@@ -120,8 +121,8 @@
 				<!--综合 销量 价格 筛选 开始-->
 				<ul class="new_search_tab bdr_bom" id="searchSort20">
 					<li class="J_ping new_change_eleven new_sort_integrative active" id="searchSort12">综合</li>
-					<li class="new_change_eleven" id="searchSort13">销量</li>
-					<li class="new_change_eleven new_sort_price" id="searchSort13">价格</li>
+					<li class="new_change_eleven new_change" id="searchSort13">销量</li>
+					<li class="new_change_eleven new_sort_price new_change" id="searchSort14">价格</li>
 					<li class="new_change_eleven chose_icon" id="searchSort19">筛选</li>
 				</ul>
 				<!--综合 销量 价格 筛选 结束-->
@@ -589,7 +590,7 @@
 			<div class="mjd_popCover new_filtrate" id="pannel" style="display:none">
 				<div class="filtrate_block">
 					<div class="two_block" id="pannelRoot">
-						<div class="filtrate_index" id="index_root" style="display:none">
+						<div class="filtrate_index" id="index_root">
 							<div class="index_ofyauto" id="index_ofyauto_h">
 								<div class="top_block">
 									<div id="areaCheck" class="title_line1 J_ping">
@@ -1209,10 +1210,13 @@
 
 			<!--弹层背景  开始-->
 			<div id="SearchCoverPannel11" class="mjd_floor cover_pannel">
-				<div class="cover_floor"></div>
+				<div class="cover_floor" id="cover_floor" style="display:none;"></div>
 			</div>
 			<!--弹层背景  结束-->
 		</div>
 	</div>
+
+	<script type="text/javascript" src="/javascripts/way_base.js"></script>
+	<script type="text/javascript" src="/javascripts/list_page/list_product.js"></script>
 </body>
 </html>

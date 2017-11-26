@@ -131,6 +131,20 @@
 	display:table-cell;
 	margin:.07rem 0;
 }
+.cus_active{
+	background: #fff;
+    padding-bottom: .08rem;
+    position: relative;
+    z-index: 99;
+    border-color:#bfbfbf;
+    top: .04rem;
+    border-bottom-color: #fff;
+    box-sizing: content-box;
+    -webkit-box-sizing: content-box;
+    -moz-box-sizing: content-box;
+    -ms-box-sizing: content-box;
+    
+}
 .custom_search_iteam>span{
 	display:block;
 	background-color:#f0f2f5;

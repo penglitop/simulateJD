@@ -81,7 +81,18 @@
 	},	
 
 	nameBlur=function(){
-
+		var reg1=/^[\u4e00-\u9fa5]*[\w]*[\-]*$/g,
+			reg2=/^\s$/;
+		if(reg2.test(username.value)==false){
+			notice.innerHTML='账号或密码错误!';
+			return;
+		}
+		if(reg1.test(username.value)==false){
+			notice.innerHTML='账号或密码错误!';
+			return false;
+		}
+		notice.innerHTML='';
+		return true;
 	};
 	int();
 })(this);
