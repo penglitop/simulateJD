@@ -7,7 +7,9 @@ var express = require('express'),
 
 var index = require('./routes/index'),
     frontStatic=require('./routes/frontStatic'),
-    frontDynamic=require('./routes/frontDynamic');
+    frontDynamic=require('./routes/frontDynamic'),
+    ajaxPost=require('./routes/ajaxPost'),
+    ajaxGet=require('./routes/ajaxGet');
 
 var app = express();
 
@@ -25,6 +27,8 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/', index);
 app.use('/static', frontStatic);
 app.use('/dynamic', frontDynamic);
+app.post('/ajaxInterface', ajaxPost);
+app.get('/ajaxInterface', ajaxGet);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
