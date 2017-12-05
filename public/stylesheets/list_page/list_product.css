@@ -58,7 +58,10 @@
 	margin-left:.04rem;
 	background:url(../../images/list_page/list_product/jd-sprites.png) no-repeat;
 	background-size:2rem 2rem;
-	background-position:0 -1.09rem;
+	background-position:-.1rem -1.09rem;
+}
+.new_sort_integrative.active:after{
+	background-position:0rem -1.09rem !important;
 }
 .new_sort_price:after{
 	content:'';
@@ -69,6 +72,12 @@
 	background:url(../../images/list_page/list_product/jd-sprites.png) no-repeat;
 	background-position:-1.7rem -.3rem;
 	background-size:2rem 2rem;
+}
+.new_sort_price.upPrice:after{
+	background-position:-1.7rem -.15rem;
+}
+.new_sort_price.downPrice:after{
+	background-position:-1.7rem 0rem;
 }
 .chose_icon:after{
 	content:'';
@@ -278,7 +287,7 @@ span.show{
     text-overflow: ellipsis;
     display: inline-block;
 }
-.custom_info_list .checked .tick{
+.custom_info_list .active .tick{
 	display:inline-block;
 	width:.13rem;
 	height:.1rem;
@@ -666,8 +675,8 @@ span.show{
 	height:.35rem;
 	position:fixed;
 	right:.08rem;
-	bottom:.68rem;
-	z-index:100;
+	bottom:.78rem;
+	z-index:3;
 }
 .normal_change_btn{
 	display:inline-block;
@@ -679,7 +688,10 @@ span.show{
 	position:fixed;
 	right:.08rem;
 	bottom:.28rem;
-	z-index:100;
+	z-index:3;
+}
+.go_addcar_bottom{
+	bottom:.78rem;
 }
 /*回到顶部  结束*/
 
@@ -698,25 +710,33 @@ span.show{
 		width:90%;
 		overflow-x:hidden;
 		overflow-y:auto;
-		position:absolute;
-		top:0;
-		left:10%;
-		z-index:301;
 		font-size:0;
 	}
 	.filtrate_block{
-		height:100%;
-		width:100%;
-		overflow:hidden;
+		height: 100%;
+	    width: 90%;
+	    overflow-y: auto;
+	    position: fixed;
+	    top: 0;
+	    /* margin-bottom: .44rem; */
+	    left: 10%;
+	    z-index: 300;
+	}
+	.filter_mask{
+		width: 100%;
+		height: 100%;
+		position: fixed;
+		top: 0;
+		left: 0;
+		background: rgba(0,0,0,.7);
+		z-index:290;
 	}
 	.two_block{
 		width:200%;
 		height:100%;
-		overflow:hidden;
 	}
 	.filtrate_index{
 		background-color:#fff;
-		overflow:hidden;
 		width:50%;
 		float:left;
 		height:100%;
@@ -727,6 +747,7 @@ span.show{
 		overflow-x:hidden;
 		width:100%;
 		background:#f8f8f8;
+		margin-bottom:.44rem;
 	}
 	.top_block{
 		position:relative;
@@ -743,6 +764,7 @@ span.show{
 		display:-ms-box;
 		display:-o-box;
 		display:box;
+		line-height:.18rem;
 	}
 	.title{
 		display:inline-block;
@@ -997,7 +1019,6 @@ span.show{
 	}
 	.bottom_block .btns>.others{
 		margin-right:.1rem;
-		overflow:hidden;
 	}
 	.bottom_block .btns>.first>div{
 		margin-top:.1rem;
@@ -1065,6 +1086,10 @@ span.show{
 	    margin:0 .02rem 0;
 	}
 	.index_btns{
+		width:90%;
+		position:fixed;
+		bottom:0;
+		z-index:300;
 		height:.44rem;
 		display: box;
 	    display: -webkit-box;
@@ -1639,6 +1664,13 @@ span.show{
 		font-size:.11rem;
 		color:#000;
 	}
+	.cover_space{
+		height:1.77rem;
+		width:100%;
+	}
+	.space_height{
+		height:2.99rem;
+	}
 	/*品牌弹窗-字母排序  结束*/
 
 
@@ -1656,7 +1688,24 @@ span.show{
 		top:0;
 		left:0;
 		background:rgba(0,0,0,.7);
-		z-index:250;
+		z-index:15;
 	}
 	/*弹层背景  结束*/
 /*筛选弹窗  结束*/
+
+.sidebar_iteam.active .sort_of_brand {
+    color: #f15353;
+}
+
+.go_addcar{
+	display:block;
+	background:url(../../images/list_page/list_product/addcar.png) no-repeat;
+	position:fixed;
+	background-size:.35rem .35rem;
+	z-index:100;
+	right:.08rem;
+	bottom:1.28rem;
+	width:.35rem;
+	height:.35rem;
+	z-index:3;
+}

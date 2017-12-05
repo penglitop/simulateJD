@@ -120,10 +120,10 @@
 
 				<!--综合 销量 价格 筛选 开始-->
 				<ul class="new_search_tab bdr_bom" id="searchSort20">
-					<li class="J_ping new_change_eleven new_sort_integrative active" id="searchSort12">综合</li>
-					<li class="new_change_eleven new_change" id="searchSort13">销量</li>
-					<li class="new_change_eleven new_sort_price new_change" id="searchSort14">价格</li>
-					<li class="new_change_eleven chose_icon" id="searchSort19">筛选</li>
+					<li class="J_ping new_change_eleven active new_sort_integrative" id="multiple">综合</li>
+					<li class="new_change_eleven new_change" id="sales">销量</li>
+					<li class="new_change_eleven new_sort_price new_change" id="price">价格</li>
+					<li class="new_change_eleven chose_icon" id="fliter">筛选</li>
 				</ul>
 				<!--综合 销量 价格 筛选 结束-->
 
@@ -268,10 +268,11 @@
 				<!--京东配送行下拉列表 结束-->
 			</div>
 
-			<div class="cover_space" id="search1" style="height:1.77rem"></div>
+			
 
 			<!--商品列表  开始-->
 			<div id="layout_content" class="mjd_content">
+				<div class="cover_space" id="search1"></div>
 				<div class="mjd_floor list_pannel" id="search_list_root">
 					<div class="seach_list" id="search_list">
 						<div class="is_loading displayNone" id="searchlist49">
@@ -577,14 +578,26 @@
 
 
 					<!--回到顶部  开始-->
-					<span class="go_back_to_top J_ping" id="seach_list48"></span>
-					<span class="normal_change_btn J_ping" id="seach_list50"></span>
+					<a class="go_addcar J_ping" id="go_addcar">
+						<i class="addnum"></i>
+					</a>
+					<span class="go_back_to_top J_ping" id="go_back_to_top"></span>
+					<span class="normal_change_btn J_ping" id="normal_change_btn"></span>
 					<!--回到顶部  结束-->
 
 
 				</div>
 			</div>
 			<!--商品列表  结束-->
+
+			<!--弹层背景  开始-->
+			<div id="SearchCoverPannel11" class="mjd_floor cover_pannel">
+				<div class="cover_floor" id="cover_floor" style="display:none;"></div>
+			</div>
+			<!--弹层背景  结束-->
+		</div>
+	</div>
+
 
 			<!--筛选弹窗  开始-->
 			<div class="mjd_popCover new_filtrate" id="pannel" style="display:none">
@@ -613,10 +626,6 @@
 
 										<div class="J_ping">
 											<span>促销</span>
-										</div>
-
-										<div class="J_ping">
-											<span>全球购</span>
 										</div>
 
 										<div class="J_ping">
@@ -771,14 +780,10 @@
 									</div>
 								</div>
 							</div>
-							<div class="index_btns" id="indexbtns">
-								<div id="reset" class="left J_ping">重置</div>
-								<din id="submit" class="right J_ping">确定</din>
-							</div>
 						</div>
 
 
-						<div class="filtrate_right" id="panelNextPage">
+						<div class="filtrate_right" id="panelNextPage" style="display:none">
 							<!--配送至弹窗  开始-->
 							<div id="areaPanel" class="address" style="display:none">
 								<div class="right_head">
@@ -1203,18 +1208,15 @@
 							<!--全部品牌  结束-->
 						</div>
 					</div>
+					<div class="index_btns" id="indexbtns">
+						<div id="reset" class="left J_ping">重置</div>
+						<din id="submit" class="right J_ping">确定</din>
+					</div>
 				</div>
+				<div class="filter_mask"></div>
 			</div>
 			<!--筛选弹窗  结束-->
 
-
-			<!--弹层背景  开始-->
-			<div id="SearchCoverPannel11" class="mjd_floor cover_pannel">
-				<div class="cover_floor" id="cover_floor" style="display:none;"></div>
-			</div>
-			<!--弹层背景  结束-->
-		</div>
-	</div>
 
 	<script type="text/javascript" src="/javascripts/way_base.js"></script>
 	<script type="text/javascript" src="/javascripts/list_page/list_product.js"></script>
