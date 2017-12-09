@@ -8,6 +8,10 @@
 	max-width:6.4rem;
 	margin:0 auto;
 	z-index:99;
+	-webkit-transition:transform .5s ease;
+	-moz-transition:transform .5s ease;
+	-o-transition:transform .5s ease;
+	transition:transform .5s ease;
 }
 .mjd_header{
 	width:100%;
@@ -47,8 +51,11 @@
 	text-align:center;
 	color:#232326;
 }
-.new_search_tab .active{
+.new_change_eleven.active{
 	color:#f15353 !important;
+}
+.new_sort_price.active:after{
+	background-position:-1.7rem -.15rem;
 }
 .new_sort_integrative:after{
 	content:'';
@@ -73,12 +80,7 @@
 	background-position:-1.7rem -.3rem;
 	background-size:2rem 2rem;
 }
-.new_sort_price.upPrice:after{
-	background-position:-1.7rem -.15rem;
-}
-.new_sort_price.downPrice:after{
-	background-position:-1.7rem 0rem;
-}
+
 .chose_icon:after{
 	content:'';
 	display:inline-block;
@@ -191,7 +193,7 @@
 .integrative_list{
 	padding:.04rem .08rem .04rem .04rem;
 }
-.integrative_list .sidebar_iteam{
+.integrative_list .side_iteam{
 	position:relative;
 	font-size:0;
 	height:.38rem;
@@ -207,7 +209,7 @@
     display: inline-block;
 }
 .integrative_list .tick{
-	display:block;
+	display:none;
 	width:.13rem;
 	height:.1rem;
 	background:url(../../images/list_page/list_product/jd-search-sprites.png) no-repeat;
@@ -216,34 +218,49 @@
 	float:right;
 	margin:.14rem .14rem 0 .04rem;
 }
+.side_iteam.active .tick{
+	display:block;
+}
 /*综合下拉列表  结束*/
 
 
 /*京东配送行下拉列表  开始*/
-strong.select_active{
+.jd_send.active span{
 	color:#f23030;
 	border-color:#f23030;
 	background-color:#fff;
 }
 .ok_active{
+	visibility:hidden;
+	display:inline-block;
 	width:.1rem;
 	height:.12rem;
-	display:inline-block;
 	vertical-align:middle;
 	background:url(../../images/list_page/list_product/jd-search-sprites.png) no-repeat 0 -1.68rem;
 	background-size:2rem 2rem;
 }
-span.show{
+.jd_send.active .ok_active{
+	visibility:visible;
+}
+.selected_nav.active{
 	background:#fff;
 	border-color:#bfbfbf;
 	border-bottom-color:#fff;
 	position:relative;
-	padding-bottom:.14rem;
+	padding-bottom:.06rem;
+	top:.04rem;
 	color:#232326;
 	z-index:99;
 	box-sizing:content-box;
 	-webkit-box-sizing:content-box;
 	-moz-box-sizing:content-box;
+}
+.selected_nav.active .down{
+	-webkit-transform:rotate(180deg);
+	-moz-transform:rotate(180deg);
+	-ms-transform:rotate(180deg);
+	-o-transform:rotate(180deg);
+	transform:rotate(180deg);
 }
 .custom_search_box{
 	background-color:#fff;
@@ -267,7 +284,20 @@ span.show{
 	line-height:.44rem;
 	color:#252525;
 }
-.sidebar_iteam>a.active{
+.sidebar_iteam.active>a{
+	color:#f15353;
+	border-bottom:.01rem solid #f15353;
+}
+.side_iteam>a{
+	display:block;
+	margin:0 .07rem;
+	padding-left:.05rem;
+	border-bottom:.01rem solid #fff;
+	height:.44rem;
+	line-height:.44rem;
+	color:#252525;
+}
+.side_iteam>a.active{
 	color:#f15353;
 	border-bottom:.01rem solid #f15353;
 }
@@ -276,7 +306,7 @@ span.show{
 	width:50%;
 	float:left;
 }
-.custom_info_list .sort_of_brand{
+.sidebar_iteam .sort_of_brand{
 	width:100%;
 	height:.44rem;
 	font-size:.13rem;
@@ -287,7 +317,7 @@ span.show{
     text-overflow: ellipsis;
     display: inline-block;
 }
-.custom_info_list .active .tick{
+.sidebar_iteam.active .tick{
 	display:inline-block;
 	width:.13rem;
 	height:.1rem;
@@ -688,15 +718,49 @@ span.show{
 	position:fixed;
 	right:.08rem;
 	bottom:.28rem;
-	z-index:3;
+	z-index:10;
 }
-.go_addcar_bottom{
-	bottom:.78rem;
+.go_addcar.active{
+	bottom:1.28rem;
 }
 /*回到顶部  结束*/
 
 /*商品列表  结束*/
 
+	/*添加购物车成功提示文案 开始*/
+	.add_succesed{
+		position:fixed;
+		z-index:100;
+		top:50%;
+		left:50%;
+		width:1.44rem;
+		height:.88rem;
+		margin:-.44rem 0 0 -.72rem;
+		border-radius:.07rem;
+		background:rgba(0,0,0,.8);
+		opacity:0;
+		transition:opacity .5s ease;
+	}
+	.add_succesed.active{
+		opacity:1;
+	}
+	.add_succesed_icon{
+		display:block;
+		width:.26rem;
+		height:.26rem;
+		margin:.18rem auto 0 auto;
+		background:url(../../images/detial_page/prompt_err_icon.png) no-repeat;
+		background-position:-.01rem -.29rem;
+		background-size:.28rem .6rem;
+	}
+	.prompt_text{
+		font-size:.15rem;
+		display:block;
+		margin-top:.09rem;
+		text-align:center;
+		color:#fff;
+	}
+	/*添加购物车成功提示文案 结束*/
 
 
 /*筛选弹窗  开始*/
@@ -716,11 +780,21 @@ span.show{
 		height: 100%;
 	    width: 90%;
 	    overflow-y: auto;
+	    overflow-x:hidden;
 	    position: fixed;
 	    top: 0;
 	    /* margin-bottom: .44rem; */
-	    left: 10%;
+	    left: 100%;
 	    z-index: 300;
+	    background:#fff;
+	    -webkit-transition:all .3s ease;
+	    -moz-transition:all .3s ease;
+	    -ms-transition:all .3s ease;
+	    -o-transition:all .3s ease;
+	    transition:all .3s ease;
+	}
+	.filtrate_block.show{
+		left:10%;
 	}
 	.filter_mask{
 		width: 100%;
@@ -733,13 +807,11 @@ span.show{
 	}
 	.two_block{
 		width:200%;
-		height:100%;
 	}
 	.filtrate_index{
 		background-color:#fff;
 		width:50%;
 		float:left;
-		height:100%;
 		padding-right:.01rem;
 	}
 	.index_ofyauto{
@@ -826,6 +898,7 @@ span.show{
 		overflow:hidden;
 		white-space:nowrap;
 		text-overflow:ellipsis;
+		position:relative;
 	}
 	.title_line2{
 		padding:.1rem .1rem .02rem .1rem;
@@ -866,6 +939,41 @@ span.show{
 	    text-align:center;
 	    font-size:.12rem;
 	    vertical-align:middle;
+	    outline-style:none;
+	}
+	.tick_icon{
+		display: inline-block;
+	    background: url(../../images/list_page/list_product/jd-search-sprites.png) no-repeat;
+	    background-size:2rem 2rem;
+	    width:.1rem;
+	    height:.07rem;
+	    background-position: 0rem -1.7rem;
+	    position: relative;
+	    top: -.01rem;
+	    display: none;
+	}
+	.tick_block.active .tick_icon{
+		display:inline-block;
+	}
+	.tick_block.active{
+	    background-color: #fff !important;
+	    color: #f23030;
+	    position: relative;
+	}
+	.tick_block.active:after{
+		content: '';
+	    height: 190%;
+	    width: 196%;
+	    position: absolute;
+	    left: 0px;
+	    top: 0;
+	    border: .01rem solid #f23030;
+	    border-radius: .1rem;
+	    -webkit-border-radius:.1rem;
+	    transform: scale(0.5);
+	    -webkit-transform: scale(0.5);
+	    transform-origin: top left;
+	    -webkit-transform-origin: top left
 	}
 	.from_to>span{
 		display:block;
@@ -903,6 +1011,29 @@ span.show{
 	    -moz-box-pack: center;
 	    -ms-box-pack: center;
 	    -o-box-pack: center;
+	}
+	.border_block.active{
+		background-color: #fff !important;
+	    color: #f23030 !important;
+	    position: relative;
+	}
+	.border_block.active .tick_icon{
+		display:inline-block;
+	}
+	.border_block.active:after{
+		content: '';
+	    height: .66rem;
+	    width: 196%;
+	    position: absolute;
+	    left: 0;
+	    top: 0;
+	    border: .01rem solid #f23030;
+	    border-radius: .1rem;
+	    -webkit-border-radius: .1rem;
+	    transform: scale(0.5);
+	    -webkit-transform: scale(0.5);
+	    transform-origin: top left;
+	    -webkit-transform-origin: top left;
 	}
 	.first_span_small{
 		display:block;
@@ -996,7 +1127,7 @@ span.show{
 	    color:#f23030;
 	    margin:.02rem 0 0 .1rem;
 	}
-	.bottom_title .pingpai_down{
+	.pack_down,.brand_down{
 		content:'';
 		display:block;
 		width:.1rem;
@@ -1009,6 +1140,13 @@ span.show{
 	    -moz-transform: rotate(135deg);
 	    -ms-transform: rotate(135deg);
 	    -o-transform: rotate(135deg);
+	}
+	.brand_down.active,.pack_down.active{
+		-webkit-transform:rotate(-45deg);
+		-moz-transform:rotate(-45deg);
+		-ms-transform:rotate(-45deg);
+		-o-transform:rotate(-45deg);
+		transform:rotate(-45deg);
 	}
 	.bottom_block .btns{
 		padding-bottom:.1rem;
@@ -1693,7 +1831,7 @@ span.show{
 	/*弹层背景  结束*/
 /*筛选弹窗  结束*/
 
-.sidebar_iteam.active .sort_of_brand {
+.side_iteam.active .sort_of_brand {
     color: #f15353;
 }
 
@@ -1702,10 +1840,24 @@ span.show{
 	background:url(../../images/list_page/list_product/addcar.png) no-repeat;
 	position:fixed;
 	background-size:.35rem .35rem;
-	z-index:100;
 	right:.08rem;
-	bottom:1.28rem;
+	bottom:.78rem;
 	width:.35rem;
 	height:.35rem;
-	z-index:3;
+	z-index:5;
+}
+.go_addcar i{
+	display: inline-block;
+    position: absolute;
+    top: -6px;
+    background-color: #f23030;
+    line-height: 10px;
+    font-style: normal;
+    border-radius: 8px;
+    padding: 0 4px;
+    font-size: 8px;
+    color: #fff;
+    right: -4px;
+    border: 1px solid #fff;
+    font-family: PingFangSC-Regular,Helvetica,"Droid Sans",Arial,sans-serif;
 }

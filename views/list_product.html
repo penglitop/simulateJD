@@ -120,7 +120,7 @@
 
 				<!--综合 销量 价格 筛选 开始-->
 				<ul class="new_search_tab bdr_bom" id="searchSort20">
-					<li class="J_ping new_change_eleven active new_sort_integrative" id="multiple">综合</li>
+					<li class="J_ping new_change_eleven active new_sort_integrative new_change" id="multiple">综合</li>
 					<li class="new_change_eleven new_change" id="sales">销量</li>
 					<li class="new_change_eleven new_sort_price new_change" id="price">价格</li>
 					<li class="new_change_eleven chose_icon" id="fliter">筛选</li>
@@ -129,26 +129,26 @@
 
 
 				<!--京东配送 品牌 开始-->
-				<ul class="custom_search_tab bdr_bom" id="searchSort21">
-					<li class="J_ping custom_search_iteam jd_send">
-						<strong class="select_active"><i class="ok_active"></i>京东配送</strong>
+				<ul class="custom_search_tab bdr_bom" id="selectNav">
+					<li class="J_ping custom_search_iteam jd_send" id="jd_send">
+						<span class="select_active"><i class="ok_active"></i>京东配送</sapn>
 					</li>
 					<li class="custom_search_iteam J_ping jd_downM" id="searchSort13">
-						<span>
+						<span class="selected_nav">
 							<strong>
 								品牌<i class="down"></i>
 							</strong>
 						</span>
 					</li>
 					<li class="custom_search_iteam J_ping jd_downM" id="searchSort13">
-						<span>
+						<span class="selected_nav">
 							<strong>
 								包装<i class="down"></i>
 							</strong>
 						</span>
 					</li>
 					<li class="custom_search_iteam J_ping jd_downM">
-						<span>
+						<span class="selected_nav">
 							<strong>
 								口味<i class="down"></i>
 							</strong>
@@ -162,23 +162,23 @@
 				<div class="integrative_box show_position" id="searchSort18" style="display:none">
 					<ul class="integrative_list">
 
-						<li class="J_ping sidebar_iteam checked" id="searchSort15">
+						<li class="J_ping side_iteam active" id="searchSort15">
 							<span>
 								<i class="tick"></i>
 								<span class="sort_of_brand">综合</span>
 							</span>
 						</li>
 
-						<li class="J_ping sidebar_iteam" id="searchSort16">
+						<li class="J_ping side_iteam" id="searchSort16">
 							<span>
-								<i></i>
+								<i class="tick"></i>
 								<span class="sort_of_brand">新品</span>
 							</span>
 						</li>
 
-						<li class="J_ping sidebar_iteam" id="searchSort17">
+						<li class="J_ping side_iteam" id="searchSort17">
 							<span>
-								<i></i>
+								<i class="tick"></i>
 								<span class="sort_of_brand">评价</span>
 							</span>
 						</li>
@@ -188,10 +188,10 @@
 
 
 				<!--京东配送行下拉列表 开始-->
-				<div class="custom_search_box show_position" id="searchFastScreen22" style="display:none">
+				<div class="custom_search_box show_position" id="searchFast" style="display:none">
 					<ul class="custom_info_list">
-						<li class="J_ping sidebar_iteam checked">
-							<a href="#" class="active">
+						<li class="J_ping sidebar_iteam">
+							<a href="#">
 								<span class="sort_of_brand">稻香村</span>
 								<i class="tick"></i>
 							</a>
@@ -272,7 +272,7 @@
 
 			<!--商品列表  开始-->
 			<div id="layout_content" class="mjd_content">
-				<div class="cover_space" id="search1"></div>
+				<div class="cover_space" id="cover_space"></div>
 				<div class="mjd_floor list_pannel" id="search_list_root">
 					<div class="seach_list" id="search_list">
 						<div class="is_loading displayNone" id="searchlist49">
@@ -548,21 +548,21 @@
 						<!--相关搜索  开始-->
 						<div id="searchlist46">
 							<div class="page_bottom_icon">
-								<a href="#" class="head_icon">相关搜索</a>
-								<a href="#" class="little_icon J_ping">月饼盒</a>
-								<a href="#" class="little_icon J_ping">月饼京东自营</a>
-								<a href="#" class="little_icon J_ping">冰皮月饼</a>
-								<a href="#" class="little_icon J_ping">月饼散装</a>
-								<a href="#" class="little_icon J_ping">月饼五仁</a>
-								<a href="#" class="little_icon J_ping">稻香村</a>
-								<a href="#" class="little_icon J_ping">美心月饼</a>
-								<a href="#" class="little_icon J_ping">广州酒家</a>
-								<a href="#" class="little_icon J_ping">华美月饼</a>
-								<a href="#" class="little_icon J_ping">广州酒家月饼</a>
-								<a href="#" class="little_icon J_ping">月饼自营</a>
-								<a href="#" class="little_icon J_ping">蛋黄月饼</a>
-								<a href="#" class="little_icon J_ping">零食</a>
-								<a href="#" class="little_icon J_ping">稻香村月饼</a>
+								<a class="head_icon">相关搜索</a>
+								<a class="little_icon J_ping">月饼盒</a>
+								<a class="little_icon J_ping">月饼京东自营</a>
+								<a class="little_icon J_ping">冰皮月饼</a>
+								<a class="little_icon J_ping">月饼散装</a>
+								<a class="little_icon J_ping">月饼五仁</a>
+								<a class="little_icon J_ping">稻香村</a>
+								<a class="little_icon J_ping">美心月饼</a>
+								<a class="little_icon J_ping">广州酒家</a>
+								<a class="little_icon J_ping">华美月饼</a>
+								<a class="little_icon J_ping">广州酒家月饼</a>
+								<a class="little_icon J_ping">月饼自营</a>
+								<a class="little_icon J_ping">蛋黄月饼</a>
+								<a class="little_icon J_ping">零食</a>
+								<a class="little_icon J_ping">稻香村月饼</a>
 							</div>
 						</div>
 						<!--相关搜索  结束-->
@@ -579,9 +579,9 @@
 
 					<!--回到顶部  开始-->
 					<a class="go_addcar J_ping" id="go_addcar">
-						<i class="addnum"></i>
+						<i class="addnum" id="addnum"></i>
 					</a>
-					<span class="go_back_to_top J_ping" id="go_back_to_top"></span>
+					<span class="go_back_to_top J_ping" id="go_back_to_top" style="display:none;"></span>
 					<span class="normal_change_btn J_ping" id="normal_change_btn"></span>
 					<!--回到顶部  结束-->
 
@@ -600,8 +600,8 @@
 
 
 			<!--筛选弹窗  开始-->
-			<div class="mjd_popCover new_filtrate" id="pannel" style="display:none">
-				<div class="filtrate_block">
+			<div class="mjd_popCover new_filtrate">
+				<div class="filtrate_block" id="filterBlock">
 					<div class="two_block" id="pannelRoot">
 						<div class="filtrate_index" id="index_root">
 							<div class="index_ofyauto" id="index_ofyauto_h">
@@ -613,27 +613,45 @@
 									<div id="searchItemPanelIndex29" class="address_btns">
 
 										<div class="J_ping">
-											<span>京东配送</span>
+											<span class="tick_block searchFast_btn">
+												<i class="tick_icon"></i>
+												京东配送
+											</span>
 										</div>
 
 										<div class="J_ping">
-											<span>货到付款</span>
+											<span class="tick_block searchFast_btn">
+												<i class="tick_icon"></i>
+												货到付款
+											</span>
 										</div>
 
 										<div class="J_ping">
-											<span>仅看有货</span>
+											<span class="tick_block searchFast_btn">
+												<i class="tick_icon"></i>
+												仅看有货
+											</span>
 										</div>
 
 										<div class="J_ping">
-											<span>促销</span>
+											<span class="tick_block searchFast_btn">
+												<i class="tick_icon"></i>
+												促销
+											</span>
 										</div>
 
 										<div class="J_ping">
-											<span>PLUS专享价</span>
+											<span class="tick_block searchFast_btn">
+												<i class="tick_icon"></i>
+												PLUS专享价
+											</span>
 										</div>
 
 										<div class="J_ping">
-											<span>配送全球</span>
+											<span class="tick_block searchFast_btn">
+												<i class="tick_icon"></i>
+												配送全球
+											</span>
 										</div>
 									</div>
 									<div class="title_line2">
@@ -648,6 +666,7 @@
 										<div id="searchItemPanelIndex28" class="prices_btns">
 											<div class="btn_block J_ping">
 												<div class="border_block">
+													<i class="tick_icon"></i>
 													<div>
 														<span class="first_span_small">26-56</span>
 														<span class="second_span">39%的选择</span>
@@ -657,6 +676,7 @@
 
 											<div class="btn_block J_ping">
 												<div class="border_block">
+													<i class="tick_icon"></i>
 													<div>
 														<span class="first_span_small">56-82</span>
 														<span class="second_span">33%的选择</span>
@@ -667,8 +687,11 @@
 
 											<div class="btn_block J_ping">
 												<div class="border_block">
+													<i class="tick_icon"></i>
 													<div>
-														<span class="first_span_small">82-131</span>
+														<span class="first_span_small">
+															82-131
+														</span>
 														<span class="second_span">19%的选择</span>
 													</div>
 												</div>
@@ -687,46 +710,70 @@
 
 									<div id="index_pinpai_text" class="bottom_title J_ping">
 										<span class="title">品牌</span>
-										<span class="selected"></span>
-										<i id="open" class="pingpai_down"></i>
+										<span class="selected" id="brand_name"></span>
+										<i id="brand_open" class="brand_down"></i>
 									</div>
 
-									<div id="expressionKey40" class="btns">
+									<div class="btns">
 										<div id="first" class="first">
 
 											<div class="J_ping">
-												<span>稻香村</span>
+												<span class="tick_block brand_btn">
+													<i class="tick_icon"></i>
+													稻香村
+												</span>
 											</div>
 
 											<div class="J_ping">
-												<span>美心（Meixin）</span>
+												<span class="tick_block brand_btn">
+													<i class="tick_icon"></i>
+													美心（Meixin）
+												</span>
 											</div>
 
 											<div class="J_ping">
-												<span>华美（Huamei）</span>
+												<span class="tick_block brand_btn">
+													<i class="tick_icon"></i>
+													华美（Huamei）
+												</span>
 											</div>
 										</div>
 
 
-										<div id="others" class="others displayNone">
+										<div id="brandBlock" class="others displayNone">
 											<div class="J_ping">
-												<span>元朗荣华（WINGWAH）</span>
+												<span class="tick_block brand_btn">
+													<i class="tick_icon"></i>
+													元朗荣华（WINGWAH）
+												</span>
 											</div>
 
 											<div class="J_ping">
-												<span>杏花楼</span>
+												<span class="tick_block brand_btn">
+													<i class="tick_icon"></i>
+													杏花楼
+												</span>
 											</div>
 
 											<div class="J_ping">
-												<span>广州酒家</span>
+												<span class="tick_block brand_btn">
+													<i class="tick_icon"></i>
+													广州酒家
+												</span>
 											</div>
 
 											<div class="J_ping">
-												<span>哈根达斯（Haagen-Dazs）</span>
+												<span class="tick_block brand_btn">
+													<i class="tick_icon"></i>
+													哈根达斯（Haagen-Dazs）
+												</span>
 											</div>
 
 											<div class="J_ping">
-												<span>元祖（GANSO）</span>
+												<span class="tick_block brand_btn">
+													<i class="tick_icon"></i>
+													元祖（GANSO）
+												</span>
 											</div>
 
 											<div id="morepinpai">
@@ -738,42 +785,64 @@
 
 									<div id="index_pinpai_text" class="bottom_title J_ping">
 										<span class="title">包装</span>
-										<span class="selected"></span>
-										<i id="open" class="pingpai_down"></i>
+										<span class="selected" id="pack_name"></span>
+										<i id="pack_open" class="pack_down"></i>
 									</div>
 
-									<div id="expressionKey30" class="btns">
+									<div class="btns">
 										<div id="first" class="first">
 
 											<div class="J_ping">
-												<span>散装</span>
+												<span class="tick_block pack_btn">				
+													<i class="tick_icon"></i>
+													散装
+												</span>
 											</div>
 
 											<div class="J_ping">
-												<span>独立包装</span>
+												<span class="tick_block pack_btn">
+													<i class="tick_icon"></i>
+													独立包装
+												</span>
 											</div>
 
 											<div class="J_ping">
-												<span>礼盒装</span>
+												<span class="tick_block pack_btn">
+													<i class="tick_icon"></i>
+													礼盒装
+												</span>
 											</div>
 										</div>
 
 
-										<div id="others" class="others displayNone">
+										<div id="packBlock" class="others displayNone">
 											<div class="J_ping">
-												<span>纸盒装</span>
+												<span class="tick_block pack_btn">
+													<i class="tick_icon"></i>
+													纸盒装
+												</span>
 											</div>
 
 											<div class="J_ping">
-												<span>组合装</span>
+												<span class="tick_block pack_btn">
+													<i class="tick_icon"></i>
+													组合装
+												</span>
 											</div>
 
 											<div class="J_ping">
-												<span>铁盒装</span>
+												<span class="tick_block pack_btn">
+													<i class="tick_icon"></i>
+													铁盒装
+												</span>
 											</div>
 
 											<div class="J_ping">
-												<span>其他</span>
+												<span class="tick_block pack_btn">
+													<i class="tick_icon"></i>
+													其他
+												</span>
+												
 											</div>
 
 										</div>
@@ -1213,9 +1282,16 @@
 						<din id="submit" class="right J_ping">确定</din>
 					</div>
 				</div>
-				<div class="filter_mask"></div>
+				<div class="filter_mask" id="filterMask" style="display:none"></div>
 			</div>
 			<!--筛选弹窗  结束-->
+
+	<!--添加购物车成功提示文案 开始-->
+	<div class="add_succesed" id="add_succesed" style="display:none;">
+		<span class="add_succesed_icon"></span>
+		<span class="prompt_text">加入购物车成功！</span>
+	</div>
+	<!--添加购物车成功提示文案 结束-->
 
 
 	<script type="text/javascript" src="/javascripts/way_base.js"></script>
