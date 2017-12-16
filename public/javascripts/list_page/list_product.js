@@ -421,7 +421,7 @@ var that=null;
 })(this);
 /*品牌-包装-口味 结束*/
 
-/*筛选 开始*/
+/*筛选主页 开始*/
 ;(function(global){
 	var fliterBtn=bycss('#fliter'),
 		filterBlock=bycss('#filterBlock'),
@@ -517,4 +517,182 @@ var that=null;
 	};
 	int();
 })(this);
-/*筛选 结束*/
+/*筛选主页 结束*/
+
+/*筛选--全部 开始*/
+;(function(global){
+	var allCateBtn=bycss('#all_category'),
+		indexRoot=bycss('#index_root'),
+		catelogyRoot=bycss('#catelogyRoot'),
+		allBackBtn=bycss('#allBack'),
+		pannelRoot=bycss('#pannelRoot'),
+		selAllBtn=bycss('#catelogy_selectAll'),
+		selectRight=bycss('#selectRight'),
+		upBtn=bycssAll('.up'),
+		up=bycssAll('.classify_ul')[0],
+		upList=byEl('li',up),
+		upBlock=bycssAll('.cate_block'),
+		cateList =bycssAll('.cate_list '),
+		areaText=bycss('#areaText'),
+		areaPanel=bycss('#areaPanel'),
+		sendBackBtn=bycss('#sendBack');
+
+	var int=function(){
+		allCateBtn.addEventListener('click',showAllCate);
+		allBackBtn.addEventListener('click',allBack);
+		selAllBtn.addEventListener('click',selectAll);
+		areaText.addEventListener('click',address);
+		sendBackBtn.addEventListener('click',sendBack);
+		for(var i=0;i<upList.length;i++){
+			upList[i].index=i;
+			upList[i].addEventListener('click',showUpBlock);
+		}
+		for(var j=0;j<cateList.length;j++){
+			cateList[j].index=j;
+			cateList[j].addEventListener('click',selectCateList);
+		}
+	},
+
+	showAllCate=function(){
+		addClass(pannelRoot,'show');
+		show(catelogyRoot);
+	},
+
+	allBack=function(){
+		removeClass(pannelRoot,'show');
+		hide(catelogyRoot);
+	},
+
+	address=function(){
+		addClass(pannelRoot,'show');
+		show(areaPanel);
+	},
+
+	sendBack=function(){
+		removeClass(pannelRoot,'show');
+		hide(areaPanel);
+	},
+
+	selectAll=function(){
+		allBack();
+		removeClass(selectRight,'right');
+	},
+
+	showUpBlock=function(){
+		if(!hasClass(this,'active')){
+			addClass(this,'active');
+			show(upBlock[this.index]);
+		}else{
+			removeClass(this,'active');
+			hide(upBlock[this.index]);
+		}
+	},
+
+	selectCateList=function(){
+		if(!hasClass(this,'active')){
+			addClass(this,'active');
+			allCateBtn.innerHTML=cateList[this.index].innerHTML;
+			removeClass(allCateBtn,'all');
+			allBack();
+
+		}else{
+			removeClass(this,'active');
+			allBack();
+			allCateBtn.innerHTML='全部';
+			addClass(allCateBtn,'all');
+		}
+	};
+	int();
+
+})(this);
+/*筛选--全部 结束*/
+
+/*筛选--配送至--地址选择 开始*/
+;(function(global){
+	var areaselected=bycss('#areaselected'),
+		areaList=byEl('li',areaselected),
+		areaCursor=bycss('#areaCursor'),
+		areaBlock=bycss('#areaItem'),
+		areaItem=byEl('li',areaBlock);
+
+
+	var int=function(){
+		for(var i=0;i<areaList.length;i++){
+			areaList[i].index=i;
+			areaList[i].addEventListener('click',fillArea);
+		}
+
+		for(var j=0;j<areaItem.length;j++){
+			areaItem[j].index=j;
+			areaItem[j].addEventListener('click',selectArea);
+		}
+	},
+
+	fillArea=function(){
+
+	},
+
+	selectArea=function(){
+
+	};
+
+	int();
+})(this);
+/*筛选--配送至--地址选择 结束*/
+
+/*筛选--全部品牌 开始*/
+;(function(global){
+	var moreBrandBtn=bycss('#moreBrand'),
+		brandRoot=bycss('#brand_root'),
+		pannelRoot=bycss('#pannelRoot'),
+		brandBackBtn=bycss('#brand_back'),
+		brandTab=bycssAll('.brand_select'),
+		letterTitle=bycss('#brand_letters_title'),
+		brandLetter=bycss('#brand_letter'),
+		lettersList=bycss('#brand_letters_list'),
+		brandRecommend=bycss('#brand_recommend'),
+		brand_ul_title=bycss('#brand_ul_title'),
+		activeInd=1;
+
+	var int=function(){
+		moreBrandBtn.addEventListener('click',showBrand);
+		brandBackBtn.addEventListener('click',brandBack);
+		for(var i=0;i<brandTab.length;i++){
+			brandTab[i].index=i;
+			brandTab[i].addEventListener('click',selectBrand);
+		}
+	},
+
+	showBrand=function(){
+		addClass(pannelRoot,'show');
+		show(brandRoot);
+	},
+
+	brandBack=function(){
+		removeClass(pannelRoot,'show');
+		hide(brandRoot);
+	},
+
+	selectBrand=function(){
+		if(this.index==0&&!hasClass(this,'selected')){
+			removeClass(brandTab[activeInd],'selected');
+			addClass(this,'selected');
+			show(brandRecommend);
+			hide(letterTitle);
+			hide(brandLetter);
+			hide(lettersList);
+			activeInd=this.index;
+		}else if(this.index==1&&!hasClass(this,'selected')){
+			removeClass(brandTab[activeInd],'selected');
+			addClass(this,'selected');
+			hide(brandRecommend);
+			show(letterTitle);
+			show(brandLetter);
+			show(lettersList);
+			activeInd=this.index;
+		}
+	};
+
+	int();
+})(this);
+/*筛选--全部品牌 结束*/

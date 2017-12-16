@@ -608,7 +608,9 @@
 								<div class="top_block">
 									<div id="areaCheck" class="title_line1 J_ping">
 										<span class="title">配送至</span>
-										<span id="areaText" class="address">配送至</span>
+										<span class="address">
+											<span id="areaText" class="areaText">配送至</span>
+										</span>
 									</div>
 									<div id="searchItemPanelIndex29" class="address_btns">
 
@@ -701,7 +703,7 @@
 									</div>
 									<div id="index_openCtelogyList" class="title_line3">
 										<span class="title">全部分类</span>
-										<span id="index_CtelogyListText" class="all">全部</span>
+										<span id="all_category" class="all allBtn">全部</span>
 									</div>
 								</div>
 
@@ -776,7 +778,7 @@
 												</span>
 											</div>
 
-											<div id="morepinpai">
+											<div id="moreBrand">
 												<span class="all_btns J_ping">全部品牌</span>
 											</div>
 										</div>
@@ -848,15 +850,20 @@
 										</div>
 									</div>
 								</div>
+
+								<div class="space" id="space" style="height:.44rem"></div>
+							</div>
+							<div class="index_btns" id="indexbtns">
+								<div id="reset" class="left J_ping">重置</div>
+								<din id="submit" class="right J_ping">确定</din>
 							</div>
 						</div>
 
-
-						<div class="filtrate_right" id="panelNextPage" style="display:none">
+						<div class="filtrate_right" id="panelNextPage">
 							<!--配送至弹窗  开始-->
 							<div id="areaPanel" class="address" style="display:none">
 								<div class="right_head">
-									<div id="areaback" class="back J_ping">
+									<div id="sendBack" class="back J_ping">
 										<i></i>
 									</div>
 									<div class="heat_title"><span>配送至</span></div>
@@ -867,7 +874,7 @@
 											<li id="area_getCountys">请选择</li>
 											<li id="area_getCitys"></li>
 											<li id="area_getTowns"></li>
-											<li id="area_"></li>
+											<li id="area_other"></li>
 											<i id="areaCursor"></i>
 										</ul>
 										<div class="address_uls">
@@ -899,7 +906,7 @@
 							<!--全部选择弹窗  开始-->
 							<div id="catelogyRoot" class="all_classify" style="display:none">
 								<div class="right_head">
-									<div id="areaback" class="back J_ping">
+									<div id="allBack" class="back J_ping">
 										<i></i>
 									</div>
 									<div class="heat_title"><span>全部分类</span></div>
@@ -907,7 +914,7 @@
 
 								<span class="fix_classify" id="catelogy_selectAll">
 									<span>全部分类</span>
-									<i></i>
+									<i class="right" id="selectRight"></i>
 								</span>
 
 								<ul id="catelogyItemRoot" class="classify_ul">
@@ -916,87 +923,180 @@
 										<span>食品礼券</span>
 										<i class="up"></i>
 									</li>
-									<div class="displayNone">
-										<span class="J_ping">月饼</span>
-										<span class="J_ping">卡券</span>
-										<span class="J_ping">粽子</span>
-										<span class="J_ping">大闸蟹</span>
+									<div class="displayNone cate_block">
+										<span class="J_ping cate_list">
+											<i></i>
+											月饼
+										</span>
+										<span class="J_ping cate_list">
+											<i></i>
+											卡券
+										</span>
+										<span class="J_ping cate_list">
+											<i></i>
+											粽子
+										</span>
+										<span class="J_ping cate_list">
+											<i></i>
+											大闸
+										蟹</span>
 									</div>
 
 									<li>
 										<span>休闲食品</span>
 										<i class="up"></i>
 									</li>
-									<div class="displayNone">
-										<span class="J_ping">饼干蛋糕</span>
-										<span class="J_ping">休闲零食</span>
-										<span class="J_ping">糖果巧克力</span>
-										<span class="J_ping">坚果炒货</span>
-										<span class="J_ping">肉干肉脯</span>
-										<span class="J_ping">熟食腊肉</span>
-										<span class="J_ping">蜜饯干果</span>
-										<span class="J_ping">冷冻食品</span>
-										<span class="J_ping">坚果炒货</span>
+									<div class="displayNone cate_block">
+										<span class="J_ping cate_list">
+											<i></i>
+											饼干
+										蛋糕</span>
+										<span class="J_ping cate_list">
+											<i></i>
+											休闲
+										零食</span>
+										<span class="J_ping cate_list">
+											<i></i>
+											糖果
+										巧克力</span>
+										<span class="J_ping cate_list">
+											<i></i>
+											坚果
+										炒货</span>
+										<span class="J_ping cate_list">
+											<i></i>
+											肉干
+										肉脯</span>
+										<span class="J_ping cate_list">
+											<i></i>
+											熟食
+										腊肉</span>
+										<span class="J_ping cate_list">
+											<i></i>
+											蜜饯
+										干果</span>
+										<span class="J_ping cate_list">
+											<i></i>
+											冷冻
+										食品</span>
+										<span class="J_ping cate_list">
+											<i></i>
+											坚果
+										炒货</span>
 									</div>
 
 									<li>
 										<span>家纺</span>
 										<i class="up"></i>
 									</li>
-									<div class="displayNone">
-										<span class="J_ping">地毯</span>
-										<span class="J_ping">桌布/罩件</span>
-										<span class="J_ping">抱枕靠件</span>
-										<span class="J_ping">坚果炒货</span>
-										<span class="J_ping">床品套件</span>
-										<span class="J_ping">毛巾浴巾</span>
-										<span class="J_ping">电热毯</span>
-										<span class="J_ping">冷冻食品</span>
+									<div class="displayNone cate_block">
+										<span class="J_ping cate_list">
+											<i></i>
+											地毯
+										</span>
+										<span class="J_ping cate_list">
+											<i></i>
+											桌布
+										/罩件</span>
+										<span class="J_ping cate_list">
+											<i></i>
+											抱枕
+										靠件</span>
+										<span class="J_ping cate_list">
+											<i></i>
+											坚果
+										炒货</span>
+										<span class="J_ping cate_list">
+											<i></i>
+											床品
+										套件</span>
+										<span class="J_ping cate_list">
+											<i></i>
+											毛巾
+										浴巾</span>
+										<span class="J_ping cate_list">
+											<i></i>
+											电热
+										毯</span>
+										<span class="J_ping cate_list">
+											<i></i>
+											冷冻
+										食品</span>
 									</div>
 
 									<li>
 										<span>水具酒具</span>
 										<i class="up"></i>
 									</li>
-									<div class="displayNone">
-										<span class="J_ping">酒杯/酒具</span>
+									<div class="displayNone cate_block">
+										<span class="J_ping cate_list">
+											<i></i>
+											酒杯
+										/酒具</span>
 									</div>
 
 									<li>
 										<span>五金工具</span>
 										<i class="up"></i>
 									</li>
-									<div class="displayNone">
-										<span class="J_ping">家用五金</span>
-										<span class="J_ping">手动工具</span>
-										<span class="J_ping">工具配件</span>
+									<div class="displayNone cate_block">
+										<span class="J_ping cate_list">
+											<i></i>
+											家用
+										五金</span>
+										<span class="J_ping cate_list">
+											<i></i>
+											手动
+										工具</span>
+										<span class="J_ping cate_list">
+											<i></i>
+											工具
+										配件</span>
 									</div>
 
 									<li>
 										<span>厨房配件</span>
 										<i class="up"></i>
 									</li>
-									<div class="displayNone">
-										<span class="J_ping">厨房DIY</span>
-										<span class="J_ping">烘焙/烧烤</span>
-										<span class="J_ping">保鲜盒</span>
-										<span class="J_ping">储物/置物架</span>
+									<div class="displayNone cate_block">
+										<span class="J_ping cate_list">
+											<i></i>
+											厨房
+										DIY</span>
+										<span class="J_ping cate_list">
+											<i></i>
+											烘焙
+										/烧烤</span>
+										<span class="J_ping cate_list">
+											<i></i>
+											保鲜
+										盒</span>
+										<span class="J_ping cate_list">
+											<i></i>
+											储物
+										/置物架</span>
 									</div>
 
 									<li>
 										<span>教育培训</span>
 										<i class="up"></i>
 									</li>
-									<div class="displayNone">
-										<span class="J_ping">职业技能</span>
+									<div class="displayNone cate_block">
+										<span class="J_ping cate_list">
+											<i></i>
+											职业
+										技能</span>
 									</div>
 
 									<li>
 										<span>种子</span>
 										<i class="up"></i>
 									</li>
-									<div class="displayNone">
-										<span class="J_ping">大田作物类</span>
+									<div class="displayNone cate_block">
+										<span class="J_ping cate_list">
+											<i></i>
+											大田
+										作物类</span>
 									</div>
 
 								</ul>
@@ -1005,7 +1105,7 @@
 
 
 							<!--全部品牌  开始-->
-							<div id="brand_root" class="filtrate_brand">
+							<div id="brand_root" class="filtrate_brand" style="display:none">
 
 								<div class="right_head">
 									<div id="brand_back" class="back">
@@ -1017,10 +1117,10 @@
 									<span id="brand_dcetermine" class="yes_btn J_ping">确定</span>
 								</div>
 
-								<ul id="brand_select" class="brand_head">
-									<li id="brand_recommend_select" class="J_ping">推荐品牌<i></i></li>
+								<ul class="brand_head">
+									<li id="brand_recommend_select" class="J_ping brand_select">推荐品牌<i></i></li>
 									<em></em>
-									<li id="brand_letter_select" class="selected_letter selected">字母排序<i></i></li>
+									<li id="brand_letter_select" class="selected_letter brand_select selected">字母排序<i></i></li>
 								</ul>
 
 								<!--品牌弹窗-字母排序   开始-->
@@ -1276,11 +1376,9 @@
 							</div>
 							<!--全部品牌  结束-->
 						</div>
+		
 					</div>
-					<div class="index_btns" id="indexbtns">
-						<div id="reset" class="left J_ping">重置</div>
-						<din id="submit" class="right J_ping">确定</din>
-					</div>
+					
 				</div>
 				<div class="filter_mask" id="filterMask" style="display:none"></div>
 			</div>
