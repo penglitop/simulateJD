@@ -116,12 +116,14 @@
 }
 .slide_navi_container .slide_navi{
 	width:22.5rem;
-	transition-timing-function:cubic-bezier(0.1,0.57,0.1,1);
-	transition-duration:0ms;
-	transform:translate(0px,0px,0px); 
+	-webkit-transition:transform .3s ease;
+	-moz-transition:transform .3s ease;
+	-ms-transition:transform .3s ease;
+	-o-transition:transform .3s ease;
+	transition:transform .3s ease;	
 	overflow:hidden;
-
 }
+
 .slideBctive {
 	border-bottom:.01rem solid #ddd;
 }
@@ -143,6 +145,9 @@
 	right:0;
 	top:.1rem;
 	background:#aaa;
+}
+.slide_navi .navi:last-child:after{
+	width:0rem;
 }
  .activeF{
  	color:red;

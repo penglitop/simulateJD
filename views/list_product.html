@@ -136,21 +136,24 @@
 					<li class="custom_search_iteam J_ping jd_downM" id="searchSort13">
 						<span class="selected_nav">
 							<strong>
-								品牌<i class="down"></i>
+								<span class="navBtn">品牌</span>
+								<i class="down"></i>
 							</strong>
 						</span>
 					</li>
 					<li class="custom_search_iteam J_ping jd_downM" id="searchSort13">
 						<span class="selected_nav">
 							<strong>
-								包装<i class="down"></i>
+								<span class="navBtn">包装</span>
+								<i class="down"></i>
 							</strong>
 						</span>
 					</li>
 					<li class="custom_search_iteam J_ping jd_downM">
 						<span class="selected_nav">
 							<strong>
-								口味<i class="down"></i>
+								<span class="navBtn">口味</span>
+								<i class="down"></i>
 							</strong>
 						</span>
 					</li>
@@ -189,7 +192,7 @@
 
 				<!--京东配送行下拉列表 开始-->
 				<div class="custom_search_box show_position" id="searchFast" style="display:none">
-					<ul class="custom_info_list">
+					<ul class="custom_info_list" id="brand" style="display:none;">
 						<li class="J_ping sidebar_iteam">
 							<a href="#">
 								<span class="sort_of_brand">稻香村</span>
@@ -256,6 +259,80 @@
 						<li class="J_ping sidebar_iteam">
 							<a href="#">
 								<span class="sort_of_brand">金九</span>
+								<i class="tick"></i>
+							</a>
+						</li>
+					</ul>
+
+					<ul class="custom_info_list" id="packing" style="display:none;">
+						<li class="J_ping sidebar_iteam">
+							<a href="#">
+								<span class="sort_of_brand">散装</span>
+								<i class="tick"></i>
+							</a>
+						</li>
+
+						<li class="J_ping sidebar_iteam">
+							<a href="#">
+								<span class="sort_of_brand">纸盒装</span>
+								<i class="tick"></i>
+							</a>
+						</li>
+
+						<li class="J_ping sidebar_iteam">
+							<a href="#">
+								<span class="sort_of_brand">铁盒装</span>
+								<i class="tick"></i>
+							</a>
+						</li>
+
+						<li class="J_ping sidebar_iteam">
+							<a href="#">
+								<span class="sort_of_brand">礼盒装</span>
+								<i class="tick"></i>
+							</a>
+						</li>
+					</ul>
+
+					<ul class="custom_info_list" id="taste" style="display:none";>
+						<li class="J_ping sidebar_iteam">
+							<a href="#">
+								<span class="sort_of_brand">水果味</span>
+								<i class="tick"></i>
+							</a>
+						</li>
+
+						<li class="J_ping sidebar_iteam">
+							<a href="#">
+								<span class="sort_of_brand">肉松味</span>
+								<i class="tick"></i>
+							</a>
+						</li>
+
+						<li class="J_ping sidebar_iteam">
+							<a href="#">
+								<span class="sort_of_brand">五仁味</span>
+								<i class="tick"></i>
+							</a>
+						</li>
+
+						<li class="J_ping sidebar_iteam">
+							<a href="#">
+								<span class="sort_of_brand">椒盐味</span>
+								<i class="tick"></i>
+							</a>
+						</li>
+
+						<li class="J_ping sidebar_iteam">
+							<a href="#">
+								<span class="sort_of_brand">蛋黄味</span>
+								<i class="tick"></i>
+							</a>
+						</li>
+
+						<li class="J_ping sidebar_iteam">
+							<a href="#">
+								<span class="sort_of_brand">花香味</span>
 								<i class="tick"></i>
 							</a>
 						</li>
@@ -854,7 +931,7 @@
 								<div class="space" id="space" style="height:.44rem"></div>
 							</div>
 							<div class="index_btns" id="indexbtns">
-								<div id="reset" class="left J_ping">重置</div>
+								<div id="allResetBtn" class="left J_ping">重置</div>
 								<din id="submit" class="right J_ping">确定</din>
 							</div>
 						</div>
@@ -871,31 +948,254 @@
 								<div class="address_replace address_history">
 									<div class="address4">
 										<ul id="areaselected" class="head">
-											<li id="area_getCountys">请选择</li>
-											<li id="area_getCitys"></li>
-											<li id="area_getTowns"></li>
-											<li id="area_other"></li>
+											<li id="area_getProvince" data-type="province">请选择</li>
+											<li id="area_getCountys" data-type="county"></li>
+											<li id="area_getCitys" data-type="city"></li>
+											<li id="area_getTowns" data-type="town"></li>
 											<i id="areaCursor"></i>
 										</ul>
 										<div class="address_uls">
-											<ul id="areaItem">
-												<li>北京</li>
-												<li>上海</li>
-												<li>天津</li>
-												<li>重庆</li>
-												<li>河北</li>
-												<li>山西</li>
-												<li>河南</li>
-												<li>辽宁</li>
-												<li>吉林</li>
-												<li>黑龙江</li>
-												<li>内蒙古</li>
-												<li>江苏</li>
-												<li>山东</li>
-												<li>安徽</li>
-												<li>浙江</li>
-												<li>福建</li>
-												<li>湖北</li>
+											<ul class="areaItem" id="provinceItem">
+												<li data-type="province" data-id="2">北京</li>
+												<li data-type="province" data-id="3" >安徽</li>
+												<li data-type="province" data-id="4" >福建</li>
+												<li data-type="province" data-id="5" >甘肃</li>
+												<li data-type="province" data-id="6" >广东</li>
+												<li data-type="province" data-id="7" >广西</li>
+												<li data-type="province" data-id="8" >贵州</li>
+												<li data-type="province" data-id="9" >海南</li>
+												<li data-type="province" data-id="10" >河北</li>
+												<li data-type="province" data-id="11" >河南</li>
+												<li data-type="province" data-id="12" >黑龙江</li>
+												<li data-type="province" data-id="13" >湖北</li>
+												<li data-type="province" data-id="14" >湖南</li>
+												<li data-type="province" data-id="15" >吉林</li>
+												<li data-type="province" data-id="16" >江苏</li>
+												<li data-type="province" data-id="17" >江西</li>
+												<li data-type="province" data-id="18" >辽宁</li>
+												<li data-type="province" data-id="19" >内蒙古</li>
+												<li data-type="province" data-id="20" >宁夏</li>
+												<li data-type="province" data-id="21" >青海</li>
+												<li data-type="province" data-id="22" >山东</li>
+												<li data-type="province" data-id="23" >山西</li>
+												<li data-type="province" data-id="24" >陕西</li>
+												<li data-type="province" data-id="25" >上海</li>
+												<li data-type="province" data-id="26" >四川</li>
+												<li data-type="province" data-id="27" >天津</li>
+												<li data-type="province" data-id="28" >西藏</li>
+												<li data-type="province" data-id="29" >新疆</li>
+												<li data-type="province" data-id="30" >云南</li>
+												<li data-type="province" data-id="31" >浙江</li>
+												<li data-type="province" data-id="32" >重庆</li>
+												<li data-type="province" data-id="33" >香港</li>
+												<li data-type="province" data-id="34" >澳门</li>
+												<li data-type="province" data-id="35" >台湾</li>
+											</ul>
+											<ul class="areaItem" id="countyItem">
+												<li areaid="2816" action="getCountys" class="">
+													密云区
+													<i></i>
+												</li>
+												<li areaid="72" action="getCountys" class="">
+													朝阳区
+													<i></i>
+												</li>
+												<li areaid="2901" action="getCountys" class="">
+													昌平区
+													<i></i>
+												</li>
+												<li areaid="2953" action="getCountys" class="">
+													平谷区
+													<i></i>
+												</li>
+												<li areaid="2800" action="getCountys" class="">
+													海淀区
+													<i></i>
+												</li>
+												<li areaid="2801" action="getCountys" class="">
+													西城区
+													<i></i>
+												</li>
+												<li areaid="2802" action="getCountys" class="">
+													东城区
+													<i></i>
+												</li>
+												<li areaid="2803" action="getCountys" class="">
+													崇文区
+													<i></i>
+												</li>
+												<li areaid="2804" action="getCountys" class="">
+													宣武区
+													<i></i>
+												</li>
+												<li areaid="2805" action="getCountys" class="">
+													丰台区
+													<i></i>
+												</li>
+												<li areaid="2806" action="getCountys" class="">
+													石景山
+													区<i></i
+												></li>
+												<li areaid="2807" action="getCountys" class="">
+													门头沟
+													<i></i>
+												</li>
+												<li areaid="2808" action="getCountys" class="">
+													房山区
+													<i></i>
+												</li>
+												<li areaid="2809" action="getCountys" class="">
+													通州区
+													<i></i>
+												</li>
+												<li areaid="3065" action="getCountys" class="">
+													延庆县
+													<i></i>
+												</li>
+												<li areaid="2810" action="getCountys" class="">
+													大兴区
+													<i></i>
+												</li>
+												<li areaid="2812" action="getCountys" class="">
+													顺义区
+													<i></i>
+												</li>
+												<li areaid="2814" action="getCountys" class="">
+													怀柔区
+													<i></i>
+												</li>
+											</ul>
+											<ul class="areaItem" id="cityItem">
+												<li areaid="51800" action="getTowns" class="">
+													城区<i></i>
+												</li>
+												<li areaid="51801" action="getTowns" class="">
+													川沙新镇<i></i>
+												</li>
+												<li areaid="51822" action="getTowns" class="">
+													祝桥镇<i></i>
+												</li>
+												<li areaid="51823" action="getTowns" class="">
+													新场镇<i></i>
+												</li>
+												<li areaid="51802" action="getTowns" class="">
+													高桥镇<i></i>
+												</li>
+												<li areaid="51824" action="getTowns" class="">
+													惠南镇<i></i>
+												</li>
+												<li areaid="51803" action="getTowns" class="">
+													北蔡镇<i></i>
+												</li>
+												<li areaid="51804" action="getTowns" class="">
+													合庆镇<i></i>
+												</li>
+												<li areaid="51805" action="getTowns" class="">
+													唐镇<i></i>
+												</li>
+												<li areaid="51806" action="getTowns" class="">
+													曹路镇<i></i>
+												</li>
+												<li areaid="51807" action="getTowns" class="">
+													金桥镇<i></i>
+												</li>
+												<li areaid="51808" action="getTowns" class="">
+													高行镇<i></i>
+												</li>
+												<li areaid="51809" action="getTowns" class="">
+													高东镇<i></i>
+												</li>
+												<li areaid="51810" action="getTowns" class="">
+													张江镇<i></i>
+												</li>
+												<li areaid="51811" action="getTowns" class="">
+													三林镇<i></i>
+												</li>
+												<li areaid="51812" action="getTowns" class="">
+													南汇新城镇<i></i>
+												</li>
+												<li areaid="51825" action="getTowns" class="">
+													康桥镇<i></i>
+												</li>
+												<li areaid="51826" action="getTowns" class="">
+													宣桥镇<i></i>
+												</li>
+												<li areaid="51827" action="getTowns" class="">
+													书院镇<i></i>
+												</li>
+												<li areaid="51828" action="getTowns" class="">
+													大团镇<i></i>
+												</li>
+												<li areaid="51829" action="getTowns" class="">
+													周浦镇<i></i>
+												</li>
+												<li areaid="51830" action="getTowns" class="">
+													芦潮港镇<i></i>
+												</li>
+												<li areaid="51831" action="getTowns" class="">
+													泥城镇<i></i>
+												</li>
+												<li areaid="51832" action="getTowns" class="">
+													航头镇<i></i>
+												</li>
+												<li areaid="51833" action="getTowns" class="">
+													万祥镇<i></i>
+												</li>
+												<li areaid="51834" action="getTowns" class="">
+													老港镇<i></i>
+												</li>
+											</ul>
+											<ul class="areaItem" id="townItem">
+												<li areaid="24163" action="" class="">
+													龙山乡<i></i>
+												</li>
+												<li areaid="24164" action="" class="">
+													永发乡<i></i>
+												</li>
+												<li areaid="24165" action="" class="">
+													原种场<i></i>
+												</li>
+												<li areaid="24166" action="" class="">
+													农科院<i></i>
+												</li>
+												<li areaid="24167">
+													种猪场<i></i>
+												</li>
+												<li areaid="24168">
+													十屋种牛场<i></i>
+												</li>
+												<li areaid="24169" action="" class="">	十屋农场<i></i>
+												</li>
+												<li areaid="24170" action="" class="">创业农场<i></i>
+												</li>
+												<li areaid="24171" action="" class="">
+													鹿场<i></i>
+												</li>
+												<li areaid="24172" action="" class="">	范家屯开发区<i></i>
+												</li>
+												<li areaid="24113" action="" class="">四棵树乡<i></i>
+												</li>
+												<li areaid="24114" action="" class="">
+													白山乡<i></i>
+												</li>
+												<li areaid="24115" action="" class="">
+													胜利乡<i></i>
+												</li>
+												<li areaid="24116" action="" class="">
+													双河乡<i></i>
+												</li>
+												<li areaid="24117" action="" class="">
+													金山乡<i></i>
+												</li>
+												<li areaid="24118" action="" class="">
+													梨树农场<i></i>
+												</li>
+												<li areaid="24119" action="" class="">
+													良种场<i></i>
+												</li>
+												<li areaid="36967" action="" class="">
+													县城内<i></i>
+												</li>
 											</ul>
 										</div>
 									</div>
@@ -1126,159 +1426,7 @@
 								<!--品牌弹窗-字母排序   开始-->
 								<span id="brand_letters_title" class="brand_ul_title">A</span>
 
-								<ul id="brand_letter" class="brand_ul">
-
-									<li class="J_ping selected">
-										<span>安琪（AnQier）</span>
-									</li>
-
-									<li class="J_ping">
-										<span>阿尔发</span>
-									</li>
-
-									<li class="J_ping">
-										<span>安琪</span>
-									</li>
-
-									<li class="J_ping">
-										<span>爱达乐</span>
-									</li>
-
-									<li class="J_ping">
-										<span>歌斐颂</span>
-									</li>
-
-									<li class="J_ping">
-										<span>AERFA</span>
-									</li>
-
-									<li class="J_ping">
-										<span>澳皇传统风味（KINGMAC）</span>
-									</li>
-
-									<li class="J_ping">
-										<span>安琪</span>
-									</li>
-
-									<li class="J_ping">
-										<span>爱达乐</span>
-									</li>
-
-									<li class="J_ping">
-										<span>歌斐颂</span>
-									</li>
-
-									<li class="J_ping">
-										<span>AERFA</span>
-									</li>
-
-									<li class="J_ping">
-										<span>澳皇传统风味（KINGMAC）</span>
-									</li>
-
-									<li>
-										<span class="brand_ul_title">B</span>
-									</li>
-
-									<li class="J_ping">
-										<span>北京稻香村</span>
-									</li>
-
-									<li class="J_ping">
-										<span>百草味</span>
-									</li>
-
-									<li class="J_ping">
-										<span>85度C</span>
-									</li>
-
-									<li class="J_ping">
-										<span>八享时（Favor8time）</span>
-									</li>
-
-									<li class="J_ping">
-										<span>柏佳健</span>
-									</li>
-
-									<li class="J_ping">
-										<span>宝岛太阳堂</span>
-									</li>
-
-									<li class="J_ping">
-										<span>巴莉甜甜（balitiantian）</span>
-									</li>
-
-									<li class="J_ping">
-										<span>半岛月饼</span>
-									</li>
-
-									<li class="J_ping">
-										<span>白记荟萃斋（baijihuicuizhai）</span>
-									</li>
-
-									<li class="J_ping">
-										<span>贝奥（Beow）</span>
-									</li>
-
-									<li class="J_ping">
-										<span>保稻（BAODAO）</span>
-									</li>
-
-									<li class="J_ping">
-										<span>北纬三十八度</span>
-									</li>
-
-									<li>
-										<span class="brand_ul_title">C</span>
-									</li>
-
-									<li class="J_ping">
-										<span>采芝斋</span>
-									</li>
-
-									<li class="J_ping">
-										<span>陈李济</span>
-									</li>
-
-									<li class="J_ping">
-										<span>翠沁斋</span>
-									</li>
-
-									<li class="J_ping">
-										<span>Cicilover</span>
-									</li>
-
-									<li class="J_ping">
-										<span>才叔</span>
-									</li>
-
-									<li class="J_ping">
-										<span>蔡府（CHAIFOO）</span>
-									</li>
-
-									<li class="J_ping">
-										<span>长福祥</span>
-									</li>
-
-									<li class="J_ping">
-										<span>昌海</span>
-									</li>
-
-									<li class="J_ping">
-										<span>诚可成</span>
-									</li>
-
-									<li class="J_ping">
-										<span>潮之选</span>
-									</li>
-
-									<li class="J_ping">
-										<span>采香斋</span>
-									</li>
-
-									<li class="J_ping">
-										<span>柴夫（CHAIFU）</span>
-									</li>
+								<ul id="brand_letter" class="brand_ul"><li class="J_ping"><span>Apple</span></li><li class="J_ping"><span>苹果（APPLE）</span></li><li class="J_ping"><span>AGM</span></li><li class="J_ping"><span>奥洛斯（aloes）</span></li><li class="J_ping"><span>奥乐迪奥（AoleDior）</span></li><li class="J_ping"><span>爱来福（ailyfu）</span></li><li class="J_ping"><span>爱贝多</span></li><li class="J_ping"><span>奥缇斯（autrise）</span></li><li><span class="brand_ul_title">B</span></li><li class="J_ping"><span>8848</span></li><li class="J_ping"><span>BIHEE</span></li><li class="J_ping"><span>保千里（PROTRULY）</span></li><li class="J_ping"><span>波导（BiRD）</span></li><li class="J_ping"><span>贝尔丰（BIFER）</span></li><li class="J_ping"><span>铂爵（BIOJUET）</span></li><li class="J_ping"><span>BIXING</span></li><li class="J_ping"><span>小蜜蜂（bee）</span></li><li><span class="brand_ul_title">C</span></li><li class="J_ping"><span>锤子（smartisan）</span></li><li class="J_ping"><span>长虹（CHANGHONG）</span></li><li class="J_ping"><span>CONQUEST</span></li><li class="J_ping"><span>创星</span></li><li class="J_ping"><span>CAT</span></li><li class="J_ping"><span>CAPPU</span></li><li><span class="brand_ul_title">D</span></li><li class="J_ping"><span>迪美（DIM）</span></li><li class="J_ping"><span>大显（DaXian）</span></li><li class="J_ping"><span>朵唯（DOOV）</span></li><li class="J_ping"><span>DMZ DAMUZHI</span></li><li class="J_ping"><span>独影天幕</span></li><li><span class="brand_ul_title">E</span></li><li class="J_ping"><span>21KE</span></li><li class="J_ping"><span>EPHONE</span></li><li><span class="brand_ul_title">F</span></li><li class="J_ping"><span>飞利浦（PHILIPS）</span></li><li class="J_ping"><span>捷语（gofly）</span></li><li class="J_ping"><span>FNNI</span></li><li><span class="brand_ul_title">G</span></li><li class="J_ping"><span>谷歌（Google）</span></li><li class="J_ping"><span>詹姆士（GERMY）</span></li><li class="J_ping"><span>广信（KINGSUN）</span></li><li class="J_ping"><span>关爱心</span></li><li><span class="brand_ul_title">H</span></li><li class="J_ping"><span>华为（HUAWEI）</span></li><li class="J_ping"><span>HTC</span></li><li class="J_ping"><span>黑莓（BlackBerry）</span></li><li class="J_ping"><span>海信（Hisense）</span></li><li class="J_ping"><span>海尔（Haier）</span></li><li class="J_ping"><span>红鸟</span></li><li class="J_ping"><span>HANMAC</span></li><li class="J_ping"><span>海语（HAIYU）</span></li><li><span class="brand_ul_title">I</span></li><li class="J_ping"><span>IMOO</span></li><li><span class="brand_ul_title">J</span></li><li class="J_ping"><span>金立（Gionee）</span></li><li class="J_ping"><span>金圣达（GRSED）</span></li><li class="J_ping"><span>京立（Gineek）</span></li><li class="J_ping"><span>金柏利</span></li><li><span class="brand_ul_title">K</span></li><li class="J_ping"><span>酷派（Coolpad）</span></li><li class="J_ping"><span>天语（K-Touch）</span></li><li class="J_ping"><span>康佳（KONKA）</span></li><li class="J_ping"><span>酷和（KHU）</span></li><li class="J_ping"><span>酷维（coovei）</span></li><li><span class="brand_ul_title">L</span></li><li class="J_ping"><span>乐视TV（Letv）</span></li><li class="J_ping"><span>联想（Lenovo）</span></li><li class="J_ping"><span>乐丰（lephone）</span></li><li class="J_ping"><span>朗界（RugGear）</span></li><li class="J_ping"><span>乐洲（LEZHOU）</span></li><li class="J_ping"><span>厘米</span></li><li class="J_ping"><span>LBX</span></li><li><span class="brand_ul_title">M</span></li><li class="J_ping"><span>魅族（MEIZU）</span></li><li class="J_ping"><span>美图（meitu）</span></li><li class="J_ping"><span>摩托罗拉（Motorola）</span></li><li class="J_ping"><span>MANN</span></li><li class="J_ping"><span>MOQI</span></li><li><span class="brand_ul_title">N</span></li><li class="J_ping"><span>诺基亚（NOKIA）</span></li><li class="J_ping"><span>努比亚（nubia）</span></li><li class="J_ping"><span>纽曼（Newman）</span></li><li class="J_ping"><span>纽曼</span></li><li class="J_ping"><span>诺亚信（NOAIN）</span></li><li class="J_ping"><span>尼凯恩（neken）</span></li><li><span class="brand_ul_title">O</span></li><li class="J_ping"><span>OPPO</span></li><li class="J_ping"><span>欧奇（ouki）</span></li><li><span class="brand_ul_title">Q</span></li><li class="J_ping"><span>青橙（GreenOrange）</span></li><li><span class="brand_ul_title">R</span></li><li class="J_ping"><span>锐族</span></li><li><span class="brand_ul_title">S</span></li><li class="J_ping"><span>三星（SAMSUNG）</span></li><li class="J_ping"><span>360</span></li><li class="J_ping"><span>索尼（SONY）</span></li><li class="J_ping"><span>夏普（SHARP）</span></li><li class="J_ping"><span>守护宝</span></li><li class="J_ping"><span>SUGAR</span></li><li class="J_ping"><span>索爱（soaiy）</span></li><li class="J_ping"><span>硕尼姆（Sonim）</span></li><li class="J_ping"><span>赛博宇华（SOP）</span></li><li class="J_ping"><span>神舟（HASEE）</span></li><li class="J_ping"><span>SOYES</span></li><li class="J_ping"><span>SAMWEI</span></li><li class="J_ping"><span>首家（SOJA）</span></li><li class="J_ping"><span>陕西电信</span></li><li><span class="brand_ul_title">T</span></li><li class="J_ping"><span>TCL</span></li><li class="J_ping"><span>TETC</span></li><li><span class="brand_ul_title">U</span></li><li class="J_ping"><span>UNNO</span></li><li><span class="brand_ul_title">V</span></li><li class="J_ping"><span>vivo</span></li><li class="J_ping"><span>VETAS</span></li><li class="J_ping"><span>VERTU</span></li><li class="J_ping"><span>Vilovo</span></li><li><span class="brand_ul_title">W</span></li><li class="J_ping"><span>唯米（Weiimi）</span></li><li class="J_ping"><span>万有（WANYOU）</span></li><li class="J_ping"><span>WE</span></li><li class="J_ping"><span>Weiimi</span></li><li class="J_ping"><span>万利达（Malata）</span></li><li><span class="brand_ul_title">X</span></li><li class="J_ping"><span>小米（MI）</span></li><li class="J_ping"><span>小辣椒</span></li><li class="J_ping"><span>小霸王（SUBOR）</span></li><li class="J_ping"><span>小格雷</span></li><li class="J_ping"><span>炫华（xuanhua）</span></li><li><span class="brand_ul_title">Y</span></li><li class="J_ping"><span>一加</span></li><li class="J_ping"><span>YOTA</span></li><li class="J_ping"><span>优购（UooGou）</span></li><li class="J_ping"><span>优思（Uniscope）</span></li><li class="J_ping"><span>誉品（YEPEN）</span></li><li class="J_ping"><span>易百年</span></li><li class="J_ping"><span>YAAO</span></li><li class="J_ping"><span>YLTphone</span></li><li class="J_ping"><span>亿和源（YHYON）</span></li><li><span class="brand_ul_title">Z</span></li><li class="J_ping"><span>中兴（ZTE）</span></li><li class="J_ping"><span>ZUK</span></li><li class="J_ping"><span>中兴健康（ZTE Health）</span></li>
 
 								</ul>
 

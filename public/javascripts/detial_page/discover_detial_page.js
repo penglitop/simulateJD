@@ -31,3 +31,30 @@
 		})
 })(this);
 /*购物车头部 结束*/
+
+/*展开全部商品 开始*/
+;(function(){
+	var moreProduct=byid('moreProduct'),
+		moreBtn=byid('moreBtn'),
+		moreText=byid('moreText'),
+		foldIcon=byid('foldIcon');
+	var init=function(){
+		moreBtn.addEventListener('click',showMore);
+	},
+	showMore=function(){
+		if(moreProduct.style.display=='none'){
+			show(moreProduct);
+			removeClass(foldIcon,'open');
+			addClass(foldIcon,'close');
+			moreText.innerHTML='收起';
+		}else{
+			hide(moreProduct);
+			addClass(foldIcon,'open');
+			removeClass(foldIcon,'close');
+			moreText.innerHTML='展开全部商品';
+		}
+	};
+
+	init();
+})(this);
+/*展开全部商品 结束*/

@@ -27,21 +27,24 @@
 		layjdBar=bycss('#m_common_header_shortcut'),
 		headerGoback=bycss('#m_common_header_goback');
 
+	var init=function(){
 		layKey.addEventListener('click',listShow);
-
-		headerGoback.addEventListener('click',function(){
-			if(window.history.go(-1)){
-				window.history.go(-1);
-			}
-		});
-
-		function listShow(){
-			if(layjdBar.style.display=='none'){
-				show(layjdBar);
-			}else{
-				hide(layjdBar);
-			}
+		headerGoback.addEventListener('click',goBack);
+	},		
+	goBack=function(){
+		if(window.history.go(-1)){
+			window.history.go(-1);
 		}
+	},
+
+	listShow=function(){
+		if(layjdBar.style.display=='none'){
+			show(layjdBar);
+		}else{
+			hide(layjdBar);
+		}
+	};
+	init();
 })(this);
 /*列表出现 结束*/
 
@@ -50,27 +53,31 @@
 	var toTopBtn=bycss('#index_to_top'),
 		toToptimer=null;
 
-	window.addEventListener('scroll',function(){
+	var init=function(){
+		window.addEventListener('scroll',showTopBtn);
+		toTopBtn.addEventListener('click',function(){
+			clearInterval(toToptimer);
+			toToptimer=setInterval(toTop,30);
+		});
+	},
+	showTopBtn=function(){
 		var oldScrollTop=document.documentElement.scrollTop||window.pageYOffset||document.body.scrollTop;
 		if(oldScrollTop>=5){
 			show(toTopBtn);
 		}else{
 			hide(toTopBtn);
 		}
-	});
-	toTopBtn.addEventListener('click',function(){
-		clearInterval(toToptimer);
-		toToptimer=setInterval(toTop,30);
-	});
-
-	function toTop(){
+	},
+	toTop=function(){
 		var oldScrollTop=document.documentElement.scrollTop||window.pageYOffset||document.body.scrollTop,
 			iSpeed=Math.floor(-oldScrollTop/6);
 		document.body.scrollTop=window.pageYOffset=document.documentElement.scrollTop=oldScrollTop+iSpeed;
 		if(oldScrollTop==0){
-				clearInterval(toToptimer);
-			}
-	}
+			clearInterval(toToptimer);
+		}
+	};
+
+	init();
 })(this);
 /*返回到顶部 结束*/
 
@@ -79,16 +86,19 @@
 	var promoItem=bycss('#promotion_item'),
 		promoArrow=bycss('#promoicon_arrow');
 
+	var init=function(){
 		promoArrow.addEventListener('click',arrowShow);
-		function arrowShow(){
-			if(promoItem.style.display=='block'){
-				hide(promoItem);
-				removeClass(promoArrow,'icon_arrowup');
-			}else{
-				show(promoItem);
-				addClass(promoArrow,'icon_arrowup');
-			}
+	},		
+	arrowShow=function(){
+		if(promoItem.style.display=='block'){
+			hide(promoItem);
+			removeClass(promoArrow,'icon_arrowup');
+		}else{
+			show(promoItem);
+			addClass(promoArrow,'icon_arrowup');
 		}
+	};
+	init();
 })(this);
 /*促销展开 结束*/
 
@@ -99,30 +109,32 @@
 		iconPopups=bycss('#icon_popups'),
 		menuClose=bycss('#spec_menu_close');
 
+	var init=function(){
 		iconPopups.addEventListener('click',menuShow);
 		menuClose.addEventListener('click',menuHide);
+	},
 
-		function menuShow(){
-			show(menuMask);
-			removeClass(specMenu,'spec_menu_hide');
-			addClass(specMenu,'spec_menu_show');
-			show(specMenu);
-		}
+	menuShow=function(){
+		show(menuMask);
+		removeClass(specMenu,'spec_menu_hide');
+		addClass(specMenu,'spec_menu_show');
+		show(specMenu);
+	},
 
-		function menuHide(){
-			removeClass(specMenu,'spec_menu_show');
-			addClass(specMenu,'spec_menu_hide');
-			
-			setTimeout(function(){
-				hide(menuMask);
-				hide(specMenu);
-			},700);
+	menuHide=function(){
+		removeClass(specMenu,'spec_menu_show');
+		addClass(specMenu,'spec_menu_hide');
+		
+		setTimeout(function(){
+			hide(menuMask);
+			hide(specMenu);
+		},700);
 
-			setTimeout(function(){
-				hide(specMenu);
-			},480);
-
-		}
+		setTimeout(function(){
+			hide(specMenu);
+		},480);
+	};
+	init();
 })(this);
 /*已选弹出框 结束*/
 
@@ -140,63 +152,56 @@
 		carNum=bycss('#carNum'),
 		addCartBtm=bycss('#addCartBtm');
 
-		quaIncrease.addEventListener('click',function(){
-			number.value=parseInt(number.value)+1;
-			amount.innerHTML=parseInt(number.value)+'件';
-			selectAmount.innerHTML=parseInt(number.value)+'件';
-		});
-
+	var init=function(){
+		quaIncrease.addEventListener('click',productNum);
 		quaDecrease.addEventListener('click',addNum);
-
 		addCartSpec.addEventListener('click',cartAbove);
-
 		addCartBtm.addEventListener('click',cartBttom);
+	},
+	productNum=function(){
+		number.value=parseInt(number.value)+1;
+		amount.innerHTML=parseInt(number.value)+'件';
+		selectAmount.innerHTML=parseInt(number.value)+'件';
+	},
+	cartAbove=function(){
+		removeClass(specMenu,'spec_menu_show');
+		addClass(specMenu,'spec_menu_hide');
+		setTimeout(function(){
+			hide(menuMask);
+			hide(specMenu);
+		},700);
+		setTimeout(function(){
+			hide(specMenu);
+		},480);
+		setTimeout(function(){
+			show(addSuccesed);
+		},900);
+		setTimeout(function(){
+			hide(addSuccesed);
+		},1800);
+		carNum.innerHTML=parseInt(number.value)+parseInt(carNum.innerHTML);
+	},
+	cartBttom=function (){
+		setTimeout(function(){
+			show(addSuccesed);
+		},300);
 
-		function cartAbove(){
-			removeClass(specMenu,'spec_menu_show');
-			addClass(specMenu,'spec_menu_hide');
-			
-			setTimeout(function(){
-				hide(menuMask);
-				hide(specMenu);
-			},700);
+		setTimeout(function(){
+			hide(addSuccesed);
+		},1200);
 
-			setTimeout(function(){
-				hide(specMenu);
-			},480);
-
-			setTimeout(function(){
-				show(addSuccesed);
-			},900);
-
-			setTimeout(function(){
-				hide(addSuccesed);
-			},1800);
-
-			carNum.innerHTML=parseInt(number.value)+parseInt(carNum.innerHTML);
+		carNum.innerHTML=parseInt(number.value)+parseInt(carNum.innerHTML);
+	},
+	addNum=function(){
+		if(number.value=='1'){
+			number.value=1;
+		}else{
+			number.value=parseInt(number.value)-1;
 		}
-
-		function cartBttom(){
-			setTimeout(function(){
-				show(addSuccesed);
-			},300);
-
-			setTimeout(function(){
-				hide(addSuccesed);
-			},1200);
-
-			carNum.innerHTML=parseInt(number.value)+parseInt(carNum.innerHTML);
-		}
-
-		function addNum(){
-			if(number.value=='1'){
-				number.value=1;
-			}else{
-				number.value=parseInt(number.value)-1;
-			}
-			amount.innerHTML=parseInt(number.value)+'件';
-			selectAmount.innerHTML=parseInt(number.value)+'件';
-		}	
+		amount.innerHTML=parseInt(number.value)+'件';
+		selectAmount.innerHTML=parseInt(number.value)+'件';
+	};
+	init();	
 })(this);
 /*已选弹出框--数量  结束*/
 
@@ -209,27 +214,24 @@
 		menuMask=bycss('#flick_menu_mask'),
 		serMenuClose=bycss('#service_menu_close');
 
+	var init=function(){
 		serText1.addEventListener('click',serviceBtn);
-
 		serText2.addEventListener('click',serviceBtn);
-
 		serMenuClose.addEventListener('click',serviceClose);
-
 		serOkBtn.addEventListener('click',serviceClose);
-
-
-		function serviceBtn(){
-			removeClass(serMenu,'service_menu_hide');
-			addClass(serMenu,'service_menu_show');
-			show(menuMask);
-			show(serMenu);
-		}
-
-		function serviceClose(){
-			hide(menuMask);
-			hide(serMenu);
-			removeClass(serMenu,'service_menu_show');
-		}
+	},		
+	serviceBtn=function (){
+		removeClass(serMenu,'service_menu_hide');
+		addClass(serMenu,'service_menu_show');
+		show(menuMask);
+		show(serMenu);
+	},
+	serviceClose=function(){
+		hide(menuMask);
+		hide(serMenu);
+		removeClass(serMenu,'service_menu_show');
+	};
+	init();
 })(this);
 /*服务说明 结束*/
 
@@ -344,7 +346,7 @@
 	          	return true;
 	          }else{
 	            return false;
-	            }
+            }
 		}
 })(this);
 /*降价通知 结束*/
@@ -358,37 +360,39 @@
 		concernSuccesed=bycss('#concern_succesed'),
 		cancelConcern=bycss('#cancel_concern');
 
+	var init=function(){
 		focusOn.addEventListener('click',concern);
-
-		function concern(){
-			if(focuScale.style.display=='none'){
-				removeClass(attentFocus,'focus_out');
-				addClass(attentFocus,'focus_on');
-				addClass(focuScale,'focus_scale_show');
-				addClass(attentFocus,'click_focus_show');
-				show(focuScale);
-				concernInfo.innerHTML='已关注';
-				setTimeout(function(){
-					show(concernSuccesed);
-				},200);
-				setTimeout(function(){
-					hide(concernSuccesed);
-				},1200);
-			}else{
-				addClass(attentFocus,'focus_out');
-				removeClass(attentFocus,'focus_on');
-				removeClass(focuScale,'focus_scale_show');
-				removeClass(attentFocus,'click_focus_show');
-				hide(focuScale);
-				concernInfo.innerHTML='关注';
-				setTimeout(function(){
-					show(cancelConcern);
-				},200);
-				setTimeout(function(){
-					hide(cancelConcern);
-				},1200);
-			}
+	},
+	concern=function(){
+		if(focuScale.style.display=='none'){
+			removeClass(attentFocus,'focus_out');
+			addClass(attentFocus,'focus_on');
+			addClass(focuScale,'focus_scale_show');
+			addClass(attentFocus,'click_focus_show');
+			show(focuScale);
+			concernInfo.innerHTML='已关注';
+			setTimeout(function(){
+				show(concernSuccesed);
+			},200);
+			setTimeout(function(){
+				hide(concernSuccesed);
+			},1200);
+		}else{
+			addClass(attentFocus,'focus_out');
+			removeClass(attentFocus,'focus_on');
+			removeClass(focuScale,'focus_scale_show');
+			removeClass(attentFocus,'click_focus_show');
+			hide(focuScale);
+			concernInfo.innerHTML='关注';
+			setTimeout(function(){
+				show(cancelConcern);
+			},200);
+			setTimeout(function(){
+				hide(cancelConcern);
+			},1200);
 		}
+	};
+	init();
 })(this);
 /*关注 结束*/
 
@@ -508,22 +512,22 @@
 		sidebar=bycss('#sidebar_content'),
 		regionBack=bycss('#region_back_arrow');
 
+	var init=function(){
 		location.addEventListener('click',sendToShow);
-
 		regionBack.addEventListener('click',sendToHide);
-
-		function sendToShow(){
-			document.body.scrollTop=window.pageYOffset=document.documentElement.scrollTop=0+'px';
-			addClass(mainLayout,'body_slide_move');
-			show(puller);
-			addClass(sidebar,'send_slide_show');
-		}
-
-		function sendToHide(){
-			setTimeout(function(){
-				hide(puller);
-			},50);
-			removeClass(mainLayout,'body_slide_move');
-		}
+	},
+	sendToShow=function(){
+		document.body.scrollTop=window.pageYOffset=document.documentElement.scrollTop=0+'px';
+		addClass(mainLayout,'body_slide_move');
+		show(puller);
+		addClass(sidebar,'send_slide_show');
+	},
+	sendToHide=function(){
+		setTimeout(function(){
+			hide(puller);
+		},50);
+		removeClass(mainLayout,'body_slide_move');
+	};
+	init();
 })(this);
 /*配送至出现 结束*/

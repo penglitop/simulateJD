@@ -18,37 +18,76 @@
 /*关闭固定头部 结束*/
 /*轮播 开始*/
 ;(function(glboal){
-	var slider=byid('slider');
+	var slider=byid('slider'),
+		imgLi=byEl('li',slider),
+		pointer=byEl('span',slider);
 	if(!slider){
 		console.warn('轮播容器不存在');
 		return;
 	}
-	var slider_list=byid('slider_list');
-	var startX=0;
+	var sliderList=byid('slider_list'),
+		screenWidth=document.body.offsetWidth,
+		sildeWidth=0,
+		startX=0,
+		moveX=0,
+		endX=0,
+		lastX=0,
+		num=0;
+
+
 	var init=function(){
-		slider.addEventListener('touchstart',startTouch);
-		slider.addEventListener('touchmove',moveTouch);
-		slider.addEventListener('touchend',endTouch);
+		sliderList.addEventListener('touchstart',start);
+		sliderList.addEventListener('touchmove',move);
+		sliderList.addEventListener('touchend',end);
 	},
-	startTouch=function(e){
-		startX=e.touches[0].clientX;
+	start=function(e){
+		startX=e.changedTouches[0].clientX;
+		lastX=sliderList.offsetLeft;
 	},
-	moveTouch=function(e){
-		var movex=e.changedTouches[0].clientX-startX;
-		slider_list.style.marginLeft=movex+'px';
+	move=function(e){
+		moveX=e.changedTouches[0].clientX-startX;
+		sliderList.style.left=moveX+lastX+'px';
 	},
-	endTouch=function(e){
-		var endx=e.changedTouches[0].clientX-startX;
+	end=function(e){
+		endX=e.changedTouches[0].clientX;
+		if(Math.abs(endX-startX)>=30){
+			if((endX-startX)<0){
+				startSlide(num+1);
+				if(num!=imgLi.length-1){
+					num++;
+				}
+			}else if((endX-startX)==0){
+				startSlide(num);
+			}else if((endX-startX)>0){
+				startSlide(num-1);
+				if(num!=0){
+					num--;
+				}
+			}
+		}else{
+			startSlide(num);
+		}
+	},
+	startSlide=function(index){
+		index=index>=(imgLi.length-1)?imgLi.length-1:index;
+		index=index<=0?0:index;
+		addClass(sliderList,'active');
+		sliderList.style.left=-index*screenWidth+'px';
+		for(var i=0;i<pointer.length;i++){
+			removeClass(pointer[i],'active');
+		}
+		addClass(pointer[index],'active');
 	},
 	setTranslate=function(el,x){
-		var value='translate3d('+x+'px,0px,0px)';
+		var value='translate3d('+x+'px,'+0+'px,'+0+'px)';
         el.style.transform = value;
         el.style.webkitTransform=value;
         el.style.msTransform=value;
         el.style.mozTransform=value;
         el.style.oTransform = value;
-    };
+	};
 	init();
+
 })(this);
 /*轮播 end*/
 /*京东秒杀倒计时 开始*/
@@ -139,14 +178,10 @@
 		topheader=byid('topheader');
 		window.addEventListener('scroll',function(){
 			var oldScrollTop=document.body.scrollTop||window.pageYOffset||document.documentElement.scrollTop;
-			if(oldScrollTop>=2){
-				if(!hasClass(seaBoxCover,'active')){
-					addClass(seaBoxCover,'active');
-					if(topheader.style.display=='block'){
-						topheader.style.display='none';
-						downloadBannel.style.display='none';
-					}
-				}
+			if(oldScrollTop>=85){
+				addClass(seaBoxCover,'active');
+				hide(downloadBannel);
+				hide(topheader);
 			}else{
 				removeClass(seaBoxCover,'active');
 			}
@@ -212,7 +247,7 @@
 
 		scrollNews.appendChild(newsList2);
 
-	var int=function(){
+	var init=function(){
 		setInterval(scrollUp,time);
 	},
 	scrollUp=function(){
@@ -239,6 +274,36 @@
 			newsList2.classList.remove('news_active');
 		}
 	}
-	int();
+	init();
 })(this);
 /*消息滚动 结束*/
+
+/*京东秒杀轮播 开始*/
+;(function(){
+	var seckillul=byid('seckillul'),
+		startX=0,
+		lastX=0,
+		moveX=0,
+		endX=0,
+		num=0;
+
+	var init=function(){
+		seckillul.addEventListener('touchstart',start);
+		seckillul.addEventListener('touchmove',move);
+		seckillul.addEventListener('touchend',end);
+	},
+	start=function(e){
+		startX=e.changedTouches[0].clientX;
+		lastX=seckillul.offsetLeft;
+	},
+	move=function(e){
+		moveX=e.changedTouches[0].clientX-startX;
+		seckillul.style.left=moveX+lastX+'px';
+	},
+	end=function(e){
+		endX=e.changedTouches[0].clientX;
+		num=num 
+	};
+	init();
+})(this);
+/*京东秒杀轮播 结束*/

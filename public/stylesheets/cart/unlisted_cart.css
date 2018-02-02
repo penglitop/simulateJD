@@ -32,7 +32,6 @@ body{
 	background-size:100% .44rem;
 	z-index:20;
 	font-size:0;
-	border-bottom:.01rem solid rgb(191,191,191);
 }
 .jd_header_icon_back{
 	position:absolute;
@@ -185,6 +184,7 @@ span.empty_msg{
 	border-radius:.02rem;
 }
 .bottom_to_top{
+	display:none;
 	position:fixed;
 	bottom:1.3rem;
 	right:.08rem;
@@ -786,15 +786,17 @@ span.txt_nomore_msg{
     -webkit-transform: scaleY(0.5);
 }
 .shp_chk_new{
-	padding:.15rem 0 0 .16rem;
+	padding:.15rem 0 0 .06rem;
 }
 .shp_chk{
+	display:inline-block;
+	float:left;
 	text-align:center;
 	overflow:hidden;
 }
 .box_flex_c{
 	display:inline-block;
-	float:left;
+	float:right;
 }
 .cart_checkbox{
 	display:inline-block;
@@ -814,9 +816,12 @@ span.txt_nomore_msg{
 	font-weight:600;
 }
 .shp_cart_info_new{
-	margin-left:.1rem;
+	margin-left:.05rem;
 	font-size:0;
 	overflow:hidden;
+	text-align:right;
+	float:right;
+	display:inline-block;
 }
 .shp_cart_total{
 	margin-top:.1rem;
@@ -845,18 +850,17 @@ span#cart_oriPrice{
 }
 .btn_right_block{
 	display:inline-block;
-	max-width:.98rem;
+	width:.98rem;
 	line-height:.5rem;
 	text-align:center;
 	background:#f23030;
 	color:#fff;
-	height:.49rem;
-	margin-top:.01rem;
+	height:.5rem;
 	font-size:.16rem;
-	padding:0 .2rem;
 	float:right;
 	box-sizing:border-box;
 	-webkit-box-sizing:border-box;
+	margin-left:.05rem;
 }
 #checkedNum{
 	font-size:.12rem;
@@ -906,6 +910,7 @@ span#cart_oriPrice{
 	width:100%;
 	height:100%;
 	font-size:0;
+	margin-bottom:.15rem;
 }
 .shop_group .shop_group_item{
 	margin-bottom:.1rem;
@@ -984,7 +989,7 @@ span#cart_oriPrice{
 	height:.13rem;
 	background:#e3e5e9;
 	vertical-align:top;
-	margin-top:.16rem;
+	margin-top:.1rem;
 	margin-left:.05rem;
 }
 .cart_new_btn:first-child .right_boundary{
@@ -1203,7 +1208,7 @@ span.icon_condition span{
 	display: inline-block;
     height: 100%;
     line-height:.24rem;
-    font-size:.13rem;
+    font-size:.14rem;
     color: #f23030
 }
 .shp_cart_item_price>strong{
@@ -1222,6 +1227,7 @@ span.icon_condition span{
     font-size: 0;
 }
 .customize_qua .quantity_decrease{
+	outline:none;
 	height:.24rem;
 	display:inline-block;
 	box-sizing:border-box;
@@ -1265,8 +1271,8 @@ span.icon_condition span{
 }
 .cart_product_cell_5{
 	position: relative;
-    height: .13rem;
-    line-height:.13rem;
+    height: .14rem;
+    line-height:.14rem;
     font-size: 0;
 }
 .cart_product_cell_5 .shop_btn_com{
@@ -1329,7 +1335,6 @@ span.icon_condition span{
     top: 0;
     left: -30%;
     height:.23rem;
-    margin-top:.02rem;
     width: 130%;
 }
 .edit_pro_mode .shop_btn_com{
@@ -1343,6 +1348,8 @@ span.icon_condition span{
 }
 .edit_pro_mode .cart_new_btn{
 	color: #81838e;
+	overflow:hidden;
+	line-height:2.5;
 }
 .edit_pro_mode .cart_new_btn span:first-child{
 	color:#232326;

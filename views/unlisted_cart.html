@@ -85,7 +85,7 @@
 		<div class="header_login_info">
 			<div class="header_login_info_left">登录后可同步电脑与手机购物车中的商品</div>
 			<div class="header_login_info_right">
-				<a href="#" class="btn_jd_red">登录</a>
+				<a href="http://localhost:3000/static/login_index.html" class="btn_jd_red">登录</a>
 			</div>
 		</div>
 	</div>
@@ -142,7 +142,7 @@
 				</div>
 
 				<ul class="shp_cart_list">
-					<li class="product204302459" id="productGroup-1">
+					<li class="product" id="productGroup-1">
 						<span class="promotion_space">
 							<a href="#" id="shopping204302459" class="shp_cart_conditions_link">
 								<span class="icon_condition" id="gift_info_sign204302459">
@@ -151,7 +151,7 @@
 								</span>
 
 								<span class="condition_description">
-									<span class="sTip204302459">购满199.00元，可减100.00元，还差159.10元</span>
+									<span class="sTip204302459">购满199.00元，可减100.00元</span>
 								</span>
 
 								<span class="condition_description_tips">
@@ -161,14 +161,14 @@
 						</span>
 						<div class="items" id="product4223570">
 							<div class="check_wrapper">
-								<span class="cart_checkbox  group-8888 checked" id="checkIcon4223570"></span>
+								<span class="cart_checkbox  group checked" id="checkIcon4223570"></span>
 							</div>
 							<div class="shp_cart_item_core shop_cart_display">
 								<a href="#" class="cart_product_cell_1">
 									<img src="/images/cart/58d8d96aN1bc6d7d1.jpg!q70.jpg" alt="" class="cart_photo_thumb">
 								</a>
 
-								<div class="cart_product_cell_2" style="display:none">
+								<div class="cart_product_cell_2">
 									<div class="cart_product_name">
 										<a href="#">
 											<span class="non_fresh_txt">红棉 红糖姜茶 黑糖姜母茶 老姜黑糖块 220g</span>
@@ -182,68 +182,171 @@
 
 									<div class="icon_list"></div>
 
-									<div class="cart_product_cell_3" style="display:none">
-										<span class="shp_cart_item_price " id="price2043024594223570">
-											¥
-											<strong>39</strong>.90
+									<div class="cart_product_cell_3">
+										<span class="shp_cart_item_price " id="price">
+											¥<span class="shopPrice">39.90</span>
 										</span>
 
 										<div class="quantity_wrapper customize_qua">
-											<a href="#" class="quantity_decrease disabled" id="subnum4223570"></a>
+											<a href="#" class="quantity_decrease disabled" id="deNum"></a>
 
-											<input type="text" id="num4223570" class="quantity" value="1">
+											<input type="text" id="num" class="quantity" value="1">
 
-											<a href="#" class="quantity_increase " id="addnum4223570"></a>
+											<a href="#" class="quantity_increase" id="inNum"></a>
 										</div>
 									</div>
 								</div>
 
-								<div class="edit_pro_mode">
-									<div class="property_edit_in noEditEntry">
-										<span></span>
-										<em class="arrow_down_pro"></em>
-									</div>
-
-									<div class="price_count_edit">
-										<span class="shp_cart_item_price " id="price2043024594223570">
-											¥
-											<strong>39</strong>.90
-										</span>
-
-										<div class="quantity_wrapper customize_qua">
-											<a href="#" class="quantity_decrease disabled" id="subnum4223570"></a>
-
-											<input type="text" id="num4223570" class="quantity" value="1">
-
-											<a href="#" class="quantity_increase " id="addnum4223570"></a>
-										</div>
-									</div>
-
+								<div class="edit_pro_mode" style="display:none;">
 									<div class="option_btns">
 										<div class="shop_btn_com">
-											<a href="#" class="cart_new_btn atten_move_btn">
-												<span class="btn_msg_in" id="grey_color">移入关注</span>
+											<a class="cart_new_btn atten_move_btn">
+												<span class="btn_msg_in attentionBtn" id="grey_color">移入关注</span>
 												<span class="right_boundary"></span>
 											</a>
 
-											<a href="#" class="cart_new_btn del_prod_btn">
+											<a class="cart_new_btn del_prod_btn">
 												<span class="right_boundary"></span>
-												<span class="btn_msg_in" id="grey_color">删除</span>
+												<span class="btn_msg_in deleteBtn" id="grey_color">删除</span>
 											</a>
 
-											<a href="#" class="cart_new_btn complete_edit_btn">
+											<a class="cart_new_btn complete_edit_btn">
 												<span class="right_boundary"></span>
-												<span class="btn_msg_in">完成</span>
+												<span class="btn_msg_in completeBtn">完成</span>
 											</a>
 										</div>
 									</div>
 								</div>
 
-								<div class="cart_product_cell_5 main_pro_btns" style="display:none;">
+								<div class="cart_product_cell_5 main_pro_btns">
 									<div class="shop_btn_com">
-										<a href="#" class="cart_new_btn edit_mode_in">
+										<a class="cart_new_btn edit_mode_in">
 											<span class="right_boundary"></span>
-											<span class="btn_msg_in">编辑</span>
+											<span class="btn_msg_in btn_msg">编辑</span>
+										</a>
+									</div>
+								</div>
+							</div>
+						</div>
+					</li>
+				</ul>
+			</div>
+		</div>
+		<div class="shop_group">
+			<div class="shop_group_item" id="shop1">
+				<div class="shop_title customize_shtit">
+					<div class="item">
+						<div class="check_wrapper">
+							<span id="checkShop9999" class="cart_checkbox check_wrapper_unit checked"></span>
+						</div>
+						<div class="shop_title_content">
+							<span class="shop_title_icon">
+								<img src="/images/cart/JDshopTitle.png" alt="">
+							</span>
+							<span class="shop_title_name">京东自营</span>
+
+							<div class="shop_btn_com freeFreOpini" id="freeFreight">
+
+								<a class="cart_new_btn free_freight_btn">
+									<span class="right_boundary"></span>
+									<span class="btn_msg_in">
+										<div class="freight_free_container store_right_new_free">
+											<span class="free_tips">凑单免运费</span>
+										</div>
+									</span>
+								</a>
+
+								<a class="cart_new_btn marginLt10 self_coupon_btn coupon_info_exp">
+									<span class="right_boundary"></span>
+									<span class="btn_msg_in">优惠券</span>
+								</a>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<ul class="shp_cart_list">
+					<li class="product" id="productGroup-1">
+						<span class="promotion_space">
+							<a href="#" id="shopping204302459" class="shp_cart_conditions_link">
+								<span class="icon_condition" id="gift_info_sign204302459">
+									<span>满减</span>
+									<em class="promotion_down_arrow_icon"></em>
+								</span>
+
+								<span class="condition_description">
+									<span class="sTip204302459">购满199.00元，可减100.00元</span>
+								</span>
+
+								<span class="condition_description_tips">
+									<i id="sTipEntrance204302459">去凑单</i>
+								</span>
+							</a>
+						</span>
+						<div class="items" id="product4223570">
+							<div class="check_wrapper">
+								<span class="cart_checkbox  group checked" id="checkIcon4223570"></span>
+							</div>
+							<div class="shp_cart_item_core shop_cart_display">
+								<a href="#" class="cart_product_cell_1">
+									<img src="/images/cart/58d8d96aN1bc6d7d1.jpg!q70.jpg" alt="" class="cart_photo_thumb">
+								</a>
+
+								<div class="cart_product_cell_2">
+									<div class="cart_product_name">
+										<a href="#">
+											<span class="non_fresh_txt">红棉 红糖姜茶 黑糖姜母茶 老姜黑糖块 220g</span>
+										</a>
+									</div>
+
+									<div class="cart_product_prop eles_flex">
+										<i class="prop0">重量:0.29kg</i>
+										<span class="prop1">12345</span>
+									</div>
+
+									<div class="icon_list"></div>
+
+									<div class="cart_product_cell_3">
+										<span class="shp_cart_item_price " id="price">
+											¥<span class="shopPrice">39.90</span>
+										</span>
+
+										<div class="quantity_wrapper customize_qua">
+											<a href="#" class="quantity_decrease disabled" id="deNum"></a>
+
+											<input type="text" id="num" class="quantity" value="1">
+
+											<a href="#" class="quantity_increase " id="inNum"></a>
+										</div>
+									</div>
+								</div>
+
+								<div class="edit_pro_mode" style="display:none;">
+									<div class="option_btns">
+										<div class="shop_btn_com">
+											<a class="cart_new_btn atten_move_btn">
+												<span class="btn_msg_in attentionBtn" id="grey_color">移入关注</span>
+												<span class="right_boundary"></span>
+											</a>
+
+											<a class="cart_new_btn del_prod_btn">
+												<span class="right_boundary"></span>
+												<span class="btn_msg_in deleteBtn" id="grey_color">删除</span>
+											</a>
+
+											<a class="cart_new_btn complete_edit_btn">
+												<span class="right_boundary"></span>
+												<span class="btn_msg_in completeBtn">完成</span>
+											</a>
+										</div>
+									</div>
+								</div>
+
+								<div class="cart_product_cell_5 main_pro_btns">
+									<div class="shop_btn_com">
+										<a class="cart_new_btn edit_mode_in">
+											<span class="right_boundary"></span>
+											<span class="btn_msg_in btn_msg">编辑</span>
 										</a>
 									</div>
 								</div>
@@ -953,23 +1056,23 @@
 	<!--底部结算 开始-->
 	<div id="payment_p">
 		<div class="payment_total_bar payment_total_bar_new box_flex_f" id="payment">
-			<div class="shp_chk shp_chk_new  box_flex_c">
-				<span class="cart_checkbox" id="checkIcon_1"></span>
+			<div class="shp_chk shp_chk_new">
+				<span class="cart_checkbox checked" id="checkIcon_1"></span>
 				<span class="cart_checkbox_text">全选</span>
-			</div>
-			<div class="shp_cart_info shp_cart_info_new  box_flex_c">
-				<strong id="shpCartTotal" class="shp_cart_total">
-					合计: <span class="bottom_bar_price" id="cart_realPrice"></span>
-				</strong>
-
-				<span class="sale_off sale_off_new  bottom_total_price" id="saleOffNew">
-					总额：<span class="money_unit_bf" id="cart_oriPrice"></span>
-					立减：<span class="money_unit_bf" id="cart_reiPrice"></span>
-				</span>
 			</div>
 			<a class="btn_right_block btn_right_block_new  box_flex_c">
 				去结算<span id="checkedNum">()</span>
 			</a>
+			<div class="shp_cart_info shp_cart_info_new  box_flex_c">
+				<strong id="shpCartTotal" class="shp_cart_total">
+					合计:<span class="bottom_bar_price" id="cart_realPrice"></span>
+				</strong>
+
+				<span class="sale_off sale_off_new  bottom_total_price" id="saleOffNew">
+					总额:<span class="money_unit_bf" id="cart_oriPrice"></span>
+					立减:<span class="money_unit_bf" id="cart_reiPrice"></span>
+				</span>
+			</div>
 		</div>
 	</div>
 	<!--底部结算 结束-->
@@ -995,7 +1098,7 @@
 		<div class="cart_cover_floor"></div>
 		<div class="cart_info_box">
 			<div class="cart_info_box_content cart_bdb_1px">
-				<span class="cart_info_box_content cart_bdb_1px">确认要删除此商品吗？</span>
+				<span class="cart_info_box_content cart_bdb_1px" id="popContent">确认要收删除商品吗？</span>
 			</div>
 			<div class="cart_btn_box">
 				<div class="cart_btn_box_back" id="cancel">取消</div>
@@ -1004,5 +1107,8 @@
 		</div>
 	</div>
 	<!--删除弹层 结束-->
+
+	<script type="text/javascript" src="/javascripts/way_base.js"></script>
+	<script type="text/javascript" src="/javascripts/cart/unlisted_cart.js"></script>
 </body>
 </html>

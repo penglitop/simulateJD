@@ -64,3 +64,25 @@ $ajax({
 	success:''
 });
 */
+
+function sendAjax(){
+	var xhr;
+	if(window.XMLHttpRequest){
+		xhr=new XMLHttpRequest;
+	}else{
+		xhr=new ActiveXObject('Microsoft.XMLHTTP');
+	}
+
+	xhr.onreadystatechange=function(){
+		if(this.readyState==4){
+			if(this.status==200){
+				console.log(this.responseText);
+			}else{
+				console.warn(this.responseText);
+			}
+		}
+	}
+
+	xhr.open('GET','/ajaxInterface/?',true);
+	xhr.send();
+}

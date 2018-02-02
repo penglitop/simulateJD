@@ -119,9 +119,13 @@ span.login_selected{
     	outline: 0;
 	}
 	.icon_clear{
-		top:.13rem;
+		top:.12rem;
 		right:.1rem;
 		background-position:0 0;
+	}
+	.tel_clear{
+		right:1.18rem;
+		display:none;
 	}
 	.password{
 		width:100%;
@@ -147,6 +151,10 @@ span.login_selected{
 		-webkit-box-sizing: border-box;
 	    -moz-box-sizing: border-box;
 	    box-sizing: border-box;
+	}
+	.label_checkbox .checkbtn.active{
+		background:url(../../images/login/show_password.png) no-repeat;
+		background-size:cover;
 	}
 	.imgverify{
 		width:100%;
@@ -226,7 +234,7 @@ span.login_selected{
     	box-shadow: none;
     	position:absolute;
     	right:0;
-
+		color:rgb(51,51,51);
 	}
 	.mesg_disable{
 		color:#848689;
@@ -241,9 +249,8 @@ span.login_selected{
 	.notice{
 		font-size:.12rem;
 		line-height:.3rem;
-		height:.3rem;
 		color:#f23030;
-		min-height:.15rem;
+		min-height:.30rem;
 		text-align:left;
 	}
 	.btn{
@@ -264,6 +271,7 @@ span.login_selected{
 		border:.01rem solid #f23030;
 		background:#fff;
 		margin-top:.1rem;
+		height:.47rem;
 	}
 	.quick_nav{
 		margin-top:.2rem;
@@ -568,6 +576,12 @@ span.login_selected{
 .forget_usernumber .btn.btn_active{
 	background-color:#f23030;
 }
+.mesgClear{
+	right:.95rem;
+}
+.forget_toast{
+	bottom:2rem !important;
+}
 /*登录-忘记密码1 结束*/
 
 /*登录-短信验证码 开始*/
@@ -651,7 +665,7 @@ html,body,.login_list_page{
     color:#fff;
     font-size:.15rem;
 }
-.receive_msg .btn.btn_active{
+.btn.btn_active{
 	background-color:#f23030;
 }
 .question_box{
@@ -676,7 +690,7 @@ html,body,.login_list_page{
 	z-index:999;
 }
 .toast{
-	top: 50%;
+	bottom:.25rem;
     left: 50%;
     position: absolute;
     padding: .1rem .15rem;
@@ -687,6 +701,61 @@ html,body,.login_list_page{
     -webkit-transform: translate(-50%,-50%);
     transform: translate(-50%,-50%);
 }
+.toast_ui{
+    padding: .1rem .15rem;
+    color: #fff;
+    z-index: 200;
+    background: 0;
+    margin-top: -1.8rem;
+}
+.toast{
+	-webkit-animation-name: fadeIn;
+    -webkit-animation-duration: 3s;
+    -webkit-animation-iteration-count: 1;
+    -webkit-animation-delay: 0s;
+    -webkit-transition: all .3s ease;
+    -moz-transition: all .3s ease;
+    transition: all .3s ease;
+    max-width: 80%;
+    display: none;
+    background: #2B2B2B;
+    padding: .1rem .15rem;
+    display: inline-table;
+    text-align: left;
+    border-radius: 3px;
+}
+.recive_toast{
+	bottom:2.1rem;
+	width:1.6rem;
+}
+.maskfadeout {
+    display: block;
+    -webkit-animation: fadeout 3s linear;
+    animation: fadeout 3s linear;
+    -webkit-animation-iteration-count: 1;
+    animation-iteration-count: 1
+}
+
+@-webkit-keyframes fadeout {
+    0%,80% {
+        opacity: 1
+    }
+
+    100% {
+        opacity: 0
+    }
+}
+
+@keyframes fadeout {
+    0%,80% {
+        opacity: 1
+    }
+
+    100% {
+        opacity: 0
+    }
+}
+
 /*登录-短信验证码 结束*/
 
  	input::-webkit-input-placeholder { /* WebKit browsers */

@@ -35,7 +35,7 @@
 	<div class="login_list_page">
 		<ul>
 			<!--登录主页 开始-->
-			<li class="login_index">
+			<li class="login_index" id="login_index">
 				<!--登录头部 开始-->
 				<header id="header">
 					<span class="icon icon_goback"></span>
@@ -68,7 +68,7 @@
 								<i class="icon icon_clear" id="login_pwd_clear" style="display:none;right:.45rem;"></i>
 								<label for="" class="label_checkbox J_ping">
 									<input type="checkbox" id="onOff_pwd" style="display:none">
-									<div class="checkbtn"></div>
+									<div class="checkbtn" id="checkbtn"></div>
 								</label>
 							</div>
 
@@ -101,14 +101,14 @@
 										<i class="area_icon"></i>
 									</label>
 									<input type="text" id="telphone" class="acc_input telphone sms_txt_input J_ping" placeholder="请输入手机号">
-									<i class="icon icon_clear"></i>
+									<i class="icon icon_clear tel_clear" id="tel_clear"></i>
 								</div>
-								<button class="mesg_code mesg_disable J_ping">获取验证码</button>
+								<button class="mesg_code mesg_disable J_ping" id="mesgCode">获取验证码</button>
 							</div>
 
 							<div class="input_container">
 								<input type="text" id="telCode" class="acc-input telCode sms-txt-input J_ping" placeholder="请输入收到的验证码">
-								<i class="icon icon_clear"></i>
+								<i class="icon icon_clear" id="telcode_clear" style="display:none"></i>
 							</div>
 						</div>
 						<!--短信验证码登录 结束-->
@@ -120,11 +120,11 @@
 						<a href="#" id="loginOneStep" class="btn btn_onestep J_ping">一键登录</a>
 
 						<div class="quick_nav clearfix">
-							<a href="#" class="J_ping findpwd">
+							<a href="#" class="J_ping findpwd" id="findpwd">
 								<i class="icon icon_clock"></i>
 								<span class="text_findpwd">忘记密码</span>
 							</a>
-							<a href="#" class="J_ping quickReg">
+							<a href="http://localhost:3000/static/user_log_on.html#" class="J_ping quickReg">
 								<i class="icon icon_reg"></i>
 								<span class="text_quickReg">手机快速注册</span>
 							</a>
@@ -142,7 +142,7 @@
 								<i class="icon icon_money"></i>
 							</a>
 							<div class="agreement_tips">
-								<p>登录即代表您已同意<a href="#">京东隐私政策</a></p>
+								<p>登录即代表您已同意<a href="https://in.m.jd.com/help/app/private_policy.html">京东隐私政策</a></p>
 							</div>
 						</div>
 					</div>
@@ -150,8 +150,10 @@
 				<!--登陆内容 结束-->
 
 
-				<div class="toast_ui">
-					<span class="toast" style="display:none;"></span>
+				<div class="toast_ui" style="display:none">
+					<span class="toast">
+						使用此功能，请安装最新版京东APP，<a href="#" style="color:#f23030">前往安装</a>
+					</span>
 				</div>
 
 
@@ -165,6 +167,7 @@
 					</div>
 				</div>
 
+				<div class="" id=""></div>
 
 				<!--验证历史收货人 开始-->
 				<div class="verify_dialog" style="display:none">
@@ -185,10 +188,10 @@
 			<!--登录主页 结束-->
 
 			<!--登录-忘记密码1 开始-->
-			<li class="forget_usernumber" style="display:none;">
+			<li class="forget_usernumber" id="forget_usernumber" style="display:none;">
 				<!--忘记密码头部 开始-->
 				<header id="header">
-					<span class="icon icon_goback"></span>
+					<span class="icon icon_goback" id="forGoback"></span>
 					<span class="text_header">忘记密码</span>
 				</header>
 				<!--忘记密码头部 结束-->
@@ -197,29 +200,29 @@
 					<div class="wrap findpwdPage">
 						<div class="input_container">
 							<lable class="lable_name">账号</lable>
-							<input type="text" id="username" class="acc_input username J_ping" placeholder="用户名/邮箱/手机号">
-							<i class="icon icon_clear"></i>
+							<input type="text" id="forgetUsername" class="acc_input username J_ping" placeholder="用户名/邮箱/手机号">
+							<i class="icon icon_clear" id="forgetClear" style="display:none;"></i>
 						</div>
 						<div class="input_container">
 							<input type="text" id="imgVerify" class="acc_input imgVerify J_ping" placeholder="请输入图片验证码">
-							<i class="icon icon_clear"></i>
-							<span class="img_code">
+							<i class="icon icon_clear mesgClear" id="mesgClear" style="display:none;"></i>
+							<span class="img_code" id="imgCodeBtn">
 								<img src="/images/login/authcode" alt="" id="imgCode">
 							</span>
 						</div>
 
-						<a href="#" id="sureBtn" class="btn J_ping btn_active">下一步</a>
+						<a href="#" id="sureBtn" class="btn btn_gray J_ping">下一步</a>
 					</div>
 				</section>
 
-				<div class="toast_mask">
-					<div class="toast"></div>
+				<div>
+					<div class="toast forget_toast maskfadeout" id="forgetToast" style="display:none;"></div>
 				</div>
 			</li>
 			<!--登录-忘记密码1 结束-->
 
 			<!--登录-短信验证码 开始-->
-			<li class="receive_msg" style="display:none;">
+			<li class="receive_msg" id="receive_msg" style="display:none;">
 				<!--忘记密码头部 开始-->
 				<header id="header">
 					<span class="icon icon_goback"></span>
@@ -245,7 +248,7 @@
 							<button id="getMesCode" class="getMes_btn">获取短信验证码</button>
 						</div>
 
-						<a href="#" id="sureBtn" class="btn J_ping btn_active">下一步</a>
+						<a href="#" id="lastBtn" class="btn btn_gray J_ping">下一步</a>
 
 						<div class="question_box">
 							<p id="retrieve_pwd">
@@ -266,8 +269,8 @@
 					</div>
 				</div>
 
-				<div class="toast_mask">
-					<div class="toast">请输入183****7472收到的短信验证码</div>
+				<div class="maskfadeout" id="reciveToast">
+					<div class="toast recive_toast">请输入183****7472收到的短信验证码</div>
 				</div>
 			</li>
 			<!--登录-短信验证码 结束-->

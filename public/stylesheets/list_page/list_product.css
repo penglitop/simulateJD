@@ -127,6 +127,12 @@
 	background-color:#fff;
 	display:table;
 }
+.selected_nav strong{
+	overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    max-width:100%;
+}
 .custom_search_iteam{
 	width:25%;
 	display:inline-block;
@@ -141,6 +147,19 @@
 	line-height:.28rem;
 	display:table-cell;
 	margin:.07rem 0;
+ 	overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    text-align: right;
+}
+.navBtn{
+	font-weight: normal;
+    display: inline-block;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    text-align:center;
+    width: .4rem;
 }
 .cus_active{
 	background: #fff;
@@ -171,6 +190,9 @@
 	line-height:.24rem;
 }
 .down{
+	position:relative;
+	top:-.08rem;
+	right:.05rem;
 	content:'';
 	display:inline-block;
 	width:.08rem;
@@ -254,6 +276,17 @@
 	box-sizing:content-box;
 	-webkit-box-sizing:content-box;
 	-moz-box-sizing:content-box;
+}
+.selected_nav.ok{
+    color: #f23030;
+    border-color: #f23030;
+    background-color: #fff;
+}
+.selected_nav{
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    text-align: right;
 }
 .selected_nav.active .down{
 	-webkit-transform:rotate(180deg);
@@ -1466,13 +1499,18 @@
 		background-color:#f23030;
 		left:0.072rem;
 		width:.576rem;
+		-webkit-transition:all .2s ease;
+		-moz-transition:all .2s ease;
+		-ms-transition:all .2s ease;
+		-o-transition:all .2s ease;
+		transition:all .2s ease;
 	}
 	.address_uls{
 		height:4.86rem;
 		overflow:hidden;
 		width:400%;
 	}
-	#areaItem{
+	.areaItem{
 		display:block;
 		float:left;
 		height:100%;
@@ -1481,7 +1519,7 @@
 		width:25%;
 		padding-top:.1rem;
 	}
-	#areaItem>li{
+	.areaItem>li{
 		height:.4rem;
 		padding-left:.1rem;
 		color:#232326;
@@ -1781,7 +1819,6 @@
 		height:.44rem;
 		color:#000000;
 		font-size:.15rem;
-		padding-right:.3rem;
 		position:relative;
 		display: box;
 	    display: -webkit-box;
@@ -1812,7 +1849,7 @@
 	    transform-origin: top left;
 	    -webkit-transform-origin: top left;
 	}
-	.filtrate_brand .brand_ul>li.selected{
+	.filtrate_brand .brand_ul>li>span.active{
 		color:#f23030;
 	}
 	.filtrate_brand .brand_ul>li>span{
@@ -1826,9 +1863,9 @@
 	    overflow: hidden;
 	    white-space: nowrap;
 	    text-overflow: ellipsis;
-	    height:.16rem;
-	    line-height:.16rem;
-	    padding-left:.1rem;
+	    height:.44rem;
+	    line-height:.44rem;
+	    text-indent:.1rem;
 	}
 	.filtrate_brand .brand_ul>li>span.brand_ul_title{
 		display:block;
@@ -1836,9 +1873,14 @@
 	    background-color: #f8f8f8;
 	    font-size:.13rem;
 	    color: #232326;
+	    height:.16rem;
 	    line-height:.16rem;
 	    padding-left:.1rem;
 	    position: relative;
+	    margin-right:.2rem;
+	}
+	.brand_ul>li>span.active{
+		color:#f23030;
 	}
 	.letters{
 		overflow:hidden;

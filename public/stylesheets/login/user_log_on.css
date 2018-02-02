@@ -120,7 +120,7 @@
 .telphone{
     width: 100%;
     padding-left: .6rem;
-    padding-right: 1.3rem;
+    padding-right: 1.2rem;
 }
 .input_box>.mesg_code{
 		width:1.12rem;
@@ -148,6 +148,7 @@
 		padding-right:.32rem;
 		line-height:.48rem;
 		font-size:.14rem;
+        outline:none;
 }
 .icon_clear_zhuce_telCode{
 	top:.13rem;
@@ -183,9 +184,24 @@
 	color: #f23030;
 	min-height: .15rem;
 	text-align: left;
+    height:.56rem;
+}
+.password {
+    width:75%;
+}
+.btn_gray{
+    color:#848689;
+    background:#eee;
+}
+.btn.btn_active{
+    color:#fff;
+    background-color:#f23030;
 }
 .notice_def{
 	color:#999;
+}
+.notice_def.active{
+    color:#f23030 !important;
 }
 .btn{
     height: .45rem;

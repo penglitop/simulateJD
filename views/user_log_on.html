@@ -45,11 +45,11 @@
 
 			<!--短信验证码登录 开始-->
 			<div class="input_container" id="input_code">
-				<input type="text" id="code" class="acc_input imgverify J_ping txt_input" placeholder="请输入图片验证码">
+				<input type="text" id="imgCode" class="acc_input imgverify J_ping txt_input" placeholder="请输入图片验证码">
 				<span class="code_box">
-					<img src="/images/login/authcode" alt="" id="imgCode" class="J_ping">
+					<img src="/images/login/authcode" alt="" id="imgcode" class="J_ping">
 				</span>
-				<i class="icon icon_clear_zhuce" style="display:none"></i>
+				<i class="icon icon_clear_zhuce" id="imgCodeClear" style="display:none"></i>
 			</div>
 
 			<div class="input_box">
@@ -59,30 +59,30 @@
 						<i class="area_icon"></i>
 					</label>
 					<input type="text" id="telphone" class="acc_input telphone txt_input J_ping" placeholder="请输入手机号">
-					<i class="icon icon_clear_zhuce" style="display:none"></i>
+					<i class="icon icon_clear_zhuce" id="telClear" style="display:none"></i>
 				</div>
-				<button class="mesg_code mesg_disable J_ping">获取验证码</button>
+				<button class="mesg_code mesg_disable J_ping" id="mesgCode">获取验证码</button>
 			</div>
 
 
 			<div class="input_container">
 				<input type="text" id="telCode" class="telCode acc-input J_ping" placeholder="请输入手机验证码">
-				<i class="icon icon_clear_zhuce_telCode" style="display:none"></i>
+				<i class="icon icon_clear_zhuce_telCode" id="telcodeClear" style="display:none"></i>
 			</div>
 
 
 			<div class="input_container">
-				<input type="text" id="password" class="acc_input password txt_input J_ping" placeholder="请设置6-20位登录密码">
-				<i class="icon icon_clear_pass" style="display:none"></i>
+				<input type="password" id="password" class="acc_input password txt_input J_ping" placeholder="请设置6-20位登录密码">
+				<i class="icon icon_clear_pass" id="pwdClear" style="display:none"></i>
 				<label for="" class="label_checkbox J_ping">
 					<input type="checkbox" id="onOff_pwd" style="display:none">
-					<div class="checkbtn"></div>
+					<div class="checkbtn" id="checkbtn"></div>
 				</label>
 			</div>
 			<!--短信验证码登录 结束-->
 
 			<div class="noice">
-				<span class="notice_def">密码由6-20位字母、数字或半角符号组成，不能是10位以下纯数字/字母/半角符号，字母需区分大小写</span>
+				<span class="notice_def" id="notice">密码由6-20位字母、数字或半角符号组成，不能是10位以下纯数字/字母/半角符号，字母需区分大小写</span>
 			</div>
 			<a href="#" id="regBtn" class="btn J_ping">注 册</a>
 
@@ -104,7 +104,7 @@
 	</div>
 
 	<!--注册及隐私政策弹窗 开始-->
-	<div class="agreement_dialog">
+	<div class="agreement_dialog" id="agreement_dialog">
 		<div class="agreement_body">
 			<div class="agreement_msg">
 				<p class="agreement_title">注册协议及隐私政策</p>
@@ -138,13 +138,15 @@
 						</span>
 					</div>
 					<div class="agreement_btns">
-						<a href="#" class="agreement_btn agreement_btn_cancel clearfix">不同意</a>
-						<a href="#" class="agreement_btn btn_complete clearfix">同意</a>
+						<a href="#" class="agreement_btn agreement_btn_cancel clearfix" id="agreeCancel">不同意</a>
+						<a href="#" class="agreement_btn btn_complete clearfix" id="agree">同意</a>
 					</div>
 				</div>
 			</div>
 		</div>
 	</div>
 	<!--注册及隐私政策弹窗 结束-->
+	<script type="text/javascript" src="/javascripts/way_base.js"></script>
+	<script type="text/javascript" src="/javascripts/login/user_log_on.js"></script>
 </body>
 </html>

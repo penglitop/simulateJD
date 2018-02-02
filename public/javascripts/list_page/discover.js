@@ -42,36 +42,72 @@
 		aDownTraP=bycssAll('.navi_name',downTransition),
 		activeInd=0;
 
-
-		naviArrow.addEventListener('click',function(){
-			if(!hasClass(downTransition,'displayNone')){
-					removeClass(arrow,'arrow_up');
-					addClass(downTransition,'down_active');
-					setTimeout(function(){
-						addClass(downTransition,'displayNone');
-					},200);
-						
-			}else{
-				addClass(arrow,'arrow_up');
-				removeClass(downTransition,'down_active');
-				setTimeout(function(){
-					removeClass(downTransition,'displayNone');
-				},200);
-			}
-		});
-
+	var init=function(){
+		naviArrow.addEventListener('click',clickArrow);
 		for(var i=0;i<aWrapperP.length;i++){
 			aWrapperP[i].index=i;
-			aWrapperP[i].addEventListener('click',function(){
-				if(!hasClass(this,'activeF')){
-					removeClass(aWrapperP[activeInd],'activeF');
-					addClass(this,'activeF');
-					removeClass(aDownTraP[activeInd],'activeS');
-					addClass(aDownTraP[this.index],'activeS');
-					activeInd=this.index;
-				}
-			})
+			aWrapperP[i].addEventListener('click',selectWrapItem);
+		};
+
+		for(var j=0;j<aDownTraP.length;j++){
+			aDownTraP[j].index=j;
+			aDownTraP[j].addEventListener('click',selectDownItem);
+		};
+	},
+	clickArrow=function(){
+		if(!hasClass(downTransition,'displayNone')){
+			hideDown();
+		}else{
+			showDown();
 		}
+	},
+	showDown=function(){
+		addClass(arrow,'arrow_up');
+		removeClass(downTransition,'displayNone');
+		setTimeout(function(){
+		removeClass(downTransition,'down_active');		
+		},200);
+	},
+	hideDown=function(){
+		removeClass(arrow,'arrow_up');
+		addClass(downTransition,'down_active');
+		setTimeout(function(){
+			addClass(downTransition,'displayNone');
+		},200);
+	},
+	selectWrapItem=function(){
+		var x=0;
+		if(!hasClass(this,'activeF')){
+			removeClass(aWrapperP[activeInd],'activeF');
+			addClass(this,'activeF');
+			removeClass(aDownTraP[activeInd],'activeS');
+			addClass(aDownTraP[this.index],'activeS');
+			moveWrap.call(this);
+		}
+	},
+	moveWrap=function(){
+		var x=0;
+		if(this.index>1&&this.index<=aWrapperP.length-1){
+			x=-this.index*20;
+			setTranslate(wrapperUl,x,0,0);
+		}else if(this.index<=1){
+			x=0;
+			setTranslate(wrapperUl,x,0,0);
+		}
+		activeInd=this.index;
+	},
+	selectDownItem=function(){
+		if(!hasClass(this,'activeF')){
+			removeClass(aWrapperP[activeInd],'activeF');
+			addClass(this,'activeS');
+			removeClass(aDownTraP[activeInd],'activeS');
+			addClass(aWrapperP[this.index],'activeF');
+			moveWrap.call(this);
+			hideDown();
+		}
+	}
+
+	init();
 })(this);
 /*精选列表 结束*/
 

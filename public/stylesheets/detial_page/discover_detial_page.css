@@ -361,14 +361,24 @@ video{
     height: .05rem;
     border-left: .01rem solid #404040;
     border-bottom:.01rem solid #404040;
-    margin-right: .04rem
+    margin-right: .04rem;
+    margin-bottom:.015rem;
 }
 .open{
 	-webkit-transform: rotate(-45deg);
+	-moz-transform: rotate(-45deg);
+	-ms-transform: rotate(-45deg);
+	-o-transform: rotate(-45deg);
     transform: rotate(-45deg);
 }
 
-
+.close{
+	-webkit-transform: rotate(135deg);
+	-moz-transform: rotate(135deg);
+	-ms-transform: rotate(135deg);
+	-o-transform: rotate(135deg);
+    transform: rotate(135deg);
+}
 
 
 .related_con{

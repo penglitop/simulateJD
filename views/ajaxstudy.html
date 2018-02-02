@@ -2,7 +2,26 @@
 <html lang="zh">
 <head>
 	<meta charset="UTF-8">
-  <title>ajax study</title>
+  	<title>ajax study</title>
+  	<!--设置html的font-size 开始-->
+	<script type="text/javascript">
+	function htmlFont(){
+		var explorer=navigator.userAgent;
+		if(explorer.indexOf("Opera")>=0){
+			winwid=screen.width;
+		}else{
+			winwid=document.getElementsByTagName('html')[0].offsetWidth;
+		}
+		fosi=winwid/320*100;
+		document.getElementsByTagName('html')[0].style.fontSize=fosi+'px';
+	}
+	htmlFont();
+	window.addEventListener('resize',htmlFont);
+	</script>
+<!--设置html的font-size 开始-->
+	<link rel="stylesheet" type="text/css" href="/stylesheets/index/index.css"/>
+	<link rel="stylesheet" type="text/css" href="/stylesheets/reset.css"/>
+	<link rel="stylesheet" type="text/css" href="/stylesheets/public.css"/>
 </head>
 <body>
   <script type="text/javascript" src="/javascripts/ajaxku.js"></script>
