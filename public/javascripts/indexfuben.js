@@ -16,35 +16,6 @@
 	});
 })(this);
 /*关闭固定头部 结束*/
-
-/*返回到顶部 开始*/
-;(function(global){
-	var toTopBtn=bycss('#bar_top'),
-		toToptimer=null;
-
-	window.addEventListener('scroll',function(){
-		var oldScrollTop=document.documentElement.scrollTop||window.pageYOffset||document.body.scrollTop;
-		/*if(oldScrollTop>=5){
-			show(toTopBtn);
-		}else{
-			hide(toTopBtn);
-		}*/
-	});
-	toTopBtn.addEventListener('click',function(){
-		clearInterval(toToptimer);
-		toToptimer=setInterval(toTop,30);
-	});
-
-	function toTop(){
-		var oldScrollTop=document.documentElement.scrollTop||window.pageYOffset||document.body.scrollTop,
-			iSpeed=Math.floor(-oldScrollTop/2);
-		document.body.scrollTop=window.pageYOffset=document.documentElement.scrollTop=oldScrollTop+iSpeed;
-		if(oldScrollTop==0){
-				clearInterval(toToptimer);
-			}
-	}
-})(this);
-/*返回到顶部 结束*/
 /*轮播 开始*/
 ;(function(glboal){
 	var slider=byid('slider'),
@@ -129,7 +100,7 @@
 		intervaler=null;
 	function countDown(){
 		var curTime=new Date(),
-		endTime=new Date('2018-4-30 23:59:59'),
+		endTime=new Date('2017-12-31 23:59:59'),
 		countTime=(endTime.getTime()-curTime.getTime())/1000;
 		if(countTime<1){
 			console.log('The end');
@@ -220,20 +191,71 @@
 
 /*消息滚动 开始*/
 ;(function(global){
+	/*var	newsList1=bycss('.news_list');
+
+	if(!newsList1){
+		return;
+	}
+
+	var	lis=byclass('news_item',newsList1),
+		firstliclone=lis[0].cloneNode(true),
+		aLiHeight=lis[0].offsetHeight,
+		listHeight=newsList1.offsetHeight,
+		time=1000,
+		y=0;
+
+	newsList1.appendChild(firstliclone);
+
+	var init=function(){
+		//setInterval(scrollUp,time);
+	},
+	scrollList1=function(){
+		setTranslate(newsList1,y);
+	},
+	scrollUp=function(){
+		y -= aLiHeight;
+		scrollList1();
+		setScrollY();
+		console.log(new Date().getSeconds());
+	},
+	setScrollY=function(){
+		if(y<-listHeight){
+			y=0;
+			newsList1.classList.add('news_active');
+			scrollList1();
+			setTimeout(function(){
+				newsList1.classList.remove('news_active');
+			},300);
+		}
+	},
+	setTranslate=function(el,y){
+        el.style.transform = 'translate3d(0px,'+y+'px,0px)';
+        el.style.webkitTransform='translate3d(0px,'+y+'px,0px)';
+        el.style.msTransform='translate3d(0px,'+y+'px,0px)';
+        el.style.mozTransform='translate3d(0px,'+y+'px,0px)';
+        el.style.oTransform = 'translate3d(0px,'+y+'px,0px)';
+    };
+	init();*/
+
 	var scrollNews=bycss('#scroll_news'),
 		newsList1=bycssAll('.news_list',scrollNews)[0],
 		newsList2=newsList1.cloneNode(true),
 		aLiHeight=scrollNews.offsetHeight,
 		listHeight=newsList1.offsetHeight,
 		time=1000,
-		y1=0,
-		y2=0;
+		y=0;
 
 		scrollNews.appendChild(newsList2);
-		var newsItem=bycssAll('.news_item');
 
 	var init=function(){
 		setInterval(scrollUp,time);
+	},
+	scrollUp=function(){
+		y=y-aLiHeight;
+		setScrollY();
+		setTranslate(newsList1,y);
+		setTranslate(newsList2,y);
+		
 	},
 	setTranslate=function(el,y){
 		el.style.transform = 'translate3d(0px,'+y+'px,0px)';
@@ -242,119 +264,83 @@
         el.style.mozTransform='translate3d(0px,'+y+'px,0px)';
         el.style.oTransform = 'translate3d(0px,'+y+'px,0px)';
 	},
-	scrollUp=function(){
-		if(Math.abs(y1)>=listHeight){
+	setScrollY=function(){
+		if(Math.abs(y)>=2*listHeight){
+			y=0;
 			newsList1.classList.add('news_active');
-			newsList2.classList.remove('news_active');
-			y1=listHeight;
-		}else if(y1==0){
 			newsList2.classList.add('news_active');
-			newsList1.classList.remove('news_active');
-			y2=0;
 		}else{
 			newsList1.classList.remove('news_active');
 			newsList2.classList.remove('news_active');
 		}
-		y1+=-aLiHeight;
-		y2+=-aLiHeight;
-		setTranslate(newsList1,y1);
-		setTranslate(newsList2,y2);	
-	};
-init();
-
+	}
+	init();
 })(this);
 /*消息滚动 结束*/
 
-/*京东轮播 开始*/
-/*;(function(){
-	var sliderList=byid('slider_list'),
-		seckillItem=byclass('sliderItem'),
+/*京东秒杀轮播 开始*/
+;(function(){
+	var seckillul=byid('seckillul'),
+		seckillItem=byEl('li',seckillul),
 		liWidth=seckillItem[0].offsetWidth,
 		startX=0,
 		lastX=0,
 		moveX=0,
-		endX=0;
-
-	var midIdex=parseInt(seckillItem.length/2);
-	for(var i=0;i<seckillItem.length;i++){
-		if(i<=midIdex){
-			seckillItem[i].style.left=-((midIdex-i)*liWidth)+'px';
-		}else{
-			seckillItem[i].style.left=(i*liWidth)-(midIdex*liWidth)+'px';
-		}
-	}
+		left=0,
+		endX=0,
+		num=0;
 
 	var init=function(){
-		sliderList.addEventListener('touchstart',start);
-		sliderList.addEventListener('touchmove',move);
-		sliderList.addEventListener('touchend',end);
-	},
-	start=function(ev){
-		startX=ev.changedTouches[0].clientX;
-	},
-	move=function(ev){
-		moveX=ev.changedTouches[0].clientX-startX;
-		
-	},
-	end=function(ev){
-		endX=ev.changedTouches[0].clientX;
-		
-	};
-	function setTranslate(el,x){
-		var value='translate3d('+x+'px,'+0+'px,'+0+'px)';
-        el.style.transform = value;
-        el.style.webkitTransform=value;
-        el.style.msTransform=value;
-        el.style.mozTransform=value;
-        el.style.oTransform = value;
-	};
-
-	init();
-
-})(this);*/
-/*京东轮播 结束*/
-
-/*京东秒杀拖动 开始*/
-;(function(){
-	var seckillul=byid('seckillul');
-	if(!seckillul){
-		return;
-	}
-	var seckill_new_items=bycssAll('.seckill_new_item',seckillul),
-		seckill_all_item=bycss('.seckill_all_item',seckillul),
-		liWid=seckill_new_items[0].offsetWidth,
-		liNum=seckill_new_items.length,
-		actInd=0,
-		startX=0,
-		timer;
-	var init=function(){
-		seckillul.style.width=(liNum*liWid+seckill_all_item.offsetWidth)+'px';
 		seckillul.addEventListener('touchstart',start);
 		seckillul.addEventListener('touchmove',move);
 		seckillul.addEventListener('touchend',end);
 	},
 	start=function(e){
-		removeClass(seckillul,'active');
 		startX=e.changedTouches[0].clientX;
-		clearTimeout(timer);
+		lastX=seckillul.offsetLeft;
 	},
 	move=function(e){
-		var moveX=e.changedTouches[0].clientX-startX;
-		seckillul.style.left=(actInd*liWid+moveX)+'px';
+		moveX=e.changedTouches[0].clientX-startX;
+		seckillul.style.left=moveX+lastX+'px';
 	},
 	end=function(e){
-		var endX=e.changedTouches[0].clientX-startX,
-			moveLiNum=Math.round(endX/liWid),
-			endLeftNum=actInd+moveLiNum;
-		endLeftNum=endLeftNum<(3-liNum)?(3-liNum):endLeftNum;
-		endLeftNum=endLeftNum>0?0:endLeftNum;
+		var timer=null;
+		endX=e.changedTouches[0].clientX;
+		left=seckillul.offsetLeft;
+		/*num=parseInt(Math.abs(left/liWidth));*/
+		if((endX-startX)<0){
+				slideStart(num+1);
+				if(num!=seckillItem.length-1){
+					num++;
+				}
+			}else if((endX-startX)==0){
+				slideStart(num);
+			}else if((endX-startX)>0){
+				slideStart(num-1);
+				if(num!=0){
+					num--;
+				}
+			}
+	},
+	slideStart=function(index){
+		if(endX-startX!=0){
+			if(num<=0){
+				num=0;
+				removeClass(seckillul,'active');
+			}else if(num>=seckillItem.length-3){
+				clearTimeout(timer);
+				num=seckillItem.length-3;
+				addClass(seckillul,'active');
+				timer=setTimeout(go,1000);
+			}
+
+		}; 
 		addClass(seckillul,'active');
-		seckillul.style.left=endLeftNum*liWid+'px';
-		actInd=endLeftNum;
-		timer=setTimeout(function(){
-			removeClass(seckillul,'active');
-		},300);
+		seckillul.style.left=-(index)*liWidth+'px';
+	},
+	go=function(){
+		location.href='http://localhost:3000/static/list_product.html';
 	};
 	init();
-})();
-/*京东秒杀拖动 结束*/
+})(this);
+/*京东秒杀轮播 结束*/

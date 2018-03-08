@@ -22,6 +22,21 @@
 })(this);
 /*账号切换 结束*/
 
+/*返回按钮 开始*/
+;(function(global){
+	var goBackBtn=byid('goBack');
+	var init=function(){
+		goBackBtn.addEventListener('click',goBack);
+	},
+	goBack=function(){
+		if(window.history.go(-1)){
+			window.history.go(-1);
+		}
+	};
+	init();
+})(this);
+/*返回按钮 结束*/
+
 /*账号登录 开始*/
 ;(function(global){
 	var username=bycss('#username'),

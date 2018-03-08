@@ -116,3 +116,32 @@ function getStyle(elements,attr){
 		return elements.currentStyle()[attr];
 	}
 }
+
+//获取对象scrollTop
+function getScrollTop(obj){
+    if(obj){
+        return obj.scrollTop;
+    }else{
+        return document.documentElement.scrollTop || window.pageYOffset || document.body.scrollTop || 0;
+    }
+}
+
+/*控制body能否滚动*/
+function bodynoscroll(container){
+    var _html=container || document.documentElement,
+        scTop;
+    var scroll=function(){
+        _html.classList.remove('fixedbodynoscroll');
+        _html.scrollTop=scTop;
+        _html.style.top='';
+    },
+    noscroll=function(){
+        scTop=getScrollTop(_html);
+        _html.style.top=-scTop+'px';
+        _html.classList.add('fixedbodynoscroll');
+    };
+    window.bodyScrollCtrl={
+        yeah:scroll,
+        no:noscroll
+    }
+}

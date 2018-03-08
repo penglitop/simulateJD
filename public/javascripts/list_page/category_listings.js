@@ -48,6 +48,20 @@
 		}
 })(this);*/
 /*清空特色服务 结束*/
+/*返回按钮 开始*/
+;(function(global){
+	var goBackBtn=byid('layout_urlblack');
+	var init=function(){
+		goBackBtn.addEventListener('click',goBack);
+	},
+	goBack=function(){
+		if(window.history.go(-1)){
+			window.history.go(-1);
+		}
+	};
+	init();
+})(this);
+/*返回按钮 结束*/
 
 /*左侧目录 开始*/
 ;(function(global){

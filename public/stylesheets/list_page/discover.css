@@ -233,6 +233,7 @@
  .article{
  	border-bottom:.01rem solid #f3f3f3;
  	background:#fff;
+ 	display:block;
  	overflow:hidden;
  }
  .article .article_left{

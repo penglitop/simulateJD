@@ -1,4 +1,5 @@
 "use strict";
+bodynoscroll();
 /*回到顶部 开始*/
 ;(function(global){
 	var toTopBtn=bycss('#indexToTop'),
@@ -39,10 +40,10 @@
 		headerGoback.addEventListener('click',goBack);
 	},
 	goBack=function(){
-			if(window.history.go(-1)){
-				window.history.go(-1);
-			}
-		},
+		if(window.history.go(-1)){
+			window.history.go(-1);
+		}
+	},
 
 	listShow=function(){
 			if(layjdBar.style.display=='none'){
@@ -82,8 +83,8 @@
 
 	var popDelete=byid('pop_delete'),
 		popContent=byid('popContent'),
-		cancel=byid('cancel'),
-		isok=byid('isok'),
+		cancel=byid('confirmClose'),
+		isok=byid('confirmSure'),
 		deleteElement;
 
 	var init=function(){
@@ -91,14 +92,104 @@
 		addClick(inNum,increase);
 		addClick(deNum,decrease);
 		addClick(checkGroup,selectGroup);
+		addClick(checkUnit,selectUnit);
 		addClick(editBtn,showedit);
 		addClick(completeBtn,complete);
-		//addClick(deleteBtn,deleteproduct);
+		addClick(deleteBtn,deleteproduct);
 		addClick(attentionBtn,attention);
 		checkAll.addEventListener('click',selectAll);
 		cancel.addEventListener('click',hidePop);
 		isok.addEventListener('click',hidePop);
 		byid('notEmptyCart').addEventListener('click',deleteProduct);
+	},
+	initialize=function(){
+		var price=0,
+			amou=0,
+			num=0;
+		for(var i=0;i<shopPrice.length;i++){
+			shopPrice[i].index=i;
+			if(!hasClass(checkUnit[i],'checked')){
+				num=0;
+			}else{
+				num=Number(amount[i].value);
+			}
+			price+=(Number(shopPrice[i].innerHTML)*Number(num));
+			realPrice.innerHTML=alliPrice.innerHTML='¥'+returnFloat(price);
+			rePrice.innerHTML='¥'+returnFloat(0);
+			if(hasClass(checkUnit[i],'checked')){
+				amou+=Number(amount[i].value);
+			}
+			checkedNum.innerHTML='('+amou+'件)';
+			if(price>=199){
+				price=price-100;
+				rePrice.innerHTML=returnFloat(100);
+			}
+		}
+	},
+	increase=function(){
+		if(!hasClass(checkUnit[this.index],'checked')){
+			amount[this.index].value++;
+		}else{
+			amount[this.index].value++;
+			initialize();
+		}
+	},
+	decrease=function(){
+		if(amount[this.index].value=='1'){
+			return;
+		}
+		if(!hasClass(checkUnit[this.index],'checked')){
+			amount[this.index].value--;
+		}else{
+			amount[this.index].value--;
+			initialize();
+		}
+	},
+	selectUnit=function(){
+		if(hasClass(this,'checked')){
+			removeClass(this,'checked');
+			removeClass(checkGroup[this.index],'checked');
+			removeClass(checkAll,'checked');
+			initialize();
+		}else{
+			var arr=[];
+			addClass(this,'checked');
+			addClass(checkGroup[this.index],'checked');
+			initialize();
+			for(var j=0;j<checkGroup.length;j++){
+				if(hasClass(checkGroup[j],'checked')){
+					arr.push(checkGroup[j]);
+				}
+			}
+			if(arr.length==checkGroup.length){
+				addClass(checkAll,'checked');
+			}else{
+				removeClass(checkAll,'checked');
+			}
+		}
+	},
+	selectGroup=function(){
+		if(hasClass(this,'checked')){
+			removeClass(this,'checked');
+			removeClass(checkUnit[this.index],'checked');
+			removeClass(checkAll,'checked');
+			initialize();
+		}else{
+			var arr=[];
+			addClass(this,'checked');
+			addClass(checkUnit[this.index],'checked');
+			initialize();
+			for(var j=0;j<checkUnit.length;j++){
+				if(hasClass(checkUnit[j],'checked')){
+					arr.push(checkUnit[j]);
+				}
+			}
+			if(arr.length==checkGroup.length){
+				addClass(checkAll,'checked');
+			}else{
+				removeClass(checkAll,'checked');
+			}
+		}
 	},
 	selectAll=function(){
 		if(hasClass(checkAll,'checked')){
@@ -106,14 +197,21 @@
 			addClass(checkAll,'checked');
 			for(var i=0;i<checkbox.length;i++){
 				removeClass(checkbox[i],'checked');
+				allNoSelect();
 			}
 		}else{
 			addClass(checkAll,'checked');
 			removeClass(checkAll,'checked');
 			for(var i=0;i<checkbox.length;i++){
 				addClass(checkbox[i],'checked');
+				initialize();
 			}
 		}
+	},
+	allNoSelect=function(){
+		realPrice.innerHTML=alliPrice.innerHTML='¥'+returnFloat(0);
+		rePrice.innerHTML='¥'+returnFloat(0);
+		checkedNum.innerHTML='0件';
 	},
 	showedit=function(){
 		hide(mainPro[this.index]);
@@ -124,9 +222,14 @@
 		hide(editBlock[this.index]);
 	},
 	deleteproduct=function(){
-		show(popDelete);
-		document.body.style.overflow='hidden';
-		deleteUnit.call(this);
+		var _self=this;
+		bodyScrollCtrl.no();
+		ConfirmLayer('',function(flag){
+			bodyScrollCtrl.yeah();
+			if(flag){
+				deleteUnit.call(_self);
+			}
+		});
 	},
 	deleteProduct=function(e){
 		var el=e.target;
@@ -151,6 +254,8 @@
 	},
 	deleteUnit=function(){
 		 if(shopGroup[this.index]){
+		 	removeClass(checkUnit[this.index],'checked');
+ 			initialize();
 	 	   var _parentElement = shopGroup[this.index].parentNode;
            _parentElement.removeChild(shopGroup[this.index]);
          }
@@ -159,64 +264,13 @@
 		hide(popDelete);
 		document.body.style.overflow='auto';
 	},
-	selectGroup=function(){
-		if(hasClass(this,'checked')){
-			removeClass(this,'checked');
-			removeClass(checkUnit[this.index],'checked');
-			removeClass(checkAll,'checked');
-			amount[this.index].value=0;
-			initialize();
-			amount[this.index].value=1;
-		}else{
-			var arr=[];
-			addClass(this,'checked');
-			addClass(checkUnit[this.index],'checked');
-			initialize();
-			for(var j=0;j<checkUnit.length;j++){
-				if(hasClass(checkUnit[j],'checked')){
-					arr.push(checkUnit[j]);
-				}
-			}
-			if(arr.length==checkGroup.length){
-				addClass(checkAll,'checked');
-			}else{
-				removeClass(checkAll,'checked');
-			}
-		}
-	},
 	addClick=function(obj,fn){
 		for(var i=0;i<obj.length;i++){
 			obj[i].index=i;
 			obj[i].addEventListener('click',fn);
 		}
 	},
-	increase=function(e){
-		amount[this.index].value++;
-		initialize();
-	},
-	decrease=function(){
-		if(amount[this.index].value=='1'){
-			return;
-		}
-		amount[this.index].value--;
-		initialize();
-	},
-	initialize=function(){
-		var price=0,
-			num=0;
-		for(var i=0;i<shopPrice.length;i++){
-			shopPrice[i].index=i;
-			price+=(Number(shopPrice[i].innerHTML)*Number(amount[i].value));
-			num+=Number(amount[i].value);
-			realPrice.innerHTML=alliPrice.innerHTML='¥'+returnFloat(price);
-			rePrice.innerHTML='¥'+returnFloat(0);
-			checkedNum.innerHTML='('+num+'件)';
-			if(price>=199){
-				price=price-100;
-				rePrice.innerHTML=returnFloat(100);
-			}
-		}
-	},
+	
 	returnFloat=function(value){
 		var xsd=value.toString().split("."),
 		 	er='';
@@ -238,3 +292,45 @@
 	init();
 })(this);
 /*总金额-合计 结束*/
+
+var ConfirmLayer=function(txt,callback){
+    var confirmLayercovering=byid('cart_info_box'),
+        confirmTit=byid('popContent'),
+        confirmClose=byid('confirmClose'),
+        confirmSure=byid('confirmSure'),
+        confirmCall=callback,
+        tittxt=txt;
+    if(!confirmLayercovering){
+        return;
+    }
+    var init=function(){
+        if(txt){
+            confirmTit.innerHTML=txt;
+        }
+        show();
+        confirmClose.addEventListener('click',function(){
+            hide();
+            confirmCall && confirmCall(false);
+        });
+        confirmSure.addEventListener('click',function(){
+            hide();
+            confirmCall && confirmCall(true);
+        });
+    },
+    hide=function(){
+        confirmLayercovering.style.display='none';
+    },
+    show=function(){
+        confirmLayercovering.style.display='block';
+    },
+    Confirm=function(txt,callback){
+        if(tittxt != txt && txt){
+            confirmTit.innerHTML=txt;
+            tittxt=txt;
+        }
+        confirmCall=callback;
+        show();
+    };
+    init();
+    ConfirmLayer=Confirm;
+};
