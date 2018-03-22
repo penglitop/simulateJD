@@ -68,6 +68,20 @@
 		sliderList.addEventListener('touchstart',start);
 		sliderList.addEventListener('touchmove',move);
 		sliderList.addEventListener('touchend',end);
+		setInterval(function(){
+			if(num>=imgLi.length-1){
+				num=0;
+				removeClass(sliderList,'active');
+				addClass(sliderList,'news_active');
+				startSlide(num);
+			}else{
+				num++;
+				addClass(sliderList,'active');
+				removeClass(sliderList,'news_active');
+				startSlide(num);
+			}
+			
+		},2000);
 	},
 	start=function(e){
 		startX=e.changedTouches[0].clientX;
@@ -94,13 +108,14 @@
 				}
 			}
 		}else{
+			addClass(sliderList,'active');
 			startSlide(num);
 		}
 	},
 	startSlide=function(index){
 		index=index>=(imgLi.length-1)?imgLi.length-1:index;
 		index=index<=0?0:index;
-		addClass(sliderList,'active');
+		/*addClass(sliderList,'active');*/
 		sliderList.style.left=-index*screenWidth+'px';
 		for(var i=0;i<pointer.length;i++){
 			removeClass(pointer[i],'active');
@@ -328,7 +343,7 @@ init();
 		startX=0,
 		timer;
 	var init=function(){
-		seckillul.style.width=(liNum*liWid+seckill_all_item.offsetWidth)+'px';
+		seckillul.style.width=(liNum*liWid+seckill_all_item.offsetWidth)+38+'px';
 		seckillul.addEventListener('touchstart',start);
 		seckillul.addEventListener('touchmove',move);
 		seckillul.addEventListener('touchend',end);
